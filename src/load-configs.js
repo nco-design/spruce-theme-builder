@@ -105,8 +105,8 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   const palettesDir = path.join(themeDir, "palettes");
   const iconPackAssetsDir = path.join(iconPackDir, "assets");
   const placeholderDir = resolveWithin(
-    path.join(ROOT_DIR, "src", "placeholder-static-files"),
-    frontendName
+    path.join(ROOT_DIR, "frontends", frontendName),
+    "placeholder-static-files"
   );
 
   requireDirectory(themeDir, `Le thème "${themeFolder}" n'existe pas`);
