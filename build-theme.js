@@ -1,4 +1,4 @@
-const { buildTheme } = require("./src/build-icons.js");
+const { buildTheme } = require("./src/mains.js");
 
 buildTheme({
   themeFolder: process.argv[2],

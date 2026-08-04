@@ -6,3 +6,6 @@
 # Installed dependencies and generated builds
 /node_modules/
 /builds/
+
+# Local development notes
+/TODO.md
