@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { createColorMap } = require("./colors.js");
 const { copyThemeStaticFiles } = require("./copy-static-files.js");
+const { injectPaletteIntoConfig } = require("./inject-config.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
 const { renderAssets } = require("./render-assets.js");
@@ -67,6 +68,14 @@ async function buildTheme(options) {
       staticFiles: context.staticFiles
     });
     console.log(`Fichiers statiques : ${copiedFiles.join(", ")}`);
+
+    const injectedConfigValues = injectPaletteIntoConfig({
+      frontendName: context.frontendName,
+      outputDir,
+      palette,
+      themeConfig: context.themeConfig
+    });
+    console.log(`Couleurs injectées : ${injectedConfigValues}`);
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,
