@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="48px"
+   viewBox="0 -960 960 960"
+   width="48px"
+   fill="#ffffff"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="iconfresh.svg"
+   inkscape:export-filename="../../../icons/app/iconfresh.png"
+   inkscape:export-xdpi="140"
+   inkscape:export-ydpi="140"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="16.395833"
+     inkscape:cx="23.969505"
+     inkscape:cy="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M150-510q-12.75 0-21.37-8.63Q120-527.25 120-540v-270q0-12.75 8.63-21.38Q137.25-840 150-840h270q12.75 0 21.38 8.62Q450-822.75 450-810v270q0 12.75-8.62 21.37Q432.75-510 420-510H150Zm390 0q-12.75 0-21.37-8.63Q510-527.25 510-540v-270q0-12.75 8.63-21.38Q527.25-840 540-840h270q12.75 0 21.38 8.62Q840-822.75 840-810v270q0 12.75-8.62 21.37Q822.75-510 810-510H540ZM150-120q-12.75 0-21.37-8.63Q120-137.25 120-150v-270q0-12.75 8.63-21.38Q137.25-450 150-450h270q12.75 0 21.38 8.62Q450-432.75 450-420v270q0 12.75-8.62 21.37Q432.75-120 420-120H150Zm524.82 0q-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-105H539q-12 0-20.5-8.68-8.5-8.67-8.5-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h105v-106q0-12 8.68-20.5 8.67-8.5 21.5-8.5 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v105h106q12 0 20.5 8.68 8.5 8.67 8.5 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H705v106q0 12-8.68 20.5-8.67 8.5-21.5 8.5Z"
+     id="path1"
+     style="fill:#e5e5e5;fill-opacity:1" />
+</svg>

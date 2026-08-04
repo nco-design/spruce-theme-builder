@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458332 26.458332"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="retroexpert.svg"
+   inkscape:export-filename="../../../icons/app/retroarch.png"
+   inkscape:export-xdpi="67.199997"
+   inkscape:export-ydpi="67.199997"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.6568545"
+     inkscape:cx="33.764347"
+     inkscape:cy="87.239295"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect2"
+       style="fill:#e5e5e5;fill-opacity:1;stroke:none;stroke-width:0.305475;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+       d="M 6.4941772,4.5702637 V 6.4941772 H 8.4186076 V 4.5702637 Z M 8.4186076,6.4941772 V 8.4186076 H 6.4941772 V 10.343038 H 4.5702637 v 1.923913 1.924431 H 2.6458333 v 5.772774 h 1.9244304 v -3.848861 h 1.9239135 v 1.924431 1.92443 h 1.9244304 v -1.92443 h 9.6211184 v 1.92443 h 1.92443 v -1.92443 -1.924431 h 1.923914 v 3.848861 H 23.8125 V 14.191382 H 21.88807 V 12.266951 10.343038 H 19.964156 V 8.4186076 h -1.92443 V 6.4941772 H 16.115812 V 8.4186076 H 10.342521 V 6.4941772 Z m 9.6211184,0 h 1.92443 V 4.5702637 h -1.92443 z m 0,13.4699788 h -3.848344 v 1.923914 h 3.848344 z m -9.6211184,0 V 21.88807 H 12.266951 V 19.964156 Z M 7.821228,10.529073 h 2.70061 c 0.708315,0 1.28443,0.540009 1.343588,1.232483 h 2.727482 c 0.05916,-0.692474 0.635273,-1.232483 1.343587,-1.232483 h 2.70061 c 0.74791,0 1.350305,0.601881 1.350305,1.349788 v 2.700611 c 0,0.747907 -0.602395,1.349788 -1.350305,1.349788 h -2.70061 c -0.747908,0 -1.349788,-0.601881 -1.349788,-1.349788 v -1.203544 h -2.71508 v 1.203544 c 0,0.747907 -0.601879,1.349788 -1.349789,1.349788 h -2.70061 c -0.7479076,0 -1.3503051,-0.601881 -1.3503051,-1.349788 v -2.700611 c 0,-0.747907 0.6023975,-1.349788 1.3503051,-1.349788 z m 0.5291667,1.204578 c -0.3739538,0 -0.6748942,0.300424 -0.6748942,0.674377 v 1.642277 c 0,0.373953 0.3009404,0.674377 0.6748942,0.674377 h 1.6422766 c 0.3739547,0 0.6743777,-0.300424 0.6743777,-0.674377 v -1.642277 c 0,-0.373953 -0.300423,-0.674377 -0.6743777,-0.674377 z m 8.1152673,0 c -0.373955,0 -0.674377,0.300424 -0.674377,0.674377 v 1.642277 c 0,0.373953 0.300422,0.674377 0.674377,0.674377 h 1.642276 c 0.373955,0 0.674895,-0.300424 0.674895,-0.674377 v -1.642277 c 0,-0.373953 -0.30094,-0.674377 -0.674895,-0.674377 z"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccssccsssssssccssssssssssssssssssssssss" />
+  </g>
+</svg>
