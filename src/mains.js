@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { createColorMap } = require("./colors.js");
 const { copyThemeStaticFiles } = require("./copy-static-files.js");
+const { generateResolutionConfig } = require("./generate-resolution-config.js");
 const { injectPaletteIntoConfig } = require("./inject-config.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
@@ -81,6 +82,13 @@ async function buildTheme(options) {
       themeConfig: context.themeConfig
     });
     console.log(`Couleurs injectées : ${injectedConfigValues}`);
+
+    const resolutionConfig = generateResolutionConfig({
+      outputDir,
+      outputFileName: "config_1280x720.json",
+      scale: 1.5
+    });
+    console.log(`Configuration HD : ${resolutionConfig}`);
 
     const staticValidation = validateStaticFiles({
       outputDir,
