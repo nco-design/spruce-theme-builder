@@ -72,6 +72,24 @@ function readPalettes(palettesDir, themeFolder) {
   });
 }
 
+function readStaticFilesConfig(frontendName) {
+  const configPath = resolveWithin(
+    path.join(ROOT_DIR, "frontends"),
+    frontendName,
+    "theme",
+    "static-files.json"
+  );
+  const config = readJson(configPath);
+
+  if (!Array.isArray(config.required) || !Array.isArray(config.optional)) {
+    throw new Error(
+      `Le fichier ${configPath} doit contenir les tableaux "required" et "optional"`
+    );
+  }
+
+  return config;
+}
+
 function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
@@ -114,6 +132,7 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
     iconPackFolder,
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),
     palettes: readPalettes(palettesDir, themeFolder),
+    staticFiles: readStaticFilesConfig(frontendName),
     themeAssetsDir,
     themeConfig,
     themeFolder,

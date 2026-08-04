@@ -1,0 +1,6 @@
+{
+  "required": [
+    "config.json"
+  ],
+  "optional": []
+}

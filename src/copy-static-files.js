@@ -16,16 +16,16 @@ function copyRequiredFile({ assetsDir, outputDir, relativePath }) {
   return relativePath;
 }
 
-function copyThemeStaticFiles({ assetsDir, outputDir }) {
+function copyThemeStaticFiles({ assetsDir, outputDir, staticFiles }) {
   const copiedFiles = [];
 
-  copiedFiles.push(
-    copyRequiredFile({
+  for (const relativePath of staticFiles.required) {
+    copiedFiles.push(copyRequiredFile({
       assetsDir,
       outputDir,
-      relativePath: "config.json"
-    })
-  );
+      relativePath
+    }));
+  }
 
   return copiedFiles;
 }
