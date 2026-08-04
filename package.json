@@ -1,0 +1,11 @@
+{
+  "name": "spruce-theme-builder",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:theme": "node build-theme.js"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
