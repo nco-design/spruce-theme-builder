@@ -104,6 +104,10 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   const themeAssetsDir = path.join(themeDir, "assets");
   const palettesDir = path.join(themeDir, "palettes");
   const iconPackAssetsDir = path.join(iconPackDir, "assets");
+  const placeholderDir = resolveWithin(
+    path.join(ROOT_DIR, "src", "placeholder-static-files"),
+    frontendName
+  );
 
   requireDirectory(themeDir, `Le thème "${themeFolder}" n'existe pas`);
   requireDirectory(themeAssetsDir, `Le dossier assets du thème "${themeFolder}" n'existe pas`);
@@ -112,6 +116,10 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   requireDirectory(
     iconPackAssetsDir,
     `Le dossier assets du pack d'icônes "${iconPackFolder}" n'existe pas`
+  );
+  requireDirectory(
+    placeholderDir,
+    `Le dossier de placeholders du frontend "${frontendName}" n'existe pas`
   );
 
   const themeConfig = readJson(path.join(themeDir, "config.json"));
@@ -132,6 +140,7 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
     iconPackFolder,
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),
     palettes: readPalettes(palettesDir, themeFolder),
+    placeholderDir,
     staticFiles: readStaticFilesConfig(frontendName),
     themeAssetsDir,
     themeConfig,

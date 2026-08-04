@@ -65,6 +65,7 @@ async function buildTheme(options) {
     const copiedFiles = copyThemeStaticFiles({
       assetsDir: context.themeAssetsDir,
       outputDir,
+      placeholderDir: context.placeholderDir,
       staticFiles: context.staticFiles
     });
     console.log(`Fichiers statiques : ${copiedFiles.join(", ")}`);

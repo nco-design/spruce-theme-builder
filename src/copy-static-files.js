@@ -2,18 +2,45 @@ const fs = require("fs");
 const path = require("path");
 const { resolveWithin } = require("./paths.js");
 
-function copyRequiredFile({ assetsDir, outputDir, relativePath }) {
-  const sourceFile = resolveWithin(assetsDir, relativePath);
-  const outputFile = resolveWithin(outputDir, relativePath);
+function isFile(filePath) {
+  return fs.existsSync(filePath) && fs.statSync(filePath).isFile();
+}
 
-  if (!fs.existsSync(sourceFile) || !fs.statSync(sourceFile).isFile()) {
-    throw new Error(`Fichier statique obligatoire introuvable : ${sourceFile}`);
-  }
+function copyFile({ outputDir, relativePath, sourceDir }) {
+  const sourceFile = resolveWithin(sourceDir, relativePath);
+  const outputFile = resolveWithin(outputDir, relativePath);
 
   fs.mkdirSync(path.dirname(outputFile), { recursive: true });
   fs.copyFileSync(sourceFile, outputFile);
 
   return relativePath;
+}
+
+function copyRequiredFile({ assetsDir, outputDir, placeholderDir, relativePath }) {
+  const projectFile = resolveWithin(assetsDir, relativePath);
+
+  if (isFile(projectFile)) {
+    return copyFile({
+      outputDir,
+      relativePath,
+      sourceDir: assetsDir
+    });
+  }
+
+  const placeholderFile = resolveWithin(placeholderDir, relativePath);
+
+  if (isFile(placeholderFile)) {
+    return copyFile({
+      outputDir,
+      relativePath,
+      sourceDir: placeholderDir
+    });
+  }
+
+  throw new Error(
+    `Fichier statique obligatoire introuvable dans le thème et les placeholders : ` +
+    relativePath
+  );
 }
 
 function findFontFiles(assetsDir) {
@@ -39,26 +66,39 @@ function findFontFiles(assetsDir) {
   return fontFiles.sort();
 }
 
-function copyThemeStaticFiles({ assetsDir, outputDir, staticFiles }) {
+function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFiles }) {
   const copiedFiles = [];
 
   for (const relativePath of staticFiles.required) {
     copiedFiles.push(copyRequiredFile({
       assetsDir,
       outputDir,
+      placeholderDir,
       relativePath
     }));
   }
 
-  for (const relativePath of findFontFiles(assetsDir)) {
+  const projectFonts = findFontFiles(assetsDir);
+  const fontSourceDir = projectFonts.length > 0 ? assetsDir : placeholderDir;
+  const fontFiles = projectFonts.length > 0
+    ? projectFonts
+    : findFontFiles(placeholderDir);
+
+  if (fontFiles.length === 0) {
+    throw new Error(
+      "Aucune police .ttf ou .otf trouvée dans le thème ou les placeholders"
+    );
+  }
+
+  for (const relativePath of fontFiles) {
     if (copiedFiles.includes(relativePath)) {
       continue;
     }
 
-    copiedFiles.push(copyRequiredFile({
-      assetsDir,
+    copiedFiles.push(copyFile({
       outputDir,
-      relativePath
+      relativePath,
+      sourceDir: fontSourceDir
     }));
   }
 
