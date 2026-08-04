@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { createGeneratedNotice } = require("./generated-notice.js");
 const readJson = require("./read-json.js");
 const { resolveWithin } = require("./paths.js");
 
@@ -61,7 +62,8 @@ function createMetadata({ iconPackConfig, palette, themeConfig }) {
       palette.description,
       iconPackConfig.description
     ),
-    author: joinAuthors(themeConfig.Author, iconPackConfig.Author)
+    author: joinAuthors(themeConfig.Author, iconPackConfig.Author),
+    ...createGeneratedNotice()
   };
 }
 
