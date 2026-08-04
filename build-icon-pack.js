@@ -1,9 +1,5 @@
-const { buildProject } = require("./src/build-icons.js");
-
-buildProject({
-  projectType: "icon-pack",
-  projectFolder: process.argv[2]
-}).catch((error) => {
-  console.error("\nErreur pendant le build :", error);
-  process.exitCode = 1;
-});
+console.error(
+  "Les packs d'icônes sont maintenant générés avec le thème.\n" +
+  "Usage : node build-theme <nom-du-theme> <frontend> <nom-du-pack-d-icones>"
+);
+process.exitCode = 1;

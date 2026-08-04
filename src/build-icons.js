@@ -5,28 +5,33 @@ const readJson = require("./read-json.js");
 
 const ROOT_DIR = path.join(__dirname, "..");
 
-const PROJECT_TYPES = {
-  theme: {
-    label: "Thème",
-    projectsFolder: "themes",
-    buildsFolder: "themes",
-    configNameField: "theme-name",
-    frontendFolder: "theme",
-    frontendFile: "theme.json",
-    sourcePrefix: /^\/?projects\//,
-    usage: "node build-theme <nom-du-theme>"
-  },
-  "icon-pack": {
-    label: "Pack d'icônes",
-    projectsFolder: "icon-packs",
-    buildsFolder: "icon-packs",
-    configNameField: "pack-name",
-    frontendFolder: "icon-pack",
-    frontendFile: "icon-pack.json",
-    sourcePrefix: /^\/?projects\/icons\//,
-    usage: "node build-icon-pack <nom-du-pack>"
+function requireDirectory(directoryPath, errorMessage) {
+  if (!fs.existsSync(directoryPath) || !fs.statSync(directoryPath).isDirectory()) {
+    throw new Error(errorMessage);
   }
-};
+}
+
+function readFrontendConfig(frontendName, projectType) {
+  const configPath = path.join(
+    ROOT_DIR,
+    "frontends",
+    frontendName,
+    projectType,
+    `${projectType}.json`
+  );
+
+  if (!fs.existsSync(configPath)) {
+    throw new Error(`Configuration frontend introuvable : ${configPath}`);
+  }
+
+  const config = readJson(configPath);
+
+  if (!Array.isArray(config.icons)) {
+    throw new Error(`Le fichier ${configPath} ne contient pas de tableau "icons"`);
+  }
+
+  return config;
+}
 
 function createColorMap(buildParams, palette) {
   if (!palette.properties) {
@@ -81,7 +86,7 @@ async function renderAssets({
       !icon.width ||
       !icon.height
     ) {
-      process.emitWarning("Asset ignoré : configuration incomplète dans le frontend");
+      process.emitWarning("Asset ignoré : configuration frontend incomplète");
       skippedCount++;
       continue;
     }
@@ -102,7 +107,7 @@ async function renderAssets({
     }
 
     const cleanTargetPath = icon["target-path"].replace(/^\/+|\/+$/g, "");
-    const targetDir = path.join(outputDir, "spruceos", cleanTargetPath);
+    const targetDir = path.join(outputDir, cleanTargetPath);
     const format = icon.format.toLowerCase();
     const outputFile = path.join(targetDir, `${icon["icon-name"]}.${format}`);
 
@@ -124,64 +129,45 @@ async function renderAssets({
     }
 
     generatedCount++;
-    console.log(`  Asset généré : ${path.relative(outputDir, outputFile)}`);
   }
 
   return { generatedCount, skippedCount };
 }
 
-async function buildProject({ projectType, projectFolder }) {
-  const typeConfig = PROJECT_TYPES[projectType];
-
-  if (!typeConfig) {
-    throw new Error(`Type de projet inconnu : ${projectType}`);
-  }
-
-  if (!projectFolder) {
-    throw new Error(`Usage : ${typeConfig.usage}`);
-  }
-
-  const sourceDir = path.join(
-    ROOT_DIR,
-    "projects",
-    typeConfig.projectsFolder,
-    projectFolder
-  );
-  const assetsDir = path.join(sourceDir, "assets");
-  const palettesDir = path.join(sourceDir, "palettes");
-
-  if (!fs.existsSync(sourceDir)) {
-    throw new Error(`Le dossier "${projectFolder}" n'existe pas`);
-  }
-
-  if (!fs.existsSync(assetsDir)) {
-    throw new Error(`Le dossier assets de "${projectFolder}" n'existe pas`);
-  }
-
-  if (!fs.existsSync(palettesDir)) {
-    throw new Error(`Le dossier palettes de "${projectFolder}" n'existe pas`);
-  }
-
-  const projectConfig = readJson(path.join(sourceDir, "config.json"));
-  const buildParams = readJson(path.join(ROOT_DIR, "src", "build-params.json"));
-  const frontendConfig = readJson(
-    path.join(
-      ROOT_DIR,
-      "frontends",
-      "spruceos",
-      typeConfig.frontendFolder,
-      typeConfig.frontendFile
-    )
-  );
-
-  if (!projectConfig[typeConfig.configNameField]) {
+async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
+  if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
-      `Champ manquant : "${typeConfig.configNameField}" dans le config.json du projet`
+      "Usage : node build-theme <nom-du-theme> <frontend> <nom-du-pack-d-icones>"
     );
   }
 
-  if (!Array.isArray(frontendConfig.icons)) {
-    throw new Error(`Le fichier ${typeConfig.frontendFile} ne contient pas de tableau "icons"`);
+  const themeDir = path.join(ROOT_DIR, "projects", "themes", themeFolder);
+  const themeAssetsDir = path.join(themeDir, "assets");
+  const palettesDir = path.join(themeDir, "palettes");
+  const iconPackDir = path.join(ROOT_DIR, "projects", "icon-packs", iconPackFolder);
+  const iconPackAssetsDir = path.join(iconPackDir, "assets");
+
+  requireDirectory(themeDir, `Le thème "${themeFolder}" n'existe pas`);
+  requireDirectory(themeAssetsDir, `Le dossier assets du thème "${themeFolder}" n'existe pas`);
+  requireDirectory(palettesDir, `Le dossier palettes du thème "${themeFolder}" n'existe pas`);
+  requireDirectory(iconPackDir, `Le pack d'icônes "${iconPackFolder}" n'existe pas`);
+  requireDirectory(
+    iconPackAssetsDir,
+    `Le dossier assets du pack d'icônes "${iconPackFolder}" n'existe pas`
+  );
+
+  const themeConfig = readJson(path.join(themeDir, "config.json"));
+  const iconPackConfig = readJson(path.join(iconPackDir, "config.json"));
+  const buildParams = readJson(path.join(ROOT_DIR, "src", "build-params.json"));
+  const themeFrontend = readFrontendConfig(frontendName, "theme");
+  const iconPackFrontend = readFrontendConfig(frontendName, "icon-pack");
+
+  if (!themeConfig["theme-name"]) {
+    throw new Error('Champ manquant : "theme-name" dans le config.json du thème');
+  }
+
+  if (!iconPackConfig["pack-name"]) {
+    throw new Error('Champ manquant : "pack-name" dans le config.json du pack d\'icônes');
   }
 
   const paletteFiles = fs
@@ -191,12 +177,12 @@ async function buildProject({ projectType, projectFolder }) {
     .sort();
 
   if (paletteFiles.length === 0) {
-    throw new Error(`Aucune palette trouvée pour "${projectFolder}"`);
+    throw new Error(`Aucune palette trouvée pour le thème "${themeFolder}"`);
   }
 
-  console.log(`${typeConfig.label} : ${projectFolder}`);
-  console.log(`Source  : ${sourceDir}`);
-  console.log("Frontend: spruceos (480p 4:3)");
+  console.log(`Thème       : ${themeFolder}`);
+  console.log(`Frontend    : ${frontendName}`);
+  console.log(`Pack icônes : ${iconPackFolder}`);
 
   for (const paletteFile of paletteFiles) {
     const palette = readJson(path.join(palettesDir, paletteFile));
@@ -205,36 +191,48 @@ async function buildProject({ projectType, projectFolder }) {
       throw new Error(`Champ manquant : "palette-name" dans ${paletteFile}`);
     }
 
-    const buildFolderName =
-      `${projectConfig[typeConfig.configNameField]}-${palette["palette-name"]}`;
     const outputDir = path.join(
       ROOT_DIR,
       "builds",
-      typeConfig.buildsFolder,
-      buildFolderName
+      "themes",
+      themeConfig["theme-name"],
+      palette["palette-name"],
+      frontendName
     );
     const colorMap = createColorMap(buildParams, palette);
 
+    fs.rmSync(outputDir, { recursive: true, force: true });
     fs.mkdirSync(outputDir, { recursive: true });
 
     console.log(`\nPalette : ${palette["palette-name"]}`);
     console.log(`Sortie  : ${outputDir}`);
 
-    const result = await renderAssets({
-      assetsDir,
+    const themeResult = await renderAssets({
+      assetsDir: themeAssetsDir,
       colorMap,
-      frontendConfig,
+      frontendConfig: themeFrontend,
       outputDir,
-      sourcePrefix: typeConfig.sourcePrefix
+      sourcePrefix: /^\/?projects\//
+    });
+    const iconPackResult = await renderAssets({
+      assetsDir: iconPackAssetsDir,
+      colorMap,
+      frontendConfig: iconPackFrontend,
+      outputDir,
+      sourcePrefix: /^\/?projects\/icon-packs\//
     });
 
     console.log(
-      `Palette terminée : ${result.generatedCount} asset(s) généré(s), ` +
-      `${result.skippedCount} ignoré(s).`
+      `Thème généré : ${themeResult.generatedCount} asset(s), ` +
+      `${themeResult.skippedCount} ignoré(s).`
+    );
+    console.log(
+      `Pack généré  : ${iconPackResult.generatedCount} asset(s), ` +
+      `${iconPackResult.skippedCount} ignoré(s).`
     );
   }
 
   console.log("\nBuild terminé avec succès.");
 }
 
-module.exports = { buildProject };
+module.exports = { buildTheme };
