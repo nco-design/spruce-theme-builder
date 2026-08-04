@@ -11,47 +11,39 @@ function requireDirectory(directoryPath, errorMessage) {
   }
 }
 
-function readFrontendConfig(frontendName, projectType) {
-  const configPath = path.join(
-    ROOT_DIR,
-    "frontends",
-    frontendName,
-    projectType,
-    `${projectType}.json`
+function readFrontendConfigs(frontendName, projectType) {
+  const frontendDir = path.join(ROOT_DIR, "frontends", frontendName, projectType);
+  const mainConfigName = `${projectType}.json`;
+  const optionalConfigPattern = new RegExp(`^${projectType}-.+\\.json$`, "i");
+
+  requireDirectory(
+    frontendDir,
+    `Configuration frontend introuvable : ${frontendDir}`
   );
 
-  if (!fs.existsSync(configPath)) {
-    throw new Error(`Configuration frontend introuvable : ${configPath}`);
-  }
-
-  const config = readJson(configPath);
-
-  if (!Array.isArray(config.icons)) {
-    throw new Error(`Le fichier ${configPath} ne contient pas de tableau "icons"`);
-  }
-
-  return config;
-}
-
-function readThemeFrontendConfigs(frontendName) {
-  const themeDir = path.join(ROOT_DIR, "frontends", frontendName, "theme");
   const configFiles = fs
-    .readdirSync(themeDir, { withFileTypes: true })
+    .readdirSync(frontendDir, { withFileTypes: true })
     .filter(
       (entry) =>
         entry.isFile() &&
-        (entry.name === "theme.json" || /^theme-.+\.json$/i.test(entry.name))
+        (entry.name === mainConfigName || optionalConfigPattern.test(entry.name))
     )
     .map((entry) => entry.name)
     .sort((left, right) => {
-      if (left === "theme.json") return -1;
-      if (right === "theme.json") return 1;
+      if (left === mainConfigName) return -1;
+      if (right === mainConfigName) return 1;
       return left.localeCompare(right);
     });
 
+  if (!configFiles.includes(mainConfigName)) {
+    throw new Error(
+      `Configuration frontend obligatoire absente : ${path.join(frontendDir, mainConfigName)}`
+    );
+  }
+
   return configFiles.map((fileName) => ({
     fileName,
-    config: readFrontendConfigFile(path.join(themeDir, fileName))
+    config: readFrontendConfigFile(path.join(frontendDir, fileName))
   }));
 }
 
@@ -191,8 +183,8 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
   const themeConfig = readJson(path.join(themeDir, "config.json"));
   const iconPackConfig = readJson(path.join(iconPackDir, "config.json"));
   const buildParams = readJson(path.join(ROOT_DIR, "src", "build-params.json"));
-  const themeFrontends = readThemeFrontendConfigs(frontendName);
-  const iconPackFrontend = readFrontendConfig(frontendName, "icon-pack");
+  const themeFrontends = readFrontendConfigs(frontendName, "theme");
+  const iconPackFrontends = readFrontendConfigs(frontendName, "icon-pack");
 
   if (!themeConfig["theme-name"]) {
     throw new Error('Champ manquant : "theme-name" dans le config.json du thème');
@@ -215,7 +207,10 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
   console.log(`Thème       : ${themeFolder}`);
   console.log(`Frontend    : ${frontendName}`);
   console.log(`Pack icônes : ${iconPackFolder}`);
-  console.log(`Profils     : ${themeFrontends.map((item) => item.fileName).join(", ")}`);
+  console.log(`Profils thème : ${themeFrontends.map((item) => item.fileName).join(", ")}`);
+  console.log(
+    `Profils pack  : ${iconPackFrontends.map((item) => item.fileName).join(", ")}`
+  );
 
   for (const paletteFile of paletteFiles) {
     const palette = readJson(path.join(palettesDir, paletteFile));
@@ -252,13 +247,19 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
       themeResult.generatedCount += profileResult.generatedCount;
       themeResult.skippedCount += profileResult.skippedCount;
     }
-    const iconPackResult = await renderAssets({
-      assetsDir: iconPackAssetsDir,
-      colorMap,
-      frontendConfig: iconPackFrontend,
-      outputDir,
-      sourcePrefix: /^\/?projects\/icon-packs\//
-    });
+    const iconPackResult = { generatedCount: 0, skippedCount: 0 };
+
+    for (const iconPackFrontend of iconPackFrontends) {
+      const profileResult = await renderAssets({
+        assetsDir: iconPackAssetsDir,
+        colorMap,
+        frontendConfig: iconPackFrontend.config,
+        outputDir,
+        sourcePrefix: /^\/?projects\/icon-packs\//
+      });
+      iconPackResult.generatedCount += profileResult.generatedCount;
+      iconPackResult.skippedCount += profileResult.skippedCount;
+    }
 
     console.log(
       `Thème généré : ${themeResult.generatedCount} asset(s), ` +

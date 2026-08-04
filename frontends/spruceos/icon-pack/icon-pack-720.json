@@ -1,0 +1,1476 @@
+{
+    "icons": [
+        {
+            "icon-name": "32X",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/32X.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "5200",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/5200.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "7800",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/7800.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "amiga",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/amiga.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "SSH",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/SSH.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "backup",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/backup.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "updater",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/updater.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "firmwareupdate",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/firmwareupdate.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "bootlogo",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/bootlogo.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "emufresh",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/emufresh.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "expertappswitch",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/expertappswitch.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "file",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/file.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "gamelist",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/gamelist.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "iconfresh",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/iconfresh.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "led",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/led.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "menuswitch",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/menuswitch.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "pico8",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/pico8.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "random",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/random.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "recents",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/recents.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "restore",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/restore.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "retroarch",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/retroarch.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "retroexpert",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/retroexpert.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "rtc",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/rtc.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "scraper",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/scraper.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "sftpgo",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/sftpgo.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "syncthing",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/syncthing.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "usb",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/usb.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "arcade",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/arcade.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "arduboy",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/arduboy.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atari",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/atari.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atari800",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/atari800.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atarist",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/atarist.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "c64",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/c64.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "chai",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/chai.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "col",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/col.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cpc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/cpc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps1",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/cps1.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps2",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/cps2.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps3",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/cps3.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "dc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/dc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "doom",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/doom.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "dos",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/dos.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "easyrpg",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/easyrpg.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fairchild",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/fairchild.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/fc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fds",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/fds.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ffplay",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ffplay.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gb",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gba",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gba.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gbc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gbc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gg",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gg.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gw",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gw.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "itv",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/itv.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "lynx",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/lynx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "mame",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/mame.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "md",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/md.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "megaduck",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/megaduck.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ms",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ms.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msu1",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/msu1.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msumd",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/msumd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msx",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/msx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "n64",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/n64.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "naomi",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/naomi.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "nds",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/nds.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "neocd",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/neocd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "neogeo",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/neogeo.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ngp",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ngp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ngpc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ngpc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ody",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ody.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "openbor",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/openbor.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pce",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/pce.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pcecd",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/pcecd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pico",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/pico.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "poke",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/poke.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ports",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ports.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ps",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ps.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "psp",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/psp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "quake",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/quake.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "satella",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/satella.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "scummvm",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/scummvm.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "segacd",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/segacd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "segasgone",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/segasgone.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "32X",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/32X.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "5200",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/5200.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "7800",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/7800.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "amiga",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/amiga.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "arcade",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/arcade.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "arduboy",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/arduboy.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atari",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/atari.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atari800",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/atari800.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "atarist",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/atarist.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "c64",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/c64.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "chai",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/chai.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "col",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/col.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cpc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/cpc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps1",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/cps1.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps2",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/cps2.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "cps3",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/cps3.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "dc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/dc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "doom",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/doom.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "dos",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/dos.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "easyrpg",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/easyrpg.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fairchild",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/fairchild.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/fc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "fds",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/fds.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ffplay",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ffplay.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gb",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gba",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gba.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gbc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gbc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gg",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gg.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gw",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gw.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "itv",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/itv.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "lynx",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/lynx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "mame",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/mame.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "md",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/md.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "megaduck",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/megaduck.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ms",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ms.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msu1",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/msu1.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msumd",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/msumd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "msx",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/msx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "n64",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/n64.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "naomi",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/naomi.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "nds",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/nds.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "neocd",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/neocd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "neogeo",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/neogeo.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ngp",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ngp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ngpc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ngpc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ody",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ody.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "openbor",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/openbor.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pce",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/pce.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pcecd",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/pcecd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pico",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/pico.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "poke",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/poke.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ports",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ports.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ps",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ps.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "psp",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/psp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "quake",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/quake.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "satella",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/satella.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "scummvm",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/scummvm.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "segacd",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/segacd.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "segasgone",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/segasgone.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sfc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/sfc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sgb",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/sgb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sgfx",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/sgfx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sufami",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/sufami.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "supervision",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/supervision.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "tic",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/tic.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vb",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/vb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vdp",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/vdp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vectrex",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/vectrex.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "wolf",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/wolf.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ws",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/ws.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "wsc",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/wsc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "x68000",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/x68000.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "zxs",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/zxs.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sfc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/sfc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sgb",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/sgb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sgfx",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/sgfx.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "sufami",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/sufami.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "supervision",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/supervision.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "tic",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/tic.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vb",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/vb.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vdp",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/vdp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "vectrex",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/vectrex.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "wolf",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/wolf.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ws",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/ws.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "wsc",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/wsc.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "x68000",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/x68000.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "zxs",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/zxs.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gametank",
+            "target-path": "/icons_1280x720",
+            "source": "/projects/icon-packs/gametank.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "gametank",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/gametank.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "saturn",
+            "target-path": "/icons_1280x720/",
+            "source": "/projects/icon-packs/saturn.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "saturn",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/saturn.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "mkxp",
+            "target-path": "/icons_1280x720/",
+            "source": "/projects/icon-packs/mkxp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "mkxp",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/mkxp.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pc98",
+            "target-path": "/icons_1280x720/",
+            "source": "/projects/icon-packs/pc98.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "pc98",
+            "target-path": "/icons_1280x720/sel",
+            "source": "/projects/icon-packs/sel/pc98.svg",
+            "width": 360,
+            "height": 360,
+            "format": "png"
+        },
+        {
+            "icon-name": "ereader",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/ereader.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "themegallery",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/themegallery.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "gallery",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/gallery.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "portmaster",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/portmaster.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "songo",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/songo.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "ppsspp",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/ppsspp.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        },
+        {
+            "icon-name": "moonlight",
+            "target-path": "/icons_1280x720/app",
+            "source": "/projects/icon-packs/app/moonlight.svg",
+            "width": 75,
+            "height": 75,
+            "format": "png"
+        }
+    ]
+}
