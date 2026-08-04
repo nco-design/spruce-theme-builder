@@ -44,17 +44,16 @@ spruce-theme-builder/
 |
 `-- builds/                        Generated files
     `-- themes/
-        `-- example-theme/
-            |-- light-palette/
-            |   `-- spruceos/
-            |       |-- skin/
-            |       |-- skin_640_480/
-            |       `-- icons/     Selected icon pack using the light palette
-            `-- dark-palette/
-                `-- spruceos/
-                    |-- skin/
-                    |-- skin_640_480/
-                    `-- icons/     Selected icon pack using the dark palette
+        |-- example-theme-light-palette/
+        |   `-- spruceos/
+        |       |-- skin/
+        |       |-- skin_640_480/
+        |       `-- icons/         Selected icon pack using the light palette
+        `-- example-theme-dark-palette/
+            `-- spruceos/
+                |-- skin/
+                |-- skin_640_480/
+                `-- icons/         Selected icon pack using the dark palette
 ```
 
 The theme is the master project. Its palettes are used to recolor both the theme

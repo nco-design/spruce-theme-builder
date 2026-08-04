@@ -195,8 +195,7 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
       ROOT_DIR,
       "builds",
       "themes",
-      themeConfig["theme-name"],
-      palette["palette-name"],
+      `${themeConfig["theme-name"]}-${palette["palette-name"]}`,
       frontendName
     );
     const colorMap = createColorMap(buildParams, palette);
