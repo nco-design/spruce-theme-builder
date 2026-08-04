@@ -1449,9 +1449,9 @@
             "format": "png"
         },
         {
-            "icon-name": "songo5",
+            "icon-name": "songo",
             "target-path": "/icons/app",
-            "source": "/projects/icon-packs/app/music.svg",
+            "source": "/projects/icon-packs/app/songo.svg",
             "width": 50,
             "height": 50,
             "format": "png"
