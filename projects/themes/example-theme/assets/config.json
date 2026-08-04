@@ -29,12 +29,17 @@
         "size": 24
 
     },
-    "recentsEnabled": false,
-    "topBarInitialXOffset": 60,
+    "recentsEnabled": true,
+    "topBarInitialXOffset": 90,
     "setTopBarTextToGameSelection": true,
     "fullScreenGridGameMenuResizeType": "FIT",
     "mainMenuTitle": "",
     "skipMainMenu": false,
     "mergeMainMenuAndGameMenu": false,
-    "showExtrasInSystemSelectMenu": false
+    "showExtrasInSystemSelectMenu": false,
+    "systemSelectShowTextGridMode": false,
+    "systemSelectGridResizeType": "FIT",
+    "gridBgOffsetToImageOffset": true,
+    "gameSystemSelectColCount": 3,
+    "gameSystemSelectRowCount": 1
 }
