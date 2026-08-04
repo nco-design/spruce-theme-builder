@@ -1,5 +1,21 @@
 {
   "theme-name": "theme-builder-example-theme",
   "description": "Simple theme designed as an example, with a clear UI",
-  "Author": "Nicolas C"
+  "Author": "Nicolas C",
+
+  "frontend-configs": {
+    "spruceos": {
+      "palette-bindings": {
+        "batteryPercentage.color": "primary-color",
+        "title.color": "primary-color",
+        "hint.color": "primary-color",
+        "currentpage.color": "bg-color",
+        "total.color": "bg-color",
+        "grid.color": "secondary-color",
+        "grid.selectedcolor": "primary-color",
+        "list.color": "secondary-color",
+        "list.selectedcolor": "primary-color"
+      }
+    }
+  }
 }
