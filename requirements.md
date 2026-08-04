@@ -43,17 +43,19 @@ spruce-theme-builder/
 |           `-- assets/            SVG sources recolored with the theme palettes
 |
 `-- builds/                        Generated files
-    `-- themes/
+    `-- spruceos/                  Selected frontend
         |-- example-theme-light-palette/
-        |   `-- spruceos/
-        |       |-- skin/
-        |       |-- skin_640_480/
-        |       `-- icons/         Selected icon pack using the light palette
+        |   |-- skin/
+        |   |-- skin_640_480/
+        |   |-- skin_1280x720/
+        |   |-- icons/             Selected icon pack using the light palette
+        |   `-- icons_1280x720/
         `-- example-theme-dark-palette/
-            `-- spruceos/
-                |-- skin/
-                |-- skin_640_480/
-                `-- icons/         Selected icon pack using the dark palette
+            |-- skin/
+            |-- skin_640_480/
+            |-- skin_1280x720/
+            |-- icons/             Selected icon pack using the dark palette
+            `-- icons_1280x720/
 ```
 
 The theme is the master project. Its palettes are used to recolor both the theme

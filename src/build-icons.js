@@ -222,9 +222,8 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
     const outputDir = path.join(
       ROOT_DIR,
       "builds",
-      "themes",
-      `${themeConfig["theme-name"]}-${palette["palette-name"]}`,
-      frontendName
+      frontendName,
+      `${themeConfig["theme-name"]}-${palette["palette-name"]}`
     );
     const colorMap = createColorMap(buildParams, palette);
 
