@@ -1,0 +1,13 @@
+{
+  "palette-name": "autumn-nights",
+  "description": "Deep night-blue palette with warm, softly autumnal grey details",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#111827",
+    "primary-color": "#d6c8b5",
+    "primary-dark": "#a8947c",
+    "secondary-color": "#9c958c",
+    "secondary-dark": "#6f6254",
+    "accent-color": "#b56f45"
+  }
+}

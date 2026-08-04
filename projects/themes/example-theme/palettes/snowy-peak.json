@@ -1,0 +1,13 @@
+{
+  "palette-name": "snowy-peak",
+  "description": "Soft off-white palette with cool dark-grey details",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#f4f2ed",
+    "primary-color": "#343a40",
+    "primary-dark": "#20262d",
+    "secondary-color": "#68727d",
+    "secondary-dark": "#4c5661",
+    "accent-color": "#6f879d"
+  }
+}
