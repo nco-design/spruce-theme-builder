@@ -39,4 +39,39 @@ function generateResolutionConfig({
   return outputFileName;
 }
 
-module.exports = { generateResolutionConfig, scaleIntegerValues };
+function prepareResolutionConfig({ assetsDir, outputDir, settings }) {
+  if (!settings.enabled) {
+    return { enabled: false };
+  }
+
+  const manualConfigPath = resolveWithin(assetsDir, settings["manual-file"]);
+  const outputPath = resolveWithin(outputDir, settings["output-file"]);
+
+  if (fs.existsSync(manualConfigPath) && fs.statSync(manualConfigPath).isFile()) {
+    fs.copyFileSync(manualConfigPath, outputPath);
+    return {
+      enabled: true,
+      fileName: settings["output-file"],
+      mode: "manual"
+    };
+  }
+
+  generateResolutionConfig({
+    outputDir,
+    outputFileName: settings["output-file"],
+    scale: settings.scale,
+    sourceFileName: settings["source-file"]
+  });
+
+  return {
+    enabled: true,
+    fileName: settings["output-file"],
+    mode: "generated"
+  };
+}
+
+module.exports = {
+  generateResolutionConfig,
+  prepareResolutionConfig,
+  scaleIntegerValues
+};

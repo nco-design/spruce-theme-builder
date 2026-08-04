@@ -94,6 +94,39 @@ function readStaticFilesConfig(frontendName) {
   return config;
 }
 
+function readFrontendSettings(frontendName) {
+  const configPath = resolveWithin(
+    path.join(ROOT_DIR, "frontends"),
+    frontendName,
+    "frontend.json"
+  );
+  const config = readJson(configPath);
+  const resolutionConfig = config["resolution-config"];
+
+  if (!resolutionConfig || typeof resolutionConfig.enabled !== "boolean") {
+    throw new Error(
+      `Switch "resolution-config.enabled" absent ou invalide : ${configPath}`
+    );
+  }
+
+  if (resolutionConfig.enabled) {
+    const requiredStrings = ["source-file", "manual-file", "output-file"];
+    const invalidString = requiredStrings.some(
+      (key) => typeof resolutionConfig[key] !== "string" || !resolutionConfig[key]
+    );
+
+    if (
+      invalidString ||
+      typeof resolutionConfig.scale !== "number" ||
+      resolutionConfig.scale <= 0
+    ) {
+      throw new Error(`Configuration de résolution invalide : ${configPath}`);
+    }
+  }
+
+  return config;
+}
+
 function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
@@ -140,6 +173,7 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   return {
     buildParams: readJson(path.join(ROOT_DIR, "src", "build-params.json")),
     frontendName,
+    frontendSettings: readFrontendSettings(frontendName),
     iconPackAssetsDir,
     iconPackFolder,
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),

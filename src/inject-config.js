@@ -38,12 +38,13 @@ function setConfigPath(config, configPath, value) {
 }
 
 function injectPaletteIntoConfig({
+  configFileName = "config.json",
   frontendName,
   outputDir,
   palette,
   themeConfig
 }) {
-  const outputConfigPath = resolveWithin(outputDir, "config.json");
+  const outputConfigPath = resolveWithin(outputDir, configFileName);
   const outputConfig = readJson(outputConfigPath);
   const bindings = getPaletteBindings(themeConfig, frontendName);
 

@@ -1,0 +1,9 @@
+{
+  "resolution-config": {
+    "enabled": true,
+    "source-file": "config.json",
+    "manual-file": "config_1280x720.json",
+    "output-file": "config_1280x720.json",
+    "scale": 1.5
+  }
+}
