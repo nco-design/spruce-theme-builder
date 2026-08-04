@@ -6,6 +6,7 @@ const { injectPaletteIntoConfig } = require("./inject-config.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
 const { renderAssets } = require("./render-assets.js");
+const { validateStaticFiles } = require("./validate-static-files.js");
 
 async function renderProfiles({
   assetsDir,
@@ -62,13 +63,16 @@ async function buildTheme(options) {
     console.log(`\nPalette : ${palette["palette-name"]}`);
     console.log(`Sortie  : ${outputDir}`);
 
-    const copiedFiles = copyThemeStaticFiles({
+    const staticCopyResult = copyThemeStaticFiles({
       assetsDir: context.themeAssetsDir,
       outputDir,
       placeholderDir: context.placeholderDir,
       staticFiles: context.staticFiles
     });
-    console.log(`Fichiers statiques : ${copiedFiles.join(", ")}`);
+    console.log(`Fichiers statiques : ${staticCopyResult.copiedFiles.join(", ")}`);
+    for (const fallbackFile of staticCopyResult.fallbackFiles) {
+      console.log(`Fallback utilisé : ${fallbackFile}`);
+    }
 
     const injectedConfigValues = injectPaletteIntoConfig({
       frontendName: context.frontendName,
@@ -77,6 +81,15 @@ async function buildTheme(options) {
       themeConfig: context.themeConfig
     });
     console.log(`Couleurs injectées : ${injectedConfigValues}`);
+
+    const staticValidation = validateStaticFiles({
+      outputDir,
+      staticFiles: context.staticFiles
+    });
+    console.log(
+      `Fichiers validés : ${staticValidation.validatedFonts} police(s), ` +
+      `${staticValidation.validatedSounds} son(s)`
+    );
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,

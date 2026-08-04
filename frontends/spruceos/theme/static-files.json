@@ -5,5 +5,8 @@
     "sound/change.mp3",
     "sound/change.wav"
   ],
-  "optional": []
+  "optional": [],
+  "system-fonts": [
+    "AdobeBlank.ttc"
+  ]
 }

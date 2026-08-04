@@ -81,9 +81,13 @@ function readStaticFilesConfig(frontendName) {
   );
   const config = readJson(configPath);
 
-  if (!Array.isArray(config.required) || !Array.isArray(config.optional)) {
+  if (
+    !Array.isArray(config.required) ||
+    !Array.isArray(config.optional) ||
+    (config["system-fonts"] && !Array.isArray(config["system-fonts"]))
+  ) {
     throw new Error(
-      `Le fichier ${configPath} doit contenir les tableaux "required" et "optional"`
+      `Configuration de fichiers statiques invalide : ${configPath}`
     );
   }
 

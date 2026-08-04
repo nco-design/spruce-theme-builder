@@ -20,21 +20,27 @@ function copyRequiredFile({ assetsDir, outputDir, placeholderDir, relativePath }
   const projectFile = resolveWithin(assetsDir, relativePath);
 
   if (isFile(projectFile)) {
-    return copyFile({
+    return {
+      fallback: false,
+      relativePath: copyFile({
       outputDir,
       relativePath,
       sourceDir: assetsDir
-    });
+      })
+    };
   }
 
   const placeholderFile = resolveWithin(placeholderDir, relativePath);
 
   if (isFile(placeholderFile)) {
-    return copyFile({
+    return {
+      fallback: true,
+      relativePath: copyFile({
       outputDir,
       relativePath,
       sourceDir: placeholderDir
-    });
+      })
+    };
   }
 
   throw new Error(
@@ -68,14 +74,19 @@ function findFontFiles(assetsDir) {
 
 function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFiles }) {
   const copiedFiles = [];
+  const fallbackFiles = [];
 
   for (const relativePath of staticFiles.required) {
-    copiedFiles.push(copyRequiredFile({
+    const copyResult = copyRequiredFile({
       assetsDir,
       outputDir,
       placeholderDir,
       relativePath
-    }));
+    });
+    copiedFiles.push(copyResult.relativePath);
+    if (copyResult.fallback) {
+      fallbackFiles.push(copyResult.relativePath);
+    }
   }
 
   const projectFonts = findFontFiles(assetsDir);
@@ -100,9 +111,13 @@ function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFile
       relativePath,
       sourceDir: fontSourceDir
     }));
+
+    if (fontSourceDir === placeholderDir) {
+      fallbackFiles.push(relativePath);
+    }
   }
 
-  return copiedFiles;
+  return { copiedFiles, fallbackFiles };
 }
 
 module.exports = { copyThemeStaticFiles, findFontFiles };
