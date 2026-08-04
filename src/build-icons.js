@@ -33,6 +33,38 @@ function readFrontendConfig(frontendName, projectType) {
   return config;
 }
 
+function readThemeFrontendConfigs(frontendName) {
+  const themeDir = path.join(ROOT_DIR, "frontends", frontendName, "theme");
+  const configFiles = fs
+    .readdirSync(themeDir, { withFileTypes: true })
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        (entry.name === "theme.json" || /^theme-.+\.json$/i.test(entry.name))
+    )
+    .map((entry) => entry.name)
+    .sort((left, right) => {
+      if (left === "theme.json") return -1;
+      if (right === "theme.json") return 1;
+      return left.localeCompare(right);
+    });
+
+  return configFiles.map((fileName) => ({
+    fileName,
+    config: readFrontendConfigFile(path.join(themeDir, fileName))
+  }));
+}
+
+function readFrontendConfigFile(configPath) {
+  const config = readJson(configPath);
+
+  if (!Array.isArray(config.icons)) {
+    throw new Error(`Le fichier ${configPath} ne contient pas de tableau "icons"`);
+  }
+
+  return config;
+}
+
 function createColorMap(buildParams, palette) {
   if (!palette.properties) {
     throw new Error('Champ manquant : "properties" dans la palette');
@@ -117,7 +149,7 @@ async function renderAssets({
       fs.writeFileSync(outputFile, svgContent);
     } else if (format === "png") {
       await sharp(Buffer.from(svgContent))
-        .resize(icon.width, icon.height)
+        .resize(icon.width, icon.height, { fit: "fill" })
         .png()
         .toFile(outputFile);
     } else {
@@ -159,7 +191,7 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
   const themeConfig = readJson(path.join(themeDir, "config.json"));
   const iconPackConfig = readJson(path.join(iconPackDir, "config.json"));
   const buildParams = readJson(path.join(ROOT_DIR, "src", "build-params.json"));
-  const themeFrontend = readFrontendConfig(frontendName, "theme");
+  const themeFrontends = readThemeFrontendConfigs(frontendName);
   const iconPackFrontend = readFrontendConfig(frontendName, "icon-pack");
 
   if (!themeConfig["theme-name"]) {
@@ -183,6 +215,7 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
   console.log(`Thème       : ${themeFolder}`);
   console.log(`Frontend    : ${frontendName}`);
   console.log(`Pack icônes : ${iconPackFolder}`);
+  console.log(`Profils     : ${themeFrontends.map((item) => item.fileName).join(", ")}`);
 
   for (const paletteFile of paletteFiles) {
     const palette = readJson(path.join(palettesDir, paletteFile));
@@ -206,13 +239,19 @@ async function buildTheme({ themeFolder, frontendName, iconPackFolder }) {
     console.log(`\nPalette : ${palette["palette-name"]}`);
     console.log(`Sortie  : ${outputDir}`);
 
-    const themeResult = await renderAssets({
-      assetsDir: themeAssetsDir,
-      colorMap,
-      frontendConfig: themeFrontend,
-      outputDir,
-      sourcePrefix: /^\/?projects\//
-    });
+    const themeResult = { generatedCount: 0, skippedCount: 0 };
+
+    for (const themeFrontend of themeFrontends) {
+      const profileResult = await renderAssets({
+        assetsDir: themeAssetsDir,
+        colorMap,
+        frontendConfig: themeFrontend.config,
+        outputDir,
+        sourcePrefix: /^\/?projects\//
+      });
+      themeResult.generatedCount += profileResult.generatedCount;
+      themeResult.skippedCount += profileResult.skippedCount;
+    }
     const iconPackResult = await renderAssets({
       assetsDir: iconPackAssetsDir,
       colorMap,
