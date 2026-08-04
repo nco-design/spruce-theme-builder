@@ -34,7 +34,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer6"
      showguides="true"><sodipodi:guide
        position="23.505136,76.729168"
        orientation="0,-1"
@@ -88,15 +88,7 @@
        width="79.375"
        height="79.375"
        x="0"
-       y="0" /><circle
-       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1.7;stroke-linecap:square;paint-order:markers stroke fill"
-       id="path2"
-       cx="39.6875"
-       cy="39.6875"
-       r="16.629843" /><path
-       id="rect1-6"
-       style="fill:#0d0d26;fill-opacity:1;stroke-width:0.600001;stroke-linecap:round;paint-order:markers stroke fill"
-       d="M 61.742485 17.632515 L 17.632515 61.742485 L 61.742485 17.632515 z " /></g><g
+       y="0" /></g><g
      inkscape:label="artwork"
      inkscape:groupmode="layer"
      id="layer1"><path
