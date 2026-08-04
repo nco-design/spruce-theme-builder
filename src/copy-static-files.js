@@ -16,6 +16,29 @@ function copyRequiredFile({ assetsDir, outputDir, relativePath }) {
   return relativePath;
 }
 
+function findFontFiles(assetsDir) {
+  const fontFiles = [];
+
+  function scanDirectory(currentDir) {
+    for (const entry of fs.readdirSync(currentDir, { withFileTypes: true })) {
+      const entryPath = path.join(currentDir, entry.name);
+
+      if (entry.isDirectory()) {
+        scanDirectory(entryPath);
+        continue;
+      }
+
+      if (entry.isFile() && /\.(ttf|otf)$/i.test(entry.name)) {
+        fontFiles.push(path.relative(assetsDir, entryPath));
+      }
+    }
+  }
+
+  scanDirectory(assetsDir);
+
+  return fontFiles.sort();
+}
+
 function copyThemeStaticFiles({ assetsDir, outputDir, staticFiles }) {
   const copiedFiles = [];
 
@@ -27,7 +50,19 @@ function copyThemeStaticFiles({ assetsDir, outputDir, staticFiles }) {
     }));
   }
 
+  for (const relativePath of findFontFiles(assetsDir)) {
+    if (copiedFiles.includes(relativePath)) {
+      continue;
+    }
+
+    copiedFiles.push(copyRequiredFile({
+      assetsDir,
+      outputDir,
+      relativePath
+    }));
+  }
+
   return copiedFiles;
 }
 
-module.exports = { copyThemeStaticFiles };
+module.exports = { copyThemeStaticFiles, findFontFiles };
