@@ -51,7 +51,7 @@ function readFrontendConfigs(frontendName, projectType, includeOptional = false)
   }));
 }
 
-function readPalettes(palettesDir, themeFolder) {
+function readPalettes(palettesDir, themeFolder, paletteName) {
   const paletteFiles = fs
     .readdirSync(palettesDir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && path.extname(entry.name).toLowerCase() === ".json")
@@ -62,7 +62,7 @@ function readPalettes(palettesDir, themeFolder) {
     throw new Error(`Aucune palette trouvée pour le thème "${themeFolder}"`);
   }
 
-  return paletteFiles.map((fileName) => {
+  const palettes = paletteFiles.map((fileName) => {
     const palette = readJson(path.join(palettesDir, fileName));
 
     if (!palette["palette-name"]) {
@@ -75,6 +75,26 @@ function readPalettes(palettesDir, themeFolder) {
 
     return { fileName, palette };
   });
+
+  if (!paletteName) {
+    return palettes;
+  }
+
+  const selectedPalette = palettes.find(
+    ({ palette }) => palette["palette-name"] === paletteName
+  );
+
+  if (!selectedPalette) {
+    const availablePalettes = palettes
+      .map(({ palette }) => palette["palette-name"])
+      .join(", ");
+    throw new Error(
+      `Palette "${paletteName}" introuvable pour le thème "${themeFolder}". ` +
+      `Palettes disponibles : ${availablePalettes}`
+    );
+  }
+
+  return [selectedPalette];
 }
 
 function readStaticFilesConfig(frontendName) {
@@ -136,7 +156,8 @@ function loadBuildContext({
   themeFolder,
   frontendName,
   iconPackFolder,
-  include720p = false
+  include720p = false,
+  paletteName
 }) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
@@ -205,7 +226,7 @@ function loadBuildContext({
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack", include720p),
     iconPackSourcePalette,
     include720p,
-    palettes: readPalettes(palettesDir, themeFolder),
+    palettes: readPalettes(palettesDir, themeFolder, paletteName),
     placeholderDir,
     staticFiles: readStaticFilesConfig(frontendName),
     themeAssetsDir,

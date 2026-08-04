@@ -73,6 +73,15 @@ the optional 720p theme assets, icon-pack assets and resolution config:
 node build-theme <theme-name> <frontend-name> <icon-pack-name> --720p
 ```
 
+By default, every theme palette is built. Use `--palette` to build only the
+palette matching its `palette-name`:
+
+```bash
+node build-theme <theme-name> <frontend-name> <icon-pack-name> --palette <palette-name>
+```
+
+`--palette` and `--720p` can be combined.
+
 Example:
 
 ```bash

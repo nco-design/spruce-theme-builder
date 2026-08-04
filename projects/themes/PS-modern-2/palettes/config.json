@@ -1,0 +1,13 @@
+{
+    "palette-name":"light-white",
+    "description":"Bright white palette, with hints of \"Playstation\" blue.",
+    "Author":"Nicolas C",
+    "properties":{
+        "bg-color":"#ffffff",
+        "primary-color":"#000064",
+        "primary-dark":"#7f7fb1",
+        "secondary-color":"#7f7fb1",
+        "secondary-dark":"#7f7fb1",
+        "accent-color":"#0000ff"
+    }
+}
