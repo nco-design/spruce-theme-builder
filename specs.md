@@ -8,7 +8,6 @@ spruce-theme-builder/
 |-- build-theme.js                 Builds a theme with a frontend and an icon pack
 |
 |-- src/                           Shared builder source code
-|   `-- build-params.json          Source colors replaced by palette colors
 |
 |-- frontends/                     Build definitions for each target CFW
 |   `-- spruceos/
@@ -28,6 +27,8 @@ spruce-theme-builder/
 |   |-- themes/                    Master projects and color palettes
 |   |   `-- example-theme/
 |   |       |-- config.json        Theme information
+|   |       |-- source-palette.json
+|   |       |                       Source colors used by the theme SVG files
 |   |       |-- assets/            Shared SVG source files
 |   |       `-- palettes/          At least one palette is required
 |   |           |-- light-palette.json
@@ -36,6 +37,8 @@ spruce-theme-builder/
 |   `-- icon-packs/
 |       `-- example-pack/
 |           |-- config.json        Icon pack information
+|           |-- source-palette.json
+|           |                       Source colors used by the icon pack SVG files
 |           `-- assets/            SVG sources recolored with the theme palettes
 |
 `-- builds/                        Generated files
@@ -97,7 +100,11 @@ node build-theme PS-modern spruceos ic-squares-monochrome
 }
 ```
 
-## build-params.json
+## source-palette.json
+
+Each theme and icon pack contains its own source palette. This allows their SVG
+files to use different working colors while both are converted to the selected
+theme palette during the build.
 
 ```json
 {

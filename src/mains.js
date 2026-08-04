@@ -56,7 +56,16 @@ async function buildTheme(options) {
       frontendBuildDir,
       `${context.themeConfig["theme-name"]}-${palette["palette-name"]}`
     );
-    const colorMap = createColorMap(context.buildParams, palette);
+    const themeColorMap = createColorMap(
+      context.themeSourcePalette,
+      palette,
+      "thème"
+    );
+    const iconPackColorMap = createColorMap(
+      context.iconPackSourcePalette,
+      palette,
+      "pack d'icônes"
+    );
 
     fs.rmSync(outputDir, { recursive: true, force: true });
     fs.mkdirSync(outputDir, { recursive: true });
@@ -117,14 +126,14 @@ async function buildTheme(options) {
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,
-      colorMap,
+      colorMap: themeColorMap,
       outputDir,
       profiles: context.themeFrontends,
       sourcePrefix: /^\/?projects\//
     });
     const iconPackResult = await renderProfiles({
       assetsDir: context.iconPackAssetsDir,
-      colorMap,
+      colorMap: iconPackColorMap,
       outputDir,
       profiles: context.iconPackFrontends,
       sourcePrefix: /^\/?projects\/icon-packs\//

@@ -165,6 +165,10 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
 
   const themeConfig = readJson(path.join(themeDir, "config.json"));
   const iconPackConfig = readJson(path.join(iconPackDir, "config.json"));
+  const themeSourcePalette = readJson(path.join(themeDir, "source-palette.json"));
+  const iconPackSourcePalette = readJson(
+    path.join(iconPackDir, "source-palette.json")
+  );
 
   if (!themeConfig["theme-name"]) {
     throw new Error('Champ manquant : "theme-name" dans le config.json du thème');
@@ -187,20 +191,21 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
   }
 
   return {
-    buildParams: readJson(path.join(ROOT_DIR, "src", "build-params.json")),
     frontendName,
     frontendSettings: readFrontendSettings(frontendName),
     iconPackAssetsDir,
     iconPackConfig,
     iconPackFolder,
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),
+    iconPackSourcePalette,
     palettes: readPalettes(palettesDir, themeFolder),
     placeholderDir,
     staticFiles: readStaticFilesConfig(frontendName),
     themeAssetsDir,
     themeConfig,
     themeFolder,
-    themeFrontends: readFrontendConfigs(frontendName, "theme")
+    themeFrontends: readFrontendConfigs(frontendName, "theme"),
+    themeSourcePalette
   };
 }
 

@@ -1,20 +1,22 @@
-function createColorMap(buildParams, palette) {
+function createColorMap(sourcePalette, palette, projectLabel = "projet") {
   if (!palette.properties) {
     throw new Error('Champ manquant : "properties" dans la palette');
   }
 
   const colorMap = {
-    [buildParams["primary-color-source"]]: palette.properties["primary-color"],
-    [buildParams["primary-dark-color-source"]]: palette.properties["primary-dark"],
-    [buildParams["secondary-color-source"]]: palette.properties["secondary-color"],
-    [buildParams["secondary-dark-color-source"]]: palette.properties["secondary-dark"],
-    [buildParams["accent-color-source"]]: palette.properties["accent-color"],
-    [buildParams["background-color-source"]]: palette.properties["bg-color"]
+    [sourcePalette["primary-color-source"]]: palette.properties["primary-color"],
+    [sourcePalette["primary-dark-color-source"]]: palette.properties["primary-dark"],
+    [sourcePalette["secondary-color-source"]]: palette.properties["secondary-color"],
+    [sourcePalette["secondary-dark-color-source"]]: palette.properties["secondary-dark"],
+    [sourcePalette["accent-color-source"]]: palette.properties["accent-color"],
+    [sourcePalette["background-color-source"]]: palette.properties["bg-color"]
   };
 
   for (const [sourceColor, targetColor] of Object.entries(colorMap)) {
     if (!sourceColor) {
-      throw new Error("Une couleur source est manquante dans src/build-params.json");
+      throw new Error(
+        `Une couleur source est manquante dans le source-palette.json du ${projectLabel}`
+      );
     }
 
     if (!targetColor) {
