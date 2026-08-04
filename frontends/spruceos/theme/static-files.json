@@ -1,6 +1,10 @@
 {
   "required": [
-    "config.json"
+    "config.json",
+    "Roboto-Regular-patched.ttf",
+    "sound/bgm.mp3",
+    "sound/change.mp3",
+    "sound/change.wav"
   ],
   "optional": []
 }
