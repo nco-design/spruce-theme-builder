@@ -93,11 +93,13 @@ async function buildTheme(options) {
     });
     console.log(`Couleurs injectées : ${injectedConfigValues}`);
 
-    const resolutionConfig = prepareResolutionConfig({
-      assetsDir: context.themeAssetsDir,
-      outputDir,
-      settings: context.frontendSettings["resolution-config"]
-    });
+    const resolutionConfig = context.include720p
+      ? prepareResolutionConfig({
+          assetsDir: context.themeAssetsDir,
+          outputDir,
+          settings: context.frontendSettings["resolution-config"]
+        })
+      : { enabled: false };
 
     if (resolutionConfig.enabled) {
       injectPaletteIntoConfig({
@@ -112,7 +114,11 @@ async function buildTheme(options) {
         `Configuration HD : ${resolutionConfig.fileName} (${resolutionConfig.mode})`
       );
     } else {
-      console.log("Configuration HD : désactivée pour ce frontend");
+      console.log(
+        context.include720p
+          ? "Configuration HD : désactivée pour ce frontend"
+          : "Configuration HD : non demandée"
+      );
     }
 
     const staticValidation = validateStaticFiles({

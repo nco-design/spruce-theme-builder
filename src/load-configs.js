@@ -13,7 +13,7 @@ function readFrontendConfigFile(configPath) {
   return config;
 }
 
-function readFrontendConfigs(frontendName, projectType) {
+function readFrontendConfigs(frontendName, projectType, includeOptional = false) {
   const frontendsRoot = path.join(ROOT_DIR, "frontends");
   const frontendDir = resolveWithin(frontendsRoot, frontendName, projectType);
   const mainConfigName = `${projectType}.json`;
@@ -29,7 +29,8 @@ function readFrontendConfigs(frontendName, projectType) {
     .filter(
       (entry) =>
         entry.isFile() &&
-        (entry.name === mainConfigName || optionalConfigPattern.test(entry.name))
+        (entry.name === mainConfigName ||
+          (includeOptional && optionalConfigPattern.test(entry.name)))
     )
     .map((entry) => entry.name)
     .sort((left, right) => {
@@ -131,7 +132,12 @@ function readFrontendSettings(frontendName) {
   return config;
 }
 
-function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
+function loadBuildContext({
+  themeFolder,
+  frontendName,
+  iconPackFolder,
+  include720p = false
+}) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
       "Usage : node build-theme <nom-du-theme> <frontend> <nom-du-pack-d-icones>"
@@ -196,15 +202,16 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
     iconPackAssetsDir,
     iconPackConfig,
     iconPackFolder,
-    iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),
+    iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack", include720p),
     iconPackSourcePalette,
+    include720p,
     palettes: readPalettes(palettesDir, themeFolder),
     placeholderDir,
     staticFiles: readStaticFilesConfig(frontendName),
     themeAssetsDir,
     themeConfig,
     themeFolder,
-    themeFrontends: readFrontendConfigs(frontendName, "theme"),
+    themeFrontends: readFrontendConfigs(frontendName, "theme", include720p),
     themeSourcePalette
   };
 }

@@ -66,6 +66,13 @@ A theme build requires three arguments:
 node build-theme <theme-name> <frontend-name> <icon-pack-name>
 ```
 
+The default build only includes the main resolution. Add `--720p` to include
+the optional 720p theme assets, icon-pack assets and resolution config:
+
+```bash
+node build-theme <theme-name> <frontend-name> <icon-pack-name> --720p
+```
+
 Example:
 
 ```bash

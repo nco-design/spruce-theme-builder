@@ -15,3 +15,9 @@ Example:
 ```bash
 node build-theme PS-modern spruceos ic-squares-monochrome
 ```
+
+With optional 720p assets:
+
+```bash
+node build-theme PS-modern spruceos ic-squares-monochrome --720p
+```
