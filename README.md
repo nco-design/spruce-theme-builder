@@ -25,23 +25,23 @@ You can find the result in `builds/`.
 Example:
 
 ```bash
-node build-theme example-them spruceos example-pack
+node build-theme example-theme spruceos example-pack
 ```
 
 With optional 720p assets:
 
 ```bash
-node build-theme example-them spruceos example-pack --720p
+node build-theme example-theme spruceos example-pack --720p
 ```
 
 Build a single palette:
 
 ```bash
-node build-theme example-them spruceos example-pack --palette snowy-peak
+node build-theme example-theme spruceos example-pack --palette snowy-peak
 ```
 
 Options can be combined:
 
 ```bash
-node build-theme example-them spruceos example-pack --palette snowy-peak --720p
+node build-theme example-theme spruceos example-pack --palette snowy-peak --720p
 ```
