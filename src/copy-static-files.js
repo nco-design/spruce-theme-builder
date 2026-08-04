@@ -89,6 +89,20 @@ function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFile
     }
   }
 
+  for (const relativePath of staticFiles.optional) {
+    const projectFile = resolveWithin(assetsDir, relativePath);
+
+    if (!isFile(projectFile)) {
+      continue;
+    }
+
+    copiedFiles.push(copyFile({
+      outputDir,
+      relativePath,
+      sourceDir: assetsDir
+    }));
+  }
+
   const projectFonts = findFontFiles(assetsDir);
   const fontSourceDir = projectFonts.length > 0 ? assetsDir : placeholderDir;
   const fontFiles = projectFonts.length > 0
