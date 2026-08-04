@@ -9,8 +9,7 @@
 ```text
 spruce-theme-builder/
 |
-|-- build-theme.js                 Builds a theme and all its color variants
-|-- build-icon-pack.js             Builds an icon pack and all its color variants
+|-- build-theme.js                 Builds a theme with a frontend and an icon pack
 |
 |-- src/                           Shared builder source code
 |   `-- build-params.json          Source colors replaced by palette colors
@@ -30,7 +29,7 @@ spruce-theme-builder/
 |                                       Additional resolution definitions (optional)
 |
 |-- projects/                      Source projects
-|   |-- themes/
+|   |-- themes/                    Master projects and color palettes
 |   |   `-- example-theme/
 |   |       |-- config.json        Theme information
 |   |       |-- assets/            Shared SVG source files
@@ -41,19 +40,36 @@ spruce-theme-builder/
 |   `-- icon-packs/
 |       `-- example-pack/
 |           |-- config.json        Icon pack information
-|           |-- assets/            Shared SVG source files
-|           `-- palettes/          At least one palette is required
-|               |-- light-palette.json
-|               `-- dark-palette.json
+|           `-- assets/            SVG sources recolored with the theme palettes
 |
 `-- builds/                        Generated files
-    |-- themes/
-    |   |-- example-theme-light-palette/
-    |   `-- example-theme-dark-palette/
-    |
-    `-- icon-packs/
-        |-- example-pack-light-palette/
-        `-- example-pack-dark-palette/
+    `-- themes/
+        `-- example-theme/
+            |-- light-palette/
+            |   `-- spruceos/
+            |       |-- skin/
+            |       |-- skin_640_480/
+            |       `-- icons/     Selected icon pack using the light palette
+            `-- dark-palette/
+                `-- spruceos/
+                    |-- skin/
+                    |-- skin_640_480/
+                    `-- icons/     Selected icon pack using the dark palette
+```
+
+The theme is the master project. Its palettes are used to recolor both the theme
+assets and the selected icon pack. Icon packs do not contain their own palettes.
+
+A theme build requires three arguments:
+
+```bash
+node build-theme <theme-name> <frontend-name> <icon-pack-name>
+```
+
+Example:
+
+```bash
+node build-theme PS-modern spruceos ic-squares-monochrome
 ```
 
 ## Theme config.json
@@ -97,7 +113,7 @@ spruce-theme-builder/
 }
 ```
 
-## theme.json et palette.json
+## theme.json and icon-pack.json
 
 ```json
 {

@@ -7,13 +7,11 @@ npm install
 # How to use
 
 ```bash
-node build-theme <theme-name>
-node build-icon-pack <icon-pack-name>
+node build-theme <theme-name> <frontend-name> <icon-pack-name>
 ```
 
 Example:
 
 ```bash
-node build-theme PS-modern
-node build-icon-pack ic-squares-monochrome
+node build-theme PS-modern spruceos ic-squares-monochrome
 ```
