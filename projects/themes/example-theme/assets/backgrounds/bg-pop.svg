@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="190"
+   viewBox="0 -960 7680 4560"
+   width="320"
+   fill="#ffffff"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="bg-pop.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   inkscape:export-filename="../../skin/bg-btn-02-n.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="6.4965435"
+     inkscape:cx="342.79767"
+     inkscape:cy="31.478277"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <rect
+     style="opacity:1;fill:#e5e5e5;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     id="rect1"
+     width="7680"
+     height="4560"
+     x="0"
+     y="-960"
+     rx="96" />
+  <rect
+     style="fill:#0d0d26;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     id="rect1-5"
+     width="7584"
+     height="4464"
+     x="48"
+     y="-912"
+     rx="60" />
+</svg>

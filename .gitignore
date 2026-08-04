@@ -1,6 +1,8 @@
 # Private source projects used for local development and testing
-/projects/themes/PS-modern/
-/projects/icon-packs/ic-squares-monochrome/
+/projects/themes/*/
+!/projects/themes/example-theme/
+/projects/icon-packs/*/
+!/projects/icon-packs/example-pack/
 /theme-example/
 
 # Installed dependencies and generated builds
