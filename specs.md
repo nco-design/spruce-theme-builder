@@ -1,8 +1,4 @@
-# Project requirements
-
-1. This project is built upon old code that is working but is not optimized (tedious process)
-2. Old code can be used and edited, the main fix comes from the new architecture
-3. Later on the project can be expanded to add more useful fonctions
+# Project specifications
 
 ## Project architecture
 
