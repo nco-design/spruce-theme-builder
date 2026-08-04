@@ -37,9 +37,38 @@ function setConfigPath(config, configPath, value) {
   current[parts.at(-1)] = value;
 }
 
+function joinDescriptions(...descriptions) {
+  const parts = descriptions
+    .map((description) => description?.trim().replace(/\.+$/, ""))
+    .filter(Boolean);
+
+  return parts.length > 0 ? `${parts.join(". ")}.` : "";
+}
+
+function joinAuthors(themeAuthor, iconPackAuthor) {
+  const authors = [themeAuthor, iconPackAuthor]
+    .map((author) => author?.trim())
+    .filter(Boolean);
+
+  return [...new Set(authors)].join(" and ");
+}
+
+function createMetadata({ iconPackConfig, palette, themeConfig }) {
+  return {
+    name: `${themeConfig["theme-name"]}-${palette["palette-name"]}`,
+    description: joinDescriptions(
+      themeConfig.description,
+      palette.description,
+      iconPackConfig.description
+    ),
+    author: joinAuthors(themeConfig.Author, iconPackConfig.Author)
+  };
+}
+
 function injectPaletteIntoConfig({
   configFileName = "config.json",
   frontendName,
+  iconPackConfig,
   outputDir,
   palette,
   themeConfig
@@ -60,9 +89,17 @@ function injectPaletteIntoConfig({
     setConfigPath(outputConfig, configPath, value);
   }
 
-  fs.writeFileSync(outputConfigPath, `${JSON.stringify(outputConfig, null, 4)}\n`);
+  const metadata = createMetadata({ iconPackConfig, palette, themeConfig });
+  const finalConfig = Object.assign({}, metadata, outputConfig, metadata);
+
+  fs.writeFileSync(outputConfigPath, `${JSON.stringify(finalConfig, null, 4)}\n`);
 
   return Object.keys(bindings).length;
 }
 
-module.exports = { injectPaletteIntoConfig };
+module.exports = {
+  createMetadata,
+  injectPaletteIntoConfig,
+  joinAuthors,
+  joinDescriptions
+};

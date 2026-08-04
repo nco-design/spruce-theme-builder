@@ -77,6 +77,7 @@ async function buildTheme(options) {
 
     const injectedConfigValues = injectPaletteIntoConfig({
       frontendName: context.frontendName,
+      iconPackConfig: context.iconPackConfig,
       outputDir,
       palette,
       themeConfig: context.themeConfig
@@ -93,6 +94,7 @@ async function buildTheme(options) {
       injectPaletteIntoConfig({
         configFileName: resolutionConfig.fileName,
         frontendName: context.frontendName,
+        iconPackConfig: context.iconPackConfig,
         outputDir,
         palette,
         themeConfig: context.themeConfig

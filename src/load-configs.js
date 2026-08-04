@@ -68,6 +68,10 @@ function readPalettes(palettesDir, themeFolder) {
       throw new Error(`Champ manquant : "palette-name" dans ${fileName}`);
     }
 
+    if (!palette.description) {
+      throw new Error(`Champ manquant : "description" dans ${fileName}`);
+    }
+
     return { fileName, palette };
   });
 }
@@ -166,8 +170,20 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
     throw new Error('Champ manquant : "theme-name" dans le config.json du thème');
   }
 
+  if (!themeConfig.description || !themeConfig.Author) {
+    throw new Error(
+      'Champs "description" ou "Author" manquants dans le config.json du thème'
+    );
+  }
+
   if (!iconPackConfig["pack-name"]) {
     throw new Error('Champ manquant : "pack-name" dans le config.json du pack d\'icônes');
+  }
+
+  if (!iconPackConfig.description || !iconPackConfig.Author) {
+    throw new Error(
+      'Champs "description" ou "Author" manquants dans le config.json du pack d\'icônes'
+    );
   }
 
   return {
@@ -175,6 +191,7 @@ function loadBuildContext({ themeFolder, frontendName, iconPackFolder }) {
     frontendName,
     frontendSettings: readFrontendSettings(frontendName),
     iconPackAssetsDir,
+    iconPackConfig,
     iconPackFolder,
     iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack"),
     palettes: readPalettes(palettesDir, themeFolder),
