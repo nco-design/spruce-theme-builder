@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { createColorMap } = require("./colors.js");
+const { copyThemeStaticFiles } = require("./copy-static-files.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
 const { renderAssets } = require("./render-assets.js");
@@ -59,6 +60,12 @@ async function buildTheme(options) {
 
     console.log(`\nPalette : ${palette["palette-name"]}`);
     console.log(`Sortie  : ${outputDir}`);
+
+    const copiedFiles = copyThemeStaticFiles({
+      assetsDir: context.themeAssetsDir,
+      outputDir
+    });
+    console.log(`Fichiers statiques : ${copiedFiles.join(", ")}`);
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,
