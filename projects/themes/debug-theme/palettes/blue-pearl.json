@@ -1,0 +1,13 @@
+{
+  "palette-name": "blue-pearl",
+  "description": "Two-tone pearlescent ice-blue palette inspired by the Anbernic RGSP",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#bddbda",
+    "primary-color": "#56908f",
+    "primary-dark": "#bddbda",
+    "secondary-color": "#bddbda",
+    "secondary-dark": "#bddbda",
+    "accent-color": "#8fc4c1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "palette-name": "emerald-green",
+  "description": "Two-tone green palette inspired by the TrimUI Brick Hammer",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#0f5722",
+    "primary-color": "#7dcc65",
+    "primary-dark": "#0f5722",
+    "secondary-color": "#0f5722",
+    "secondary-dark": "#0f5722",
+    "accent-color": "#9bea7f"
+  }
+}

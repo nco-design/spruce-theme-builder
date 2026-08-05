@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="40"
+   viewBox="0 -960 800 800"
+   width="40"
+   fill="#c5c5c5"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="TF.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   inkscape:export-filename="../../skin/icon-TF.png"
+   inkscape:export-xdpi="80"
+   inkscape:export-ydpi="80"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="13.096207"
+     inkscape:cx="22.37289"
+     inkscape:cy="21.189341"
+     inkscape:window-width="1920"
+     inkscape:window-height="1131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="path1"
+     d="m 353.82071,-900 c -7.89801,0 -15.41073,1.58223 -22.56638,4.77492 -7.15565,3.19268 -13.31603,7.36374 -18.44556,12.49326 l -168.75721,168.75721 c -5.14068,5.19092 -9.27502,11.34494 -12.39515,18.47827 -3.12014,7.13891 -4.6768,14.65799 -4.6768,22.53366 v 395.92536 c 0,15.40529 5.65988,28.7551 16.97384,40.06348 C 155.26182,-225.65988 168.61164,-220 184.01693,-220 h 431.7699 c 15.46112,0 28.87958,-5.65988 40.22702,-16.97384 11.35303,-11.30838 17.00654,-24.65819 17.00654,-40.06348 v -565.72912 c 0,-15.46111 -5.65351,-28.87957 -17.00654,-40.22701 C 644.66641,-894.34649 631.24795,-900 615.78683,-900 Z m 41.9967,59.72276 h 33.4898 c 13.91497,0 25.11735,11.20239 25.11735,25.11736 v 66.9796 c 0,13.91496 -11.20238,25.11735 -25.11735,25.11735 h -33.4898 c -13.91496,0 -25.11736,-11.20239 -25.11736,-25.11735 v -66.9796 c 0,-13.91497 11.2024,-25.11736 25.11736,-25.11736 z m 154.99209,0 h 33.4898 c 13.91496,0 25.11736,11.20239 25.11736,25.11736 v 66.9796 c 0,13.91496 -11.2024,25.11735 -25.11736,25.11735 h -33.4898 c -13.91496,0 -25.11736,-11.20239 -25.11736,-25.11735 v -66.9796 c 0,-13.91497 11.2024,-25.11736 25.11736,-25.11736 z"
+     style="fill:#e5e5e5;stroke-width:0.837245;fill-opacity:1"
+     sodipodi:nodetypes="sssccsscsscsscssssssssssssssssssss" />
+</svg>

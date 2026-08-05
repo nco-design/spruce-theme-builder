@@ -1,0 +1,45 @@
+{
+    "batteryPercentage": {
+        "font": "nunwen.ttf",
+        "size": 18
+    },
+    "title": {
+        "font": "nunwen.ttf",
+        "size": 25
+    },
+    "hint": {
+        "font": "nunwen.ttf",
+        "size": 25
+    },
+    "currentpage": {
+        "font": "nunwen.ttf",
+        "size": 22
+    },
+    "total": {
+        "font": "nunwen.ttf",
+        "size": 22
+    },
+    "grid": {
+        "font": "AdobeBlank.ttc",
+        "grid1x4": 25,
+        "grid3x4": 18
+    },
+    "list": {
+        "font": "nunwen.ttf",
+        "size": 24
+
+    },
+    "recentsEnabled": true,
+    "topBarInitialXOffset": 90,
+    "setTopBarTextToGameSelection": true,
+    "fullScreenGridGameMenuResizeType": "FIT",
+    "mainMenuTitle": "",
+    "skipMainMenu": false,
+    "mergeMainMenuAndGameMenu": false,
+    "showExtrasInSystemSelectMenu": false,
+    "systemSelectShowTextGridMode": false,
+    "systemSelectGridResizeType": "FIT",
+    "gridBgOffsetToImageOffset": true,
+    "gameSystemSelectColCount": 3,
+    "gameSystemSelectRowCount": 1
+}

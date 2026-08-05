@@ -1,6 +1,7 @@
 # Private source projects used for local development and testing
 /projects/themes/*/
 !/projects/themes/example-theme/
+!/projects/themes/debug-theme/
 /projects/icon-packs/*/
 !/projects/icon-packs/example-pack/
 /theme-example/
