@@ -15,6 +15,14 @@ function isValidAssetConfig(icon) {
   );
 }
 
+function getResizeOptions(asset) {
+  if (asset.type === "background") {
+    return { fit: "cover", position: "centre" };
+  }
+
+  return { fit: "fill" };
+}
+
 async function renderAssets({
   assetsDir,
   colorMap,
@@ -54,7 +62,7 @@ async function renderAssets({
       fs.writeFileSync(outputFile, svgContent);
     } else if (format === "png") {
       await sharp(Buffer.from(svgContent))
-        .resize(icon.width, icon.height, { fit: "fill" })
+        .resize(icon.width, icon.height, getResizeOptions(icon))
         .png()
         .toFile(outputFile);
     } else {
@@ -71,4 +79,4 @@ async function renderAssets({
   return { generatedCount, skippedCount };
 }
 
-module.exports = { renderAssets };
+module.exports = { getResizeOptions, renderAssets };

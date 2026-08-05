@@ -173,3 +173,37 @@ theme palette during the build.
   ]
 }
 ```
+
+### Background assets
+
+Manifest entries may declare the optional `type` property:
+
+```json
+{
+  "icon-name": "background",
+  "target-path": "/skin",
+  "source": "/projects/backgrounds/background.svg",
+  "width": 640,
+  "height": 480,
+  "format": "png",
+  "type": "background"
+}
+```
+
+The property follows this contract:
+
+- When `type` is omitted, the entry is a regular asset and keeps the default
+  stretch-to-size behaviour.
+- `"type": "background"` identifies a full background or visual texture whose
+  aspect ratio must be preserved.
+- Background assets use a centered `cover` resize: the entire target area is
+  filled, overflow is cropped, and the source is never stretched.
+- The generated file always uses the exact `width` and `height` declared by the
+  manifest.
+- The flag is declared per manifest entry, not per source file. A source reused
+  by both a full background and a small UI element can therefore use different
+  resize behaviours.
+- `background` is the only special `type` currently defined. Other values are
+  invalid.
+
+Support for this property in the renderer will be implemented separately.
