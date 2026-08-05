@@ -26,9 +26,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="1.1484375"
-     inkscape:cx="330.88436"
-     inkscape:cy="221.60544"
+     inkscape:zoom="3.2482718"
+     inkscape:cx="485.18108"
+     inkscape:cy="99.59142"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -43,4 +43,15 @@
      x="0"
      y="-960"
      rx="192" />
+  <text
+     xml:space="preserve"
+     style="font-size:640.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
+     x="13943.266"
+     y="-170.37474"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="stroke-width:362.835"
+       x="13943.266"
+       y="-170.37474">text-input</tspan></text>
 </svg>

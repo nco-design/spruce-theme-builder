@@ -228,10 +228,11 @@
         {
             "icon-name": "bg-pop-menu-1",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-pop-long.svg",
+            "source": "/projects/backgrounds/bg-pop.svg",
             "width": 320,
             "height": 70,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-pop-menu-2",
@@ -239,7 +240,8 @@
             "source": "/projects/backgrounds/bg-pop.svg",
             "width": 320,
             "height": 190,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-pop-menu-3",
@@ -247,15 +249,17 @@
             "source": "/projects/backgrounds/bg-pop.svg",
             "width": 320,
             "height": 190,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-pop-menu-4",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-pop-tall.svg",
+            "source": "/projects/backgrounds/bg-pop.svg",
             "width": 320,
             "height": 250,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-ra-list-item",

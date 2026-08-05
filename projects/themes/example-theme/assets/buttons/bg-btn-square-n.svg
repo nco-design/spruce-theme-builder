@@ -51,8 +51,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="11.686165"
-     inkscape:cx="14.889401"
-     inkscape:cy="26.997736"
+     inkscape:cx="18.226681"
+     inkscape:cy="26.912165"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -75,4 +75,20 @@
      x="0"
      y="-960"
      rx="96" />
+  <text
+     xml:space="preserve"
+     style="font-size:256px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
+     x="1148.6981"
+     y="-136.29361"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="font-size:256px;stroke-width:362.835"
+       x="1148.6981"
+       y="-136.29361">bg-btn-</tspan><tspan
+       sodipodi:role="line"
+       style="font-size:256px;stroke-width:362.835"
+       x="1148.6981"
+       y="119.70638"
+       id="tspan2">square-n</tspan></text>
 </svg>

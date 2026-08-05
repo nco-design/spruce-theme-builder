@@ -27,7 +27,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="10.208305"
-     inkscape:cx="39.869498"
+     inkscape:cx="27.820485"
      inkscape:cy="32.669478"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
@@ -52,8 +52,20 @@
      x="60"
      y="-900"
      rx="48" />
-  <path
-     style="fill:none;stroke:#0d0d26;stroke-width:72;stroke-linecap:square;stroke-dasharray:none;paint-order:fill markers stroke;stroke-opacity:1;fill-opacity:1"
-     d="M 857.60038,13.199789 903.88197,69.173838 1036.105,-51.012164"
-     id="path1" />
+  <text
+     xml:space="preserve"
+     style="font-size:256.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
+     x="1151.625"
+     y="-116.00121"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="stroke-width:362.835"
+       x="1151.625"
+       y="-116.00121">bg-btn-</tspan><tspan
+       sodipodi:role="line"
+       style="stroke-width:362.835"
+       x="1151.625"
+       y="139.9998"
+       id="tspan2">square-f</tspan></text>
 </svg>
