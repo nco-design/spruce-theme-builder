@@ -232,7 +232,7 @@ function transformButtonRectangles({
   });
 
   transformedSvg = transformedSvg.replace(
-    /<(ellipse|path|polygon|polyline|line)\b[^>]*>/gi,
+    /<(ellipse|path|polygon|polyline|line|text)\b[^>]*>/gi,
     (shapeTag) => {
       uniformShapeCount += 1;
       return applyUniformTransform(shapeTag, uniformTransform);
