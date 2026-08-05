@@ -52,9 +52,10 @@
             "icon-name": "app_loading_bg",
             "target-path": "/skin_1280x720",
             "source": "/projects/backgrounds/main_background.svg",
-            "width": 960,
+            "width": 1280,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "background-small",
@@ -68,17 +69,19 @@
             "icon-name": "background.1",
             "target-path": "/skin_1280x720",
             "source": "/projects/backgrounds/main_background.svg",
-            "width": 960,
+            "width": 1280,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "background",
             "target-path": "/skin_1280x720",
             "source": "/projects/backgrounds/main_background.svg",
-            "width": 960,
+            "width": 1280,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "barbg",
