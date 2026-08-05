@@ -3,7 +3,7 @@ const path = require("path");
 const readJson = require("./read-json.js");
 const { ROOT_DIR, requireDirectory, resolveWithin } = require("./paths.js");
 
-const SUPPORTED_ASSET_TYPES = new Set(["background"]);
+const SUPPORTED_ASSET_TYPES = new Set(["background", "button"]);
 
 function validateAssetTypes(config, configPath) {
   for (const asset of config.icons) {
@@ -15,7 +15,7 @@ function validateAssetTypes(config, configPath) {
       const assetName = asset["icon-name"] || asset.source || "asset sans nom";
       throw new Error(
         `Type d'asset invalide dans ${configPath} pour "${assetName}" : ` +
-        `"${asset.type}". Valeur acceptée : "background"`
+        `"${asset.type}". Valeurs acceptées : "background", "button"`
       );
     }
   }

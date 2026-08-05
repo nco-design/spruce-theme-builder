@@ -203,8 +203,11 @@ The property follows this contract:
 - The flag is declared per manifest entry, not per source file. A source reused
   by both a full background and a small UI element can therefore use different
   resize behaviours.
-- `background` is the only special `type` currently defined. Other values are
-  invalid.
+- `background` preserves the aspect ratio with a centered `cover` resize.
+- `button` identifies a button that will use the radius-preserving button
+  renderer. Until that renderer is implemented, it keeps the regular `fill`
+  behaviour.
+- Other `type` values are invalid.
 - Background sources must currently be SVG files. Palette colors are replaced
   in the SVG before it is rendered and resized.
 - Because `cover` preserves the source ratio, parts of the visual may be

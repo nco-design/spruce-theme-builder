@@ -94,7 +94,8 @@
             "source": "/projects/buttons/bg-btn-square-f.svg",
             "width": 75,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-01-n",
@@ -102,7 +103,8 @@
             "source": "/projects/buttons/bg-btn-square-n.svg",
             "width": 75,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-02-f",
@@ -126,7 +128,8 @@
             "source": "/projects/buttons/bg-btn-square-n.svg",
             "width": 72,
             "height": 72,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-sel",
@@ -134,7 +137,8 @@
             "source": "/projects/buttons/bg-btn-square-f.svg",
             "width": 75,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-shift-active",
@@ -142,7 +146,8 @@
             "source": "/projects/buttons/bg-btn-square-f.svg",
             "width": 72,
             "height": 72,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-button-nor",
@@ -150,7 +155,8 @@
             "source": "/projects/buttons/bg-btn-square-n.svg",
             "width": 351,
             "height": 102,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-game-item-f",
@@ -262,7 +268,8 @@
             "source": "/projects/buttons/bg-btn-square-f.svg",
             "width": 258,
             "height": 78,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "btn-OK",
@@ -270,7 +277,8 @@
             "source": "/projects/buttons/bg-btn-square-n.svg",
             "width": 258,
             "height": 78,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "btn-delete",
@@ -1038,7 +1046,8 @@
             "source": "/projects/buttons/bg-btn-square-n.svg",
             "width": 480,
             "height": 450,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "menu-sub-title-bg",
