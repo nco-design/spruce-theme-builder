@@ -13,10 +13,34 @@
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1" />
+     id="defs1">
+    <linearGradient
+       id="linearGradient2"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#cccccc;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#e5e5e5;stop-opacity:0;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient3"
+       x1="535.24829"
+       y1="-1297.2017"
+       x2="535.24829"
+       y2="-197.36745"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(96,335.99988)" />
+  </defs>
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#505050"
@@ -28,7 +52,7 @@
      inkscape:deskcolor="#505050"
      inkscape:zoom="11.686165"
      inkscape:cx="14.889401"
-     inkscape:cy="28.366876"
+     inkscape:cy="26.997736"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -38,6 +62,14 @@
   <rect
      style="opacity:1;fill:#0d0d26;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
+     width="1200"
+     height="1200"
+     x="0"
+     y="-960"
+     rx="96" />
+  <rect
+     style="fill:url(#linearGradient3);fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     id="rect1-5"
      width="1200"
      height="1200"
      x="0"

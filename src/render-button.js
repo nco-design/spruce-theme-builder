@@ -96,6 +96,37 @@ function scaleRectangleStrokeWidths(rectTag, scale, sourceName) {
   return transformedRect;
 }
 
+function createUniformTransform(geometry) {
+  const { minX, minY, width, height } = geometry.source.viewBox;
+  const scale = Math.min(
+    geometry.target.width / width,
+    geometry.target.height / height
+  );
+  const offsetX = (geometry.target.width - width * scale) / 2;
+  const offsetY = (geometry.target.height - height * scale) / 2;
+
+  return {
+    scale,
+    translateX: offsetX - minX * scale,
+    translateY: offsetY - minY * scale
+  };
+}
+
+function applyUniformTransform(elementTag, transform) {
+  const matrix =
+    `matrix(${formatSvgNumber(transform.scale)} 0 0 ` +
+    `${formatSvgNumber(transform.scale)} ` +
+    `${formatSvgNumber(transform.translateX)} ` +
+    `${formatSvgNumber(transform.translateY)})`;
+  const existingTransform = getSvgAttribute(elementTag, "transform");
+
+  return setSvgAttribute(
+    elementTag,
+    "transform",
+    existingTransform ? `${matrix} ${existingTransform}` : matrix
+  );
+}
+
 function transformButtonRectangles({
   sourceName = "bouton sans nom",
   svgContent,
@@ -112,7 +143,10 @@ function transformButtonRectangles({
     geometry.source.viewBox;
   const scaleX = geometry.target.width / viewBoxWidth;
   const scaleY = geometry.target.height / viewBoxHeight;
+  const uniformTransform = createUniformTransform(geometry);
   let rectangleCount = 0;
+  let circleCount = 0;
+  let uniformShapeCount = 0;
 
   let transformedSvg = svgContent.replace(/<rect\b[^>]*>/gi, (rectTag) => {
     rectangleCount += 1;
@@ -178,6 +212,33 @@ function transformButtonRectangles({
     return transformedRect;
   });
 
+  transformedSvg = transformedSvg.replace(/<circle\b[^>]*>/gi, (circleTag) => {
+    circleCount += 1;
+    const radius = parseSvgLength(
+      getSvgAttribute(circleTag, "r"),
+      "circle r",
+      sourceName
+    );
+    const maximumRadius =
+      Math.min(geometry.target.width, geometry.target.height) /
+      (2 * uniformTransform.scale);
+    const cappedCircle = setSvgAttribute(
+      circleTag,
+      "r",
+      formatSvgNumber(Math.min(radius, maximumRadius))
+    );
+
+    return applyUniformTransform(cappedCircle, uniformTransform);
+  });
+
+  transformedSvg = transformedSvg.replace(
+    /<(ellipse|path|polygon|polyline|line)\b[^>]*>/gi,
+    (shapeTag) => {
+      uniformShapeCount += 1;
+      return applyUniformTransform(shapeTag, uniformTransform);
+    }
+  );
+
   const svgTag = transformedSvg.match(/<svg\b[^>]*>/i)?.[0];
   let transformedSvgTag = setSvgAttribute(
     svgTag,
@@ -196,7 +257,14 @@ function transformButtonRectangles({
   );
   transformedSvg = transformedSvg.replace(svgTag, transformedSvgTag);
 
-  return { geometry, rectangleCount, svgContent: transformedSvg };
+  return {
+    circleCount,
+    geometry,
+    rectangleCount,
+    svgContent: transformedSvg,
+    uniformShapeCount,
+    uniformScale: uniformTransform.scale
+  };
 }
 
 async function renderButton({
@@ -288,6 +356,8 @@ function readButtonGeometry({
 }
 
 module.exports = {
+  applyUniformTransform,
+  createUniformTransform,
   formatSvgNumber,
   getSvgAttribute,
   parseSvgNumber,

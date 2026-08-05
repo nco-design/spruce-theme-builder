@@ -28,7 +28,7 @@
      inkscape:deskcolor="#505050"
      inkscape:zoom="10.208305"
      inkscape:cx="39.869498"
-     inkscape:cy="32.571519"
+     inkscape:cy="32.669478"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -45,11 +45,15 @@
      y="-960"
      rx="96" />
   <rect
-     style="fill:none;fill-opacity:1;stroke:#c5c5c5;stroke-width:24;stroke-linecap:square;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+     style="fill:none;fill-opacity:1;stroke:#0d0d26;stroke-width:24;stroke-linecap:square;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
      id="rect2"
      width="1080"
      height="1080"
      x="60"
      y="-900"
      rx="48" />
+  <path
+     style="fill:none;stroke:#0d0d26;stroke-width:72;stroke-linecap:square;stroke-dasharray:none;paint-order:fill markers stroke;stroke-opacity:1;fill-opacity:1"
+     d="M 857.60038,13.199789 903.88197,69.173838 1036.105,-51.012164"
+     id="path1" />
 </svg>
