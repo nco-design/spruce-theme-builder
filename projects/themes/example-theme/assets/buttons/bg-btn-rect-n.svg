@@ -28,7 +28,7 @@
      inkscape:deskcolor="#505050"
      inkscape:zoom="25.986174"
      inkscape:cx="110.90513"
-     inkscape:cy="3.2517292"
+     inkscape:cy="3.2902112"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -41,5 +41,6 @@
      width="2664"
      height="1200"
      x="0"
-     y="-960" />
+     y="-960"
+     rx="96" />
 </svg>
