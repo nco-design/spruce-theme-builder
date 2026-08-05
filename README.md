@@ -7,6 +7,14 @@ For each theme, you can add as many color variants as you want in `theme-name/pa
 Once you have a theme, an icon pack for your emulators and app and a few palettes, you can build any combination you want with the builder.
 So, you can work on a dark theme, add a brighter version, a colorful version or any other variant very easily.
 
+# Preview
+
+| Example theme | Example theme |
+| ------------- | ------------- |
+| **Snowy Peak**<br><br><img src="docs/imgs/preview-snowy-peak.png" width="240" alt="Snowy Peak preview"><br><br>`node build-theme example-theme spruceos example-pack --palette snowy-peak` | **Autumn Nights**<br><br><img src="docs/imgs/preview-autumn-night.png" width="240" alt="Autumn Nights preview"><br><br>`node build-theme example-theme spruceos example-pack --palette autumn-nights` |
+| **Emerald Green**<br><br><img src="docs/imgs/preview-emerald-green.png" width="240" alt="Emerald Green preview"><br><br>`node build-theme example-theme spruceos example-pack --palette emerald-green` | **Ruby Red**<br><br><img src="docs/imgs/preview-ruby-red.png" width="240" alt="Ruby Red preview"><br><br>`node build-theme example-theme spruceos example-pack --palette ruby-red` |
+| **Pink Pearl**<br><br><img src="docs/imgs/preview-pink-pearl.png" width="240" alt="Pink Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette pink-pearl` | **Blue Pearl**<br><br><img src="docs/imgs/preview-blue-pearl.png" width="240" alt="Blue Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette blue-pearl` |
+
 # How to install
 
 ```bash

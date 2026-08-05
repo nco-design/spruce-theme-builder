@@ -1,0 +1,13 @@
+{
+  "palette-name": "ruby-red",
+  "description": "Two-tone red palette inspired by the TrimUI Brick Hammer",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#981a1e",
+    "primary-color": "#ec8379",
+    "primary-dark": "#c93635",
+    "secondary-color": "#f07a70",
+    "secondary-dark": "#681014",
+    "accent-color": "#ff7869"
+  }
+}

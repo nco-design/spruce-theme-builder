@@ -1,0 +1,13 @@
+{
+  "palette-name": "pink-pearl",
+  "description": "Two-tone pearlescent pink palette inspired by the TrimUI Brick Hammer",
+  "Author": "Nicolas C",
+  "properties": {
+    "bg-color": "#f0aca8",
+    "primary-color": "#db7076",
+    "primary-dark": "#bb555e",
+    "secondary-color": "#c56168",
+    "secondary-dark": "#963c46",
+    "accent-color": "#ef8588"
+  }
+}
