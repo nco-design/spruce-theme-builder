@@ -5,9 +5,9 @@
   "properties": {
     "bg-color": "#0f5722",
     "primary-color": "#7dcc65",
-    "primary-dark": "#55ad50",
+    "primary-dark": "#7dcc65",
     "secondary-color": "#9add82",
-    "secondary-dark": "#083d17",
+    "secondary-dark": "#0f5722",
     "accent-color": "#9bea7f"
   }
 }

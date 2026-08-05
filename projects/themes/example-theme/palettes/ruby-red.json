@@ -5,8 +5,8 @@
   "properties": {
     "bg-color": "#981a1e",
     "primary-color": "#ec8379",
-    "primary-dark": "#c93635",
-    "secondary-color": "#f07a70",
+    "primary-dark": "#ec8379",
+    "secondary-color": "#681014",
     "secondary-dark": "#681014",
     "accent-color": "#ff7869"
   }
