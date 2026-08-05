@@ -204,7 +204,7 @@
         {
             "icon-name": "bg-input",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-rect-f.svg",
+            "source": "/projects/buttons/text-input",
             "width": 512,
             "height": 52,
             "format": "png",
@@ -982,7 +982,7 @@
         {
             "icon-name": "input",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/text-input.svg",
+            "source": "/projects/buttons/text-input.svg",
             "width": 592,
             "height": 52,
             "format": "png"

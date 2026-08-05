@@ -43,15 +43,4 @@
      x="0"
      y="-960"
      rx="192" />
-  <text
-     xml:space="preserve"
-     style="font-size:640.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
-     x="8455.252"
-     y="-170.37474"
-     id="text1"><tspan
-       sodipodi:role="line"
-       id="tspan1"
-       style="stroke-width:362.835"
-       x="8455.252"
-       y="-170.37474">text-input</tspan></text>
 </svg>
