@@ -5,7 +5,7 @@
   "properties": {
     "bg-color": "#bddbda",
     "primary-color": "#56908f",
-    "primary-dark": "#56908f",
+    "primary-dark": "#bddbda",
     "secondary-color": "#bddbda",
     "secondary-dark": "#bddbda",
     "accent-color": "#8fc4c1"
