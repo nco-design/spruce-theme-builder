@@ -204,7 +204,7 @@
         {
             "icon-name": "bg-input",
             "target-path": "/skin",
-            "source": "/projects/buttons/text-input",
+            "source": "/projects/buttons/text-input.svg",
             "width": 512,
             "height": 52,
             "format": "png",

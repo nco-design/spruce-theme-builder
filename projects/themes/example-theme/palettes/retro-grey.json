@@ -1,0 +1,13 @@
+{
+    "palette-name":"retro-grey",
+    "description":"Light grey palette, a nod to the original PSX hardware",
+    "Author":"Nicolas C",
+    "properties":{
+        "bg-color":"#8f9ca3",
+        "primary-color":"#20292c",
+        "primary-dark":"#798386",
+        "secondary-color":"#798386",
+        "secondary-dark":"#a39c8f",
+        "accent-color":"#ffffff"
+    }
+}
