@@ -3,6 +3,7 @@ const path = require("path");
 const sharp = require("sharp");
 const { applyColorMap } = require("./colors.js");
 const { resolveOutputFile, resolveSourceFile } = require("./paths.js");
+const { renderButton } = require("./render-button.js");
 
 function isValidAssetConfig(icon) {
   return Boolean(
@@ -61,10 +62,20 @@ async function renderAssets({
     if (format === "svg") {
       fs.writeFileSync(outputFile, svgContent);
     } else if (format === "png") {
-      await sharp(Buffer.from(svgContent))
-        .resize(icon.width, icon.height, getResizeOptions(icon))
-        .png()
-        .toFile(outputFile);
+      if (icon.type === "button") {
+        await renderButton({
+          outputFile,
+          sourceName: sourceFile,
+          svgContent,
+          targetHeight: icon.height,
+          targetWidth: icon.width
+        });
+      } else {
+        await sharp(Buffer.from(svgContent))
+          .resize(icon.width, icon.height, getResizeOptions(icon))
+          .png()
+          .toFile(outputFile);
+      }
     } else {
       process.emitWarning(
         `Format non supporté pour ${icon["icon-name"]} : ${format}`

@@ -26,15 +26,16 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="2.296875"
-     inkscape:cx="20.027211"
-     inkscape:cy="85.115646"
+     inkscape:zoom="10.208305"
+     inkscape:cx="39.869498"
+     inkscape:cy="32.571519"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="svg1"
+     showguides="true" />
   <rect
      style="opacity:1;fill:#808080;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
@@ -42,5 +43,13 @@
      height="1200"
      x="0"
      y="-960"
+     rx="96" />
+  <rect
+     style="fill:none;fill-opacity:1;stroke:#c5c5c5;stroke-width:24;stroke-linecap:square;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+     id="rect2"
+     width="1080"
+     height="1080"
+     x="60"
+     y="-900"
      rx="48" />
 </svg>
