@@ -51,7 +51,7 @@
         {
             "icon-name": "app_loading_bg",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_480.svg",
+            "source": "/projects/backgrounds/main_background.svg",
             "width": 960,
             "height": 720,
             "format": "png"
@@ -67,7 +67,7 @@
         {
             "icon-name": "background.1",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_480.svg",
+            "source": "/projects/backgrounds/main_background.svg",
             "width": 960,
             "height": 720,
             "format": "png"
@@ -75,7 +75,7 @@
         {
             "icon-name": "background",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_480.svg",
+            "source": "/projects/backgrounds/main_background.svg",
             "width": 960,
             "height": 720,
             "format": "png"
@@ -243,7 +243,7 @@
         {
             "icon-name": "bg-ra-list-item",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_480.svg",
+            "source": "/projects/backgrounds/background_flat.svg",
             "width": 319,
             "height": 179,
             "format": "png"

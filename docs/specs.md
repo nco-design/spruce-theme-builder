@@ -205,5 +205,13 @@ The property follows this contract:
   resize behaviours.
 - `background` is the only special `type` currently defined. Other values are
   invalid.
+- Background sources must currently be SVG files. Palette colors are replaced
+  in the SVG before it is rendered and resized.
+- Because `cover` preserves the source ratio, parts of the visual may be
+  cropped when the source and target ratios differ.
+- When automatic centered cropping is not suitable, provide an SVG composed
+  for the target ratio and reference it from the corresponding resolution
+  manifest, such as `theme-720.json`.
 
-Support for this property in the renderer will be implemented separately.
+Raster artwork is not accepted directly. A separate import helper may support
+JPEG, PNG or WebP sources in the future.

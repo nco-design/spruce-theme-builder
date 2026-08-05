@@ -3,12 +3,32 @@ const path = require("path");
 const readJson = require("./read-json.js");
 const { ROOT_DIR, requireDirectory, resolveWithin } = require("./paths.js");
 
+const SUPPORTED_ASSET_TYPES = new Set(["background"]);
+
+function validateAssetTypes(config, configPath) {
+  for (const asset of config.icons) {
+    if (asset.type === undefined) {
+      continue;
+    }
+
+    if (!SUPPORTED_ASSET_TYPES.has(asset.type)) {
+      const assetName = asset["icon-name"] || asset.source || "asset sans nom";
+      throw new Error(
+        `Type d'asset invalide dans ${configPath} pour "${assetName}" : ` +
+        `"${asset.type}". Valeur acceptée : "background"`
+      );
+    }
+  }
+}
+
 function readFrontendConfigFile(configPath) {
   const config = readJson(configPath);
 
   if (!Array.isArray(config.icons)) {
     throw new Error(`Le fichier ${configPath} ne contient pas de tableau "icons"`);
   }
+
+  validateAssetTypes(config, configPath);
 
   return config;
 }
@@ -237,4 +257,4 @@ function loadBuildContext({
   };
 }
 
-module.exports = { loadBuildContext, readFrontendConfigs };
+module.exports = { loadBuildContext, readFrontendConfigs, validateAssetTypes };
