@@ -205,15 +205,16 @@
         {
             "icon-name": "bg-list-l",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-list-app-f.svg",
+            "source": "/projects/buttons/list-selected.svg",
             "width": 1280,
             "height": 141,
-            "format": "png"
+            "format": "png",
+            "type":"button"
         },
         {
             "icon-name": "bg-list-s",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-rect-f.svg",
+            "source": "/projects/buttons/list-selected.svg",
             "width": 1280,
             "height": 90,
             "format": "png",
@@ -1431,7 +1432,7 @@
         {
             "icon-name": "bg-list-s2",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/bg-list-s2.svg",
+            "source": "/projects/buttons/list-selected.svg",
             "width": 480,
             "height": 90,
             "format": "png"

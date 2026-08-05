@@ -27,8 +27,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="6.4965436"
-     inkscape:cx="74.03937"
-     inkscape:cy="32.709701"
+     inkscape:cx="52.181594"
+     inkscape:cy="33.017557"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -38,11 +38,11 @@
   <rect
      style="opacity:1;fill:#808080;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
-     width="2664"
+     width="2520"
      height="1200"
-     x="0"
+     x="72"
      y="-960"
-     rx="96" />
+     rx="240" />
   <text
      xml:space="preserve"
      style="font-size:320px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
