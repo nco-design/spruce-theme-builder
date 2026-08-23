@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   height="94"
-   viewBox="0 -960 15360 2256"
-   width="640"
+   height="50"
+   viewBox="0 -960 2664 1200"
+   width="111"
    fill="#ffffff"
    version="1.1"
    id="svg1"
-   sodipodi:docname="bg-list-app-f.svg"
+   sodipodi:docname="btn-unselected.svg"
    inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
    inkscape:export-filename="../../skin/bg-btn-02-n.png"
    inkscape:export-xdpi="96"
@@ -26,9 +26,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="1.6241359"
-     inkscape:cx="402.67567"
-     inkscape:cy="70.499027"
+     inkscape:zoom="6.4965435"
+     inkscape:cx="52.643379"
+     inkscape:cy="29.01543"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -36,22 +36,22 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <rect
-     style="opacity:1;fill:#cccccc;fill-opacity:1;stroke-width:93.5643;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     style="opacity:1;fill:#0d0d26;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
-     width="14880"
-     height="1776"
-     x="240"
-     y="-720"
-     rx="888" />
+     width="2520"
+     height="1200"
+     x="72"
+     y="-960"
+     rx="240" />
   <text
      xml:space="preserve"
      style="font-size:319.999px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
-     x="14213.409"
-     y="853.35822"
+     x="2386.1372"
+     y="54.574982"
      id="text1"><tspan
        sodipodi:role="line"
        id="tspan1"
        style="stroke-width:362.835"
-       x="14213.409"
-       y="853.35822">bg-list-app-f</tspan></text>
+       x="2386.1372"
+       y="54.574982">btn-unselected</tspan></text>
 </svg>
