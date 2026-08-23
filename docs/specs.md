@@ -1,5 +1,8 @@
 # Project specifications
 
+Designers can choose the appropriate resize behaviour in
+[Source image types](source-image-types.md).
+
 ## Project architecture
 
 ```text
