@@ -473,18 +473,20 @@
         {
             "icon-name": "ic-collection-f",
             "target-path": "/skin",
-            "source": "/projects/icons/collection-f.svg",
+            "source": "/projects/icons/collection-selected.svg",
             "width": 40,
             "height": 40,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-collection-n",
             "target-path": "/skin",
-            "source": "/projects/icons/collection-f.svg",
+            "source": "/projects/icons/collection-selected.svg",
             "width": 40,
             "height": 40,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-favorite-f",
@@ -591,26 +593,29 @@
         {
             "icon-name": "ic-retroarch-f",
             "target-path": "/skin",
-            "source": "/projects/icons/retroarch-f.svg",
+            "source": "/projects/icons/retroarch-selected.svg",
             "width": 81,
             "height": 81,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-retroarch-n",
             "target-path": "/skin",
-            "source": "/projects/icons/retroarch-n.svg",
+            "source": "/projects/icons/retroarch-unselected.svg",
             "width": 81,
             "height": 81,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-retroarch",
             "target-path": "/skin",
-            "source": "/projects/icons/retroarch-f.svg",
+            "source": "/projects/icons/retroarch-selected.svg",
             "width": 81,
             "height": 81,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-setting-f",

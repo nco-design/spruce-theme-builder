@@ -464,18 +464,20 @@
         {
             "icon-name": "ic-collection-f",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/collection-f.svg",
+            "source": "/projects/icons/collection-selected.svg",
             "width": 60,
             "height": 60,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-collection-n",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/collection-f.svg",
+            "source": "/projects/icons/collection-selected.svg",
             "width": 60,
             "height": 60,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-favorite-f",
@@ -582,26 +584,29 @@
         {
             "icon-name": "ic-retroarch-f",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/retroarch-f.svg",
+            "source": "/projects/icons/retroarch-selected.svg",
             "width": 121,
             "height": 121,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-retroarch-n",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/retroarch-n.svg",
+            "source": "/projects/icons/retroarch-unselected.svg",
             "width": 121,
             "height": 121,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-retroarch",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/retroarch-f.svg",
+            "source": "/projects/icons/retroarch-selected.svg",
             "width": 121,
             "height": 121,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-setting-f",
