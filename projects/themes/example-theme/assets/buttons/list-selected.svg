@@ -26,9 +26,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="1.1484375"
-     inkscape:cx="221.17007"
-     inkscape:cy="57.034014"
+     inkscape:zoom="4.59375"
+     inkscape:cx="667.86395"
+     inkscape:cy="68.897959"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -36,11 +36,10 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <rect
-     style="opacity:1;fill:#cccccc;fill-opacity:1;stroke-width:93.5643;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     style="opacity:1;fill:#e5e5e5;fill-opacity:0.5;stroke-width:94.304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
-     width="15120"
+     width="15360"
      height="1920"
-     x="120"
-     y="-792"
-     rx="240" />
+     x="2.1316282e-13"
+     y="-792" />
 </svg>
