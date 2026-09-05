@@ -455,18 +455,20 @@
         {
             "icon-name": "ic-app-f",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/apps-f.svg",
+            "source": "/projects/main-nav-icons/apps-selected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-app-n",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/apps-n.svg",
+            "source": "/projects/main-nav-icons/apps-unselected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-collection-f",
@@ -487,10 +489,11 @@
         {
             "icon-name": "ic-favorite-f",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/fav-f.svg",
+            "source": "/projects/main-nav-icons/fav-selected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-favorite-mark",
@@ -503,26 +506,29 @@
         {
             "icon-name": "ic-favorite-n",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/fav-n.svg",
+            "source": "/projects/main-nav-icons/fav-unselected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-game-f",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/games-f.svg",
+            "source": "/projects/main-nav-icons/games-selected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-game-n",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/games-n.svg",
+            "source": "/projects/main-nav-icons/games-unselected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-power-charge-0%",
@@ -567,18 +573,20 @@
         {
             "icon-name": "ic-recent-f",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/recents-f.svg",
+            "source": "/projects/main-nav-icons/recents-selected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-recent-n",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/recents-n.svg",
+            "source": "/projects/main-nav-icons/recents-unselected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-retroarch-f",
@@ -607,18 +615,20 @@
         {
             "icon-name": "ic-setting-f",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/settings-f.svg",
+            "source": "/projects/main-nav-icons/settings-selected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "ic-setting-n",
             "target-path": "/skin",
-            "source": "/projects/main-nav-icons/settings-n.svg",
+            "source": "/projects/main-nav-icons/settings-unselected.svg",
             "width": 100,
             "height": 100,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "icon-A-27",
@@ -1098,18 +1108,20 @@
         {
         "icon-name": "nav-favorite-f",
         "target-path": "/skin",
-        "source": "/projects/main-nav-icons/fav-f.svg",
+        "source": "/projects/main-nav-icons/fav-selected.svg",
         "width": 40,
         "height": 40,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "nav-favorite-n",
         "target-path": "/skin",
-        "source": "/projects/main-nav-icons/fav-n.svg",
+        "source": "/projects/main-nav-icons/fav-unselected.svg",
         "width": 40,
         "height": 40,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "nav-file-f",
