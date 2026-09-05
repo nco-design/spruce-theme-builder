@@ -1,12 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const readJson = require("./read-json.js");
+const { validateAssetOpacity } = require("./opacity.js");
 const { ROOT_DIR, requireDirectory, resolveWithin } = require("./paths.js");
 
 const SUPPORTED_ASSET_TYPES = new Set(["background", "button"]);
 
 function validateAssetTypes(config, configPath) {
   for (const asset of config.icons) {
+    validateAssetOpacity(asset, configPath);
+
     if (asset.type === undefined) {
       continue;
     }

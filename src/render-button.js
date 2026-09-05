@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { applyOpacityToSharp } = require("./opacity.js");
 
 function getSvgAttribute(svgTag, attributeName) {
   const escapedName = attributeName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -272,7 +273,8 @@ async function renderButton({
   sourceName,
   svgContent,
   targetHeight,
-  targetWidth
+  targetWidth,
+  opacity
 }) {
   const transformed = transformButtonRectangles({
     sourceName,
@@ -281,7 +283,11 @@ async function renderButton({
     targetWidth
   });
 
-  await sharp(Buffer.from(transformed.svgContent)).png().toFile(outputFile);
+  await applyOpacityToSharp(sharp(Buffer.from(transformed.svgContent)), {
+    opacity
+  })
+    .png()
+    .toFile(outputFile);
 
   return transformed;
 }

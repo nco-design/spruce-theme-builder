@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 const { applyColorMap } = require("./colors.js");
+const { applyOpacityToSharp, applyOpacityToSvg } = require("./opacity.js");
 const { resolveOutputFile, resolveSourceFile } = require("./paths.js");
 const { renderButton } = require("./render-button.js");
 
@@ -60,7 +61,7 @@ async function renderAssets({
     fs.mkdirSync(path.dirname(outputFile), { recursive: true });
 
     if (format === "svg") {
-      fs.writeFileSync(outputFile, svgContent);
+      fs.writeFileSync(outputFile, applyOpacityToSvg(svgContent, icon));
     } else if (format === "png") {
       if (icon.type === "button") {
         await renderButton({
@@ -68,11 +69,16 @@ async function renderAssets({
           sourceName: sourceFile,
           svgContent,
           targetHeight: icon.height,
-          targetWidth: icon.width
+          targetWidth: icon.width,
+          opacity: icon.opacity
         });
       } else {
-        await sharp(Buffer.from(svgContent))
-          .resize(icon.width, icon.height, getResizeOptions(icon))
+        const pipeline = sharp(Buffer.from(svgContent)).resize(
+          icon.width,
+          icon.height,
+          getResizeOptions(icon)
+        );
+        await applyOpacityToSharp(pipeline, icon)
           .png()
           .toFile(outputFile);
       }
