@@ -95,7 +95,7 @@
         {
             "icon-name": "bg-btn-01-f",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-f.svg",
+            "source": "/projects/buttons/btn-selected.svg",
             "width": 75,
             "height": 75,
             "format": "png",
@@ -116,7 +116,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 166,
             "height": 74,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-02-n",
@@ -278,7 +279,7 @@
         {
             "icon-name": "btn-OK-f",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-f.svg",
+            "source": "/projects/buttons/btn-selected.svg",
             "width": 258,
             "height": 78,
             "format": "png",
@@ -1027,7 +1028,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 6,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "loading-progress-mid",
@@ -1035,7 +1037,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 6,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "loading-progress-right",
@@ -1043,7 +1046,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 6,
             "height": 75,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "menu-5line-bg",

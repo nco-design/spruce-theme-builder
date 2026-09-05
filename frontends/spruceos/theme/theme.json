@@ -100,7 +100,7 @@
         {
             "icon-name": "bg-btn-01-f",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-f.svg",
+            "source": "/projects/buttons/btn-selected.svg",
             "width": 50,
             "height": 50,
             "format": "png",
@@ -121,7 +121,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 111,
             "height": 50,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-02-n",
@@ -286,7 +287,7 @@
         {
             "icon-name": "btn-OK-f",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-f.svg",
+            "source": "/projects/buttons/btn-selected.svg",
             "width": 172,
             "height": 52,
             "format": "png",
@@ -1036,7 +1037,8 @@
             "source": "/projects/buttons/btn-selected.svg",
             "width": 4,
             "height": 50,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
         "icon-name": "loading-progress-mid",
@@ -1044,7 +1046,8 @@
         "source": "/projects/buttons/btn-selected.svg",
         "width": 4,
         "height": 50,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "loading-progress-right",
@@ -1052,7 +1055,8 @@
         "source": "/projects/buttons/btn-selected.svg",
         "width": 4,
         "height": 50,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "menu-5line-bg",
@@ -1390,7 +1394,8 @@
         "source": "/projects/buttons/btn-selected.svg",
         "width": 4,
         "height": 50,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "loading-progress-right",
@@ -1398,7 +1403,8 @@
         "source": "/projects/buttons/btn-selected.svg",
         "width": 4,
         "height": 50,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "menu-5line-bg",
