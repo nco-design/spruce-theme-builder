@@ -51,7 +51,7 @@
         {
             "icon-name": "app_loading_bg",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/main_background.svg",
+            "source": "/projects/backgrounds/main-background.svg",
             "width": 1280,
             "height": 720,
             "format": "png",
@@ -60,15 +60,16 @@
         {
             "icon-name": "background-small",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_transp_480.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 960,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "opacity": 50
         },
         {
             "icon-name": "background.1",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/main_background.svg",
+            "source": "/projects/backgrounds/main-background.svg",
             "width": 1280,
             "height": 720,
             "format": "png",
@@ -77,7 +78,7 @@
         {
             "icon-name": "background",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/main_background.svg",
+            "source": "/projects/backgrounds/main-background.svg",
             "width": 1280,
             "height": 720,
             "format": "png",
@@ -181,10 +182,11 @@
         {
             "icon-name": "bg-gamelist",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_transp_480.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 1280,
             "height": 540,
-            "format": "png"
+            "format": "png",
+            "opacity": 50
         },
         {
             "icon-name": "bg-grid-s",
@@ -260,7 +262,7 @@
         {
             "icon-name": "bg-ra-list-item",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_flat.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 319,
             "height": 179,
             "format": "png"
@@ -1046,26 +1048,29 @@
         {
             "icon-name": "menu-5line-bg",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_transp_480.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 960,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "opacity": 50
         },
         {
             "icon-name": "menu-bg-6",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_transp_480.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 960,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "opacity": 50
         },
         {
             "icon-name": "menu-bg-7",
             "target-path": "/skin_1280x720",
-            "source": "/projects/backgrounds/background_transp_480.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 960,
             "height": 720,
-            "format": "png"
+            "format": "png",
+            "opacity": 50
         },
         {
             "icon-name": "menu-sub-bg",
