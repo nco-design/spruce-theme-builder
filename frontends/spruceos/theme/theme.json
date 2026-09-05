@@ -100,7 +100,7 @@
         {
             "icon-name": "bg-btn-01-f",
             "target-path": "/skin",
-            "source": "/projects/buttons/btn-selected.svg",
+            "source": "/projects/buttons/keyboard-key-selected.svg",
             "width": 50,
             "height": 50,
             "format": "png",
@@ -118,7 +118,7 @@
         {
             "icon-name": "bg-btn-02-f",
             "target-path": "/skin",
-            "source": "/projects/buttons/btn-selected.svg",
+            "source": "/projects/buttons/keyboard-key-selected.svg",
             "width": 111,
             "height": 50,
             "format": "png",

@@ -26,9 +26,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="10.208305"
-     inkscape:cx="27.820485"
-     inkscape:cy="32.669478"
+     inkscape:zoom="11.313708"
+     inkscape:cx="25.190679"
+     inkscape:cy="21.169009"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -37,13 +37,17 @@
      inkscape:current-layer="svg1"
      showguides="true" />
   <rect
-     style="opacity:1;fill:#e5e5e5;fill-opacity:0.5;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     style="opacity:1;fill:#e5e5e5;fill-opacity:0.5;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke:none;stroke-opacity:1;stroke-dasharray:none"
      id="rect1"
      width="1200"
      height="1200"
      x="0"
      y="-960"
      rx="96" />
+  <path
+     id="rect1-5"
+     style="fill:#e5e5e5;fill-opacity:1;stroke:none;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+     d="M 96 -960 C 42.816053 -960 0 -917.18395 0 -864 L 0 144 C 0 197.18395 42.816053 240 96 240 L 1104 240 C 1157.1839 240 1200 197.18395 1200 144 L 1200 -864 C 1200 -917.18395 1157.1839 -960 1104 -960 L 96 -960 z M 125.76562 -924.5625 L 1074.2344 -924.5625 C 1124.2776 -924.5625 1164.5625 -884.27757 1164.5625 -834.23438 L 1164.5625 114.23438 C 1164.5625 164.27757 1124.2776 204.5625 1074.2344 204.5625 L 125.76562 204.5625 C 75.722427 204.5625 35.4375 164.27757 35.4375 114.23438 L 35.4375 -834.23438 C 35.4375 -884.27757 75.722427 -924.5625 125.76562 -924.5625 z " />
   <text
      xml:space="preserve"
      style="font-size:256.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
