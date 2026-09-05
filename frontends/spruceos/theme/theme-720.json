@@ -103,7 +103,7 @@
         {
             "icon-name": "bg-btn-01-n",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 75,
             "height": 75,
             "format": "png",
@@ -123,12 +123,13 @@
             "source": "/projects/buttons/btn-unselected.svg",
             "width": 166,
             "height": 74,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-nor",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 72,
             "height": 72,
             "format": "png",
@@ -155,7 +156,7 @@
         {
             "icon-name": "bg-button-nor",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 351,
             "height": 102,
             "format": "png",
@@ -284,7 +285,7 @@
         {
             "icon-name": "btn-OK",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 258,
             "height": 78,
             "format": "png",
@@ -1054,7 +1055,7 @@
         {
             "icon-name": "menu-sub-bg",
             "target-path": "/skin_1280x720",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 480,
             "height": 450,
             "format": "png",

@@ -108,7 +108,7 @@
         {
             "icon-name": "bg-btn-01-n",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 50,
             "height": 50,
             "format": "png",
@@ -128,12 +128,13 @@
             "source": "/projects/buttons/btn-unselected.svg",
             "width": 111,
             "height": 50,
-            "format": "png"
+            "format": "png",
+            "type": "button"
         },
         {
             "icon-name": "bg-btn-nor",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 48,
             "height": 48,
             "format": "png",
@@ -160,7 +161,7 @@
         {
             "icon-name": "bg-button-nor",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 234,
             "height": 68,
             "format": "png",
@@ -292,7 +293,7 @@
         {
             "icon-name": "btn-OK",
             "target-path": "/skin",
-            "source": "/projects/buttons/bg-btn-square-n.svg",
+            "source": "/projects/buttons/btn-unselected.svg",
             "width": 172,
             "height": 52,
             "format": "png",
@@ -1063,7 +1064,7 @@
         {
         "icon-name": "menu-sub-bg",
         "target-path": "/skin",
-        "source": "/projects/buttons/bg-btn-square-n.svg",
+        "source": "/projects/buttons/btn-unselected.svg",
         "width": 320,
         "height": 300,
         "format": "png",
@@ -1075,7 +1076,8 @@
         "source": "/projects/buttons/btn-unselected.svg",
         "width": 320,
         "height": 36,
-        "format": "png"
+        "format": "png",
+        "type": "button"
         },
         {
         "icon-name": "missing_image",
