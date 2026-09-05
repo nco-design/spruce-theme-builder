@@ -12,7 +12,7 @@
         "currentpage.color": "secondary-color",
         "total.color": "secondary-color",
         "grid.color": "secondary-color",
-        "grid.selectedcolor": "bg-color",
+        "grid.selectedcolor": "primary-color",
         "list.color": "primary-color",
         "list.selectedcolor": "bg-color"
       }
