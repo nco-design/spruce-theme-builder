@@ -476,7 +476,7 @@
         {
             "icon-name": "ic-collection-n",
             "target-path": "/skin_1280x720",
-            "source": "/projects/icons/collection-selected.svg",
+            "source": "/projects/icons/collection-unselected.svg",
             "width": 60,
             "height": 60,
             "format": "png",
