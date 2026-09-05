@@ -28,7 +28,7 @@
      inkscape:deskcolor="#505050"
      inkscape:zoom="10.208305"
      inkscape:cx="27.820485"
-     inkscape:cy="32.571519"
+     inkscape:cy="32.669478"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -37,21 +37,13 @@
      inkscape:current-layer="svg1"
      showguides="true" />
   <rect
-     style="opacity:1;fill:#808080;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     style="opacity:1;fill:#e5e5e5;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
      width="1200"
      height="1200"
      x="0"
      y="-960"
      rx="96" />
-  <rect
-     style="fill:none;fill-opacity:1;stroke:#0d0d26;stroke-width:24;stroke-linecap:square;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-     id="rect2"
-     width="1080"
-     height="1080"
-     x="60"
-     y="-900"
-     rx="48" />
   <text
      xml:space="preserve"
      style="font-size:256.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"

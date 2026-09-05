@@ -26,9 +26,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="1.6241359"
-     inkscape:cx="400.21281"
-     inkscape:cy="158.54585"
+     inkscape:zoom="3.2482718"
+     inkscape:cx="528.28092"
+     inkscape:cy="115.29208"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -36,7 +36,7 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <rect
-     style="opacity:1;fill:#e5e5e5;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     style="opacity:1;fill:#808080;fill-opacity:1;stroke-width:96;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
      id="rect1"
      width="14208"
      height="1248"
@@ -46,12 +46,12 @@
   <text
      xml:space="preserve"
      style="font-size:640.001px;line-height:1;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:end;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#fdf300;stroke-width:362.834;stroke-linecap:square;paint-order:fill markers stroke"
-     x="8455.252"
-     y="-170.37474"
+     x="14230.188"
+     y="157.9998"
      id="text1"><tspan
        sodipodi:role="line"
        id="tspan1"
        style="stroke-width:362.835"
-       x="8455.252"
-       y="-170.37474">text-input</tspan></text>
+       x="14230.188"
+       y="157.9998">text-input</tspan></text>
 </svg>
