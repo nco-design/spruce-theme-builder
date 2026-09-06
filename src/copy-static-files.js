@@ -44,7 +44,7 @@ function copyRequiredFile({ assetsDir, outputDir, placeholderDir, relativePath }
   }
 
   throw new Error(
-    `Fichier statique obligatoire introuvable dans le thème et les placeholders : ` +
+    `Required static file not found in the theme or placeholders: ` +
     relativePath
   );
 }
@@ -111,7 +111,7 @@ function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFile
 
   if (fontFiles.length === 0) {
     throw new Error(
-      "Aucune police .ttf ou .otf trouvée dans le thème ou les placeholders"
+      "No .ttf or .otf font found in the theme or placeholders"
     );
   }
 

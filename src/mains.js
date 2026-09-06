@@ -36,14 +36,14 @@ async function renderProfiles({
 async function buildTheme(options) {
   const context = loadBuildContext(options);
 
-  console.log(`Thème       : ${context.themeFolder}`);
+  console.log(`Theme       : ${context.themeFolder}`);
   console.log(`Frontend    : ${context.frontendName}`);
-  console.log(`Pack icônes : ${context.iconPackFolder}`);
+  console.log(`Icon pack   : ${context.iconPackFolder}`);
   console.log(
-    `Profils thème : ${context.themeFrontends.map((item) => item.fileName).join(", ")}`
+    `Theme profiles    : ${context.themeFrontends.map((item) => item.fileName).join(", ")}`
   );
   console.log(
-    `Profils pack  : ${context.iconPackFrontends.map((item) => item.fileName).join(", ")}`
+    `Icon pack profiles: ${context.iconPackFrontends.map((item) => item.fileName).join(", ")}`
   );
 
   const frontendBuildDir = resolveWithin(
@@ -59,19 +59,19 @@ async function buildTheme(options) {
     const themeColorMap = createColorMap(
       context.themeSourcePalette,
       palette,
-      "thème"
+      "theme"
     );
     const iconPackColorMap = createColorMap(
       context.iconPackSourcePalette,
       palette,
-      "pack d'icônes"
+      "icon pack"
     );
 
     fs.rmSync(outputDir, { recursive: true, force: true });
     fs.mkdirSync(outputDir, { recursive: true });
 
-    console.log(`\nPalette : ${palette["palette-name"]}`);
-    console.log(`Sortie  : ${outputDir}`);
+    console.log(`\nPalette: ${palette["palette-name"]}`);
+    console.log(`Output : ${outputDir}`);
 
     const staticCopyResult = copyThemeStaticFiles({
       assetsDir: context.themeAssetsDir,
@@ -79,9 +79,9 @@ async function buildTheme(options) {
       placeholderDir: context.placeholderDir,
       staticFiles: context.staticFiles
     });
-    console.log(`Fichiers statiques : ${staticCopyResult.copiedFiles.join(", ")}`);
+    console.log(`Static files: ${staticCopyResult.copiedFiles.join(", ")}`);
     for (const fallbackFile of staticCopyResult.fallbackFiles) {
-      console.log(`Fallback utilisé : ${fallbackFile}`);
+      console.log(`Fallback used: ${fallbackFile}`);
     }
 
     const injectedConfigValues = injectPaletteIntoConfig({
@@ -91,7 +91,7 @@ async function buildTheme(options) {
       palette,
       themeConfig: context.themeConfig
     });
-    console.log(`Couleurs injectées : ${injectedConfigValues}`);
+    console.log(`Colors injected: ${injectedConfigValues}`);
 
     const resolutionConfig = context.include720p
       ? prepareResolutionConfig({
@@ -111,13 +111,13 @@ async function buildTheme(options) {
         themeConfig: context.themeConfig
       });
       console.log(
-        `Configuration HD : ${resolutionConfig.fileName} (${resolutionConfig.mode})`
+        `HD configuration: ${resolutionConfig.fileName} (${resolutionConfig.mode})`
       );
     } else {
       console.log(
         context.include720p
-          ? "Configuration HD : désactivée pour ce frontend"
-          : "Configuration HD : non demandée"
+          ? "HD configuration: disabled for this frontend"
+          : "HD configuration: not requested"
       );
     }
 
@@ -126,8 +126,8 @@ async function buildTheme(options) {
       staticFiles: context.staticFiles
     });
     console.log(
-      `Fichiers validés : ${staticValidation.validatedFonts} police(s), ` +
-      `${staticValidation.validatedSounds} son(s)`
+      `Validated files: ${staticValidation.validatedFonts} font(s), ` +
+      `${staticValidation.validatedSounds} sound file(s)`
     );
 
     const themeResult = await renderProfiles({
@@ -146,16 +146,16 @@ async function buildTheme(options) {
     });
 
     console.log(
-      `Thème généré : ${themeResult.generatedCount} asset(s), ` +
-      `${themeResult.skippedCount} ignoré(s).`
+      `Theme generated: ${themeResult.generatedCount} asset(s), ` +
+      `${themeResult.skippedCount} skipped.`
     );
     console.log(
-      `Pack généré  : ${iconPackResult.generatedCount} asset(s), ` +
-      `${iconPackResult.skippedCount} ignoré(s).`
+      `Icon pack generated: ${iconPackResult.generatedCount} asset(s), ` +
+      `${iconPackResult.skippedCount} skipped.`
     );
   }
 
-  console.log("\nBuild terminé avec succès.");
+  console.log("\nBuild completed successfully.");
 }
 
 module.exports = { buildTheme };

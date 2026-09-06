@@ -12,7 +12,7 @@ function getPaletteBindings(themeConfig, frontendName) {
 
   if (!bindings || typeof bindings !== "object" || Array.isArray(bindings)) {
     throw new Error(
-      `Table "frontend-configs.${frontendName}.palette-bindings" absente ou invalide`
+      `Missing or invalid "frontend-configs.${frontendName}.palette-bindings" table`
     );
   }
 
@@ -23,14 +23,14 @@ function setConfigPath(config, configPath, value) {
   const parts = configPath.split(".");
 
   if (parts.some((part) => !part || FORBIDDEN_PATH_PARTS.has(part))) {
-    throw new Error(`Chemin de configuration invalide : ${configPath}`);
+    throw new Error(`Invalid configuration path: ${configPath}`);
   }
 
   let current = config;
 
   for (const part of parts.slice(0, -1)) {
     if (!Object.hasOwn(current, part) || typeof current[part] !== "object") {
-      throw new Error(`Chemin parent introuvable dans config.json : ${configPath}`);
+      throw new Error(`Parent path not found in config.json: ${configPath}`);
     }
     current = current[part];
   }
@@ -84,7 +84,7 @@ function injectPaletteIntoConfig({
 
     if (!value) {
       throw new Error(
-        `Couleur "${paletteProperty}" introuvable pour le chemin "${configPath}"`
+        `Color "${paletteProperty}" not found for path "${configPath}"`
       );
     }
 

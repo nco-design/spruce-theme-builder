@@ -14,7 +14,7 @@ function resolveWithin(baseDir, ...parts) {
   const resolvedPath = path.resolve(basePath, ...parts);
 
   if (resolvedPath !== basePath && !resolvedPath.startsWith(`${basePath}${path.sep}`)) {
-    throw new Error(`Chemin hors du dossier autorisé : ${resolvedPath}`);
+    throw new Error(`Path is outside the allowed directory: ${resolvedPath}`);
   }
 
   return resolvedPath;

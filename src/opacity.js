@@ -13,10 +13,10 @@ function validateAssetOpacity(asset, configPath) {
     asset.opacity < 0 ||
     asset.opacity > 100
   ) {
-    const assetName = asset["icon-name"] || asset.source || "asset sans nom";
+    const assetName = asset["icon-name"] || asset.source || "unnamed asset";
     throw new Error(
-      `Opacité invalide dans ${configPath} pour "${assetName}" : ` +
-      `${asset.opacity}. Valeur attendue : nombre entre 0 et 100`
+      `Invalid opacity in ${configPath} for "${assetName}": ` +
+      `${asset.opacity}. Expected a number from 0 to 100`
     );
   }
 }
@@ -43,7 +43,7 @@ function applyOpacityToSvg(svgContent, asset) {
   const svgTag = svgContent.match(/<svg\b[^>]*>/i)?.[0];
 
   if (!svgTag) {
-    throw new Error(`Élément <svg> introuvable : ${asset.source}`);
+    throw new Error(`<svg> element not found: ${asset.source}`);
   }
 
   const opacityTag = `<g opacity="${opacityFactor}">`;

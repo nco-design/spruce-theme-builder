@@ -44,7 +44,7 @@ function validateStaticFiles({ outputDir, staticFiles }) {
 
     const fontPath = resolveWithin(outputDir, font);
     if (!isFile(fontPath)) {
-      throw new Error(`Police référencée par config.json introuvable : ${font}`);
+      throw new Error(`Font referenced by config.json not found: ${font}`);
     }
     validatedFonts++;
   }
@@ -54,7 +54,7 @@ function validateStaticFiles({ outputDir, staticFiles }) {
   )) {
     const soundPath = resolveWithin(outputDir, relativePath);
     if (!isFile(soundPath)) {
-      throw new Error(`Fichier audio obligatoire introuvable : ${relativePath}`);
+      throw new Error(`Required audio file not found: ${relativePath}`);
     }
     validatedSounds++;
   }

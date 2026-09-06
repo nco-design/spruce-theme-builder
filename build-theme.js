@@ -16,7 +16,7 @@ function parseOptions(args) {
       const paletteName = args[index + 1];
 
       if (!paletteName || paletteName.startsWith("--")) {
-        throw new Error('L\'option "--palette" nécessite un nom de palette');
+        throw new Error('The "--palette" option requires a palette name');
       }
 
       options.paletteName = paletteName;
@@ -24,7 +24,7 @@ function parseOptions(args) {
       continue;
     }
 
-    throw new Error(`Option inconnue : ${argument}`);
+    throw new Error(`Unknown option: ${argument}`);
   }
 
   return options;
@@ -47,7 +47,7 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error("\nErreur pendant le build :", error);
+  console.error("\nBuild failed:", error);
   process.exitCode = 1;
 });
 

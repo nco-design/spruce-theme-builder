@@ -15,10 +15,10 @@ function validateAssetTypes(config, configPath) {
     }
 
     if (!SUPPORTED_ASSET_TYPES.has(asset.type)) {
-      const assetName = asset["icon-name"] || asset.source || "asset sans nom";
+      const assetName = asset["icon-name"] || asset.source || "unnamed asset";
       throw new Error(
-        `Type d'asset invalide dans ${configPath} pour "${assetName}" : ` +
-        `"${asset.type}". Valeurs acceptées : "background", "button"`
+        `Invalid asset type in ${configPath} for "${assetName}": ` +
+        `"${asset.type}". Accepted values: "background", "button"`
       );
     }
   }
@@ -28,7 +28,7 @@ function readFrontendConfigFile(configPath) {
   const config = readJson(configPath);
 
   if (!Array.isArray(config.icons)) {
-    throw new Error(`Le fichier ${configPath} ne contient pas de tableau "icons"`);
+    throw new Error(`File ${configPath} does not contain an "icons" array`);
   }
 
   validateAssetTypes(config, configPath);
@@ -44,7 +44,7 @@ function readFrontendConfigs(frontendName, projectType, includeOptional = false)
 
   requireDirectory(
     frontendDir,
-    `Configuration frontend introuvable : ${frontendDir}`
+    `Frontend configuration not found: ${frontendDir}`
   );
 
   const configFiles = fs
@@ -64,7 +64,7 @@ function readFrontendConfigs(frontendName, projectType, includeOptional = false)
 
   if (!configFiles.includes(mainConfigName)) {
     throw new Error(
-      `Configuration frontend obligatoire absente : ${path.join(frontendDir, mainConfigName)}`
+      `Required frontend configuration is missing: ${path.join(frontendDir, mainConfigName)}`
     );
   }
 
@@ -82,18 +82,18 @@ function readPalettes(palettesDir, themeFolder, paletteName) {
     .sort();
 
   if (paletteFiles.length === 0) {
-    throw new Error(`Aucune palette trouvée pour le thème "${themeFolder}"`);
+    throw new Error(`No palette found for theme "${themeFolder}"`);
   }
 
   const palettes = paletteFiles.map((fileName) => {
     const palette = readJson(path.join(palettesDir, fileName));
 
     if (!palette["palette-name"]) {
-      throw new Error(`Champ manquant : "palette-name" dans ${fileName}`);
+      throw new Error(`Missing field "palette-name" in ${fileName}`);
     }
 
     if (!palette.description) {
-      throw new Error(`Champ manquant : "description" dans ${fileName}`);
+      throw new Error(`Missing field "description" in ${fileName}`);
     }
 
     return { fileName, palette };
@@ -112,8 +112,8 @@ function readPalettes(palettesDir, themeFolder, paletteName) {
       .map(({ palette }) => palette["palette-name"])
       .join(", ");
     throw new Error(
-      `Palette "${paletteName}" introuvable pour le thème "${themeFolder}". ` +
-      `Palettes disponibles : ${availablePalettes}`
+      `Palette "${paletteName}" not found for theme "${themeFolder}". ` +
+      `Available palettes: ${availablePalettes}`
     );
   }
 
@@ -135,7 +135,7 @@ function readStaticFilesConfig(frontendName) {
     (config["system-fonts"] && !Array.isArray(config["system-fonts"]))
   ) {
     throw new Error(
-      `Configuration de fichiers statiques invalide : ${configPath}`
+      `Invalid static files configuration: ${configPath}`
     );
   }
 
@@ -153,7 +153,7 @@ function readFrontendSettings(frontendName) {
 
   if (!resolutionConfig || typeof resolutionConfig.enabled !== "boolean") {
     throw new Error(
-      `Switch "resolution-config.enabled" absent ou invalide : ${configPath}`
+      `Missing or invalid "resolution-config.enabled" switch: ${configPath}`
     );
   }
 
@@ -168,7 +168,7 @@ function readFrontendSettings(frontendName) {
       typeof resolutionConfig.scale !== "number" ||
       resolutionConfig.scale <= 0
     ) {
-      throw new Error(`Configuration de résolution invalide : ${configPath}`);
+      throw new Error(`Invalid resolution configuration: ${configPath}`);
     }
   }
 
@@ -184,7 +184,7 @@ function loadBuildContext({
 }) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
     throw new Error(
-      "Usage : node build-theme <nom-du-theme> <frontend> <nom-du-pack-d-icones>"
+      "Usage: node build-theme <theme-name> <frontend> <icon-pack-name>"
     );
   }
 
@@ -200,17 +200,17 @@ function loadBuildContext({
     "placeholder-static-files"
   );
 
-  requireDirectory(themeDir, `Le thème "${themeFolder}" n'existe pas`);
-  requireDirectory(themeAssetsDir, `Le dossier assets du thème "${themeFolder}" n'existe pas`);
-  requireDirectory(palettesDir, `Le dossier palettes du thème "${themeFolder}" n'existe pas`);
-  requireDirectory(iconPackDir, `Le pack d'icônes "${iconPackFolder}" n'existe pas`);
+  requireDirectory(themeDir, `Theme "${themeFolder}" does not exist`);
+  requireDirectory(themeAssetsDir, `Assets directory for theme "${themeFolder}" does not exist`);
+  requireDirectory(palettesDir, `Palettes directory for theme "${themeFolder}" does not exist`);
+  requireDirectory(iconPackDir, `Icon pack "${iconPackFolder}" does not exist`);
   requireDirectory(
     iconPackAssetsDir,
-    `Le dossier assets du pack d'icônes "${iconPackFolder}" n'existe pas`
+    `Assets directory for icon pack "${iconPackFolder}" does not exist`
   );
   requireDirectory(
     placeholderDir,
-    `Le dossier de placeholders du frontend "${frontendName}" n'existe pas`
+    `Placeholder directory for frontend "${frontendName}" does not exist`
   );
 
   const themeConfig = readJson(path.join(themeDir, "config.json"));
@@ -221,22 +221,22 @@ function loadBuildContext({
   );
 
   if (!themeConfig["theme-name"]) {
-    throw new Error('Champ manquant : "theme-name" dans le config.json du thème');
+    throw new Error('Missing field "theme-name" in the theme config.json');
   }
 
   if (!themeConfig.description || !themeConfig.Author) {
     throw new Error(
-      'Champs "description" ou "Author" manquants dans le config.json du thème'
+      'Missing "description" or "Author" field in the theme config.json'
     );
   }
 
   if (!iconPackConfig["pack-name"]) {
-    throw new Error('Champ manquant : "pack-name" dans le config.json du pack d\'icônes');
+    throw new Error('Missing field "pack-name" in the icon pack config.json');
   }
 
   if (!iconPackConfig.description || !iconPackConfig.Author) {
     throw new Error(
-      'Champs "description" ou "Author" manquants dans le config.json du pack d\'icônes'
+      'Missing "description" or "Author" field in the icon pack config.json'
     );
   }
 

@@ -1,6 +1,6 @@
-function createColorMap(sourcePalette, palette, projectLabel = "projet") {
+function createColorMap(sourcePalette, palette, projectLabel = "project") {
   if (!palette.properties) {
-    throw new Error('Champ manquant : "properties" dans la palette');
+    throw new Error('Missing field "properties" in palette');
   }
 
   const colorMap = {
@@ -15,13 +15,13 @@ function createColorMap(sourcePalette, palette, projectLabel = "projet") {
   for (const [sourceColor, targetColor] of Object.entries(colorMap)) {
     if (!sourceColor) {
       throw new Error(
-        `Une couleur source est manquante dans le source-palette.json du ${projectLabel}`
+        `A source color is missing from the ${projectLabel} source-palette.json`
       );
     }
 
     if (!targetColor) {
       throw new Error(
-        `Couleur de destination manquante pour la couleur source ${sourceColor}`
+        `Missing target color for source color ${sourceColor}`
       );
     }
   }

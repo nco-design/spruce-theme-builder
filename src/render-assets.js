@@ -37,7 +37,7 @@ async function renderAssets({
 
   for (const icon of frontendConfig.icons) {
     if (!isValidAssetConfig(icon)) {
-      process.emitWarning("Asset ignoré : configuration frontend incomplète");
+      process.emitWarning("Asset skipped: incomplete frontend configuration");
       skippedCount++;
       continue;
     }
@@ -45,7 +45,7 @@ async function renderAssets({
     const sourceFile = resolveSourceFile(assetsDir, icon.source, sourcePrefix);
 
     if (!fs.existsSync(sourceFile)) {
-      process.emitWarning(`Fichier source introuvable : ${icon.source}`);
+      process.emitWarning(`Source file not found: ${icon.source}`);
       skippedCount++;
       continue;
     }
@@ -84,7 +84,7 @@ async function renderAssets({
       }
     } else {
       process.emitWarning(
-        `Format non supporté pour ${icon["icon-name"]} : ${format}`
+        `Unsupported format for ${icon["icon-name"]}: ${format}`
       );
       skippedCount++;
       continue;

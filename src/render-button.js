@@ -29,7 +29,7 @@ function setSvgAttribute(svgTag, attributeName, value) {
 function parseSvgNumber(value, attributeName, sourceName, { minimum } = {}) {
   if (typeof value !== "string") {
     throw new Error(
-      `Attribut "${attributeName}" absent dans le bouton SVG : ${sourceName}`
+      `Missing "${attributeName}" attribute in SVG button: ${sourceName}`
     );
   }
 
@@ -43,8 +43,8 @@ function parseSvgNumber(value, attributeName, sourceName, { minimum } = {}) {
     (Number.isFinite(minimum) && number < minimum)
   ) {
     throw new Error(
-      `Attribut "${attributeName}" invalide dans le bouton SVG ` +
-      `${sourceName} : "${value}"`
+      `Invalid "${attributeName}" attribute in SVG button ` +
+      `${sourceName}: "${value}"`
     );
   }
 
@@ -56,8 +56,8 @@ function parseSvgLength(value, attributeName, sourceName) {
 
   if (number <= 0) {
     throw new Error(
-      `Attribut "${attributeName}" invalide dans le bouton SVG ` +
-      `${sourceName} : "${value}"`
+      `Invalid "${attributeName}" attribute in SVG button ` +
+      `${sourceName}: "${value}"`
     );
   }
 
@@ -129,7 +129,7 @@ function applyUniformTransform(elementTag, transform) {
 }
 
 function transformButtonRectangles({
-  sourceName = "bouton sans nom",
+  sourceName = "unnamed button",
   svgContent,
   targetHeight,
   targetWidth
@@ -294,7 +294,7 @@ async function renderButton({
 
 function parseViewBox(value, sourceName) {
   if (typeof value !== "string") {
-    throw new Error(`Attribut "viewBox" absent dans le bouton SVG : ${sourceName}`);
+    throw new Error(`Missing "viewBox" attribute in SVG button: ${sourceName}`);
   }
 
   const values = value
@@ -309,7 +309,7 @@ function parseViewBox(value, sourceName) {
     values[3] <= 0
   ) {
     throw new Error(
-      `Attribut "viewBox" invalide dans le bouton SVG ${sourceName} : "${value}"`
+      `Invalid "viewBox" attribute in SVG button ${sourceName}: "${value}"`
     );
   }
 
@@ -320,8 +320,8 @@ function parseViewBox(value, sourceName) {
 function validateTargetDimension(value, dimensionName, sourceName) {
   if (!Number.isFinite(value) || value <= 0) {
     throw new Error(
-      `Dimension cible "${dimensionName}" invalide pour le bouton ` +
-      `${sourceName} : ${value}`
+      `Invalid target dimension "${dimensionName}" for button ` +
+      `${sourceName}: ${value}`
     );
   }
 
@@ -329,19 +329,19 @@ function validateTargetDimension(value, dimensionName, sourceName) {
 }
 
 function readButtonGeometry({
-  sourceName = "bouton sans nom",
+  sourceName = "unnamed button",
   svgContent,
   targetHeight,
   targetWidth
 }) {
   if (typeof svgContent !== "string" || !svgContent.trim()) {
-    throw new Error(`Contenu SVG vide pour le bouton : ${sourceName}`);
+    throw new Error(`Empty SVG content for button: ${sourceName}`);
   }
 
   const svgTag = svgContent.match(/<svg\b[^>]*>/i)?.[0];
 
   if (!svgTag) {
-    throw new Error(`Élément <svg> introuvable dans le bouton : ${sourceName}`);
+    throw new Error(`<svg> element not found in button: ${sourceName}`);
   }
 
   return {

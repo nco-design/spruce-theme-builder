@@ -1,5 +1,5 @@
 console.error(
-  "Les packs d'icônes sont maintenant générés avec le thème.\n" +
-  "Usage : node build-theme <nom-du-theme> <frontend> <nom-du-pack-d-icones>"
+  "Icon packs are now generated together with the theme.\n" +
+  "Usage: node build-theme <theme-name> <frontend> <icon-pack-name>"
 );
 process.exitCode = 1;
