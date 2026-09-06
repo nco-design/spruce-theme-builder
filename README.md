@@ -1,3 +1,8 @@
+[![Download v1.0.0](https://img.shields.io/badge/download-v1.0.0-2ea44f?logo=github)](https://github.com/nco-design/spruce-theme-builder/releases/download/v1.0.0/spruce-theme-builder-v1.0.0.zip)
+[![License: GPL v3 or later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
+[![GitHub profile](https://img.shields.io/badge/GitHub-nco--design-181717?logo=github)](https://github.com/nco-design)
+[![PS Modern theme](https://img.shields.io/badge/theme-PS%20Modern-6f42c1?logo=github)](https://github.com/nco-design/PS-modern-theme)
+
 # Project description
 
 This project is a theme builder for SpruceOS. It can support multiple frontends and could be modified to work with OnionOS.
@@ -7,6 +12,9 @@ For each theme, you can add as many color variants as you want in `theme-name/pa
 Once you have a theme, an icon pack for your emulators and app and a few palettes, you can build any combination you want with the builder.
 So, you can work on a dark theme, add a brighter version, a colorful version or any other variant very easily.
 
+Copyright © 2026 nco-design. This project is licensed under the
+[GNU General Public License v3.0 or later](LICENSE).
+
 # Preview
 
 | **Snowy Peak**<br><br><img src="docs/imgs/preview-snowy-peak.png" width="240" alt="Snowy Peak preview"><br><br>`node build-theme example-theme spruceos example-pack --palette snowy-peak`             | **Autumn Nights**<br><br><img src="docs/imgs/preview-autumn-night.png" width="240" alt="Autumn Nights preview"><br><br>`node build-theme example-theme spruceos example-pack --palette autumn-nights` |
@@ -15,6 +23,15 @@ So, you can work on a dark theme, add a brighter version, a colorful version or 
 | **Pink Pearl**<br><br><img src="docs/imgs/preview-pink-pearl.png" width="240" alt="Pink Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette pink-pearl`             | **Blue Pearl**<br><br><img src="docs/imgs/preview-blue-pearl.png" width="240" alt="Blue Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette blue-pearl`            |
 
 # How to install
+
+> [!NOTE]
+> This project requires Node.js and npm to run.
+
+## 1. Download the project
+
+**[Download the latest release](https://github.com/nco-design/spruce-theme-builder/releases/download/v1.0.0/spruce-theme-builder-v1.0.0.zip)** or clone this repository.
+
+## 2. Install project dependencies
 
 ```bash
 npm install

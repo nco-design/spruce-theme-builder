@@ -1,6 +1,7 @@
 {
   "name": "spruce-theme-builder",
   "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "scripts": {
     "build:theme": "node build-theme.js"
