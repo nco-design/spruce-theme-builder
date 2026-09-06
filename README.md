@@ -1,12 +1,3 @@
-# Recommended method
-
-The tool includes a small interactive assistant. Copy this command and follow
-the instructions:
-
-```bash
-node build-theme
-```
-
 # Project description
 
 This project is a theme builder for SpruceOS. It can support multiple frontends and could be modified to work with OnionOS.
@@ -18,10 +9,10 @@ So, you can work on a dark theme, add a brighter version, a colorful version or 
 
 # Preview
 
-| **Snowy Peak**<br><br><img src="docs/imgs/preview-snowy-peak.png" width="240" alt="Snowy Peak preview"><br><br>`node build-theme example-theme spruceos example-pack --palette snowy-peak` | **Autumn Nights**<br><br><img src="docs/imgs/preview-autumn-night.png" width="240" alt="Autumn Nights preview"><br><br>`node build-theme example-theme spruceos example-pack --palette autumn-nights` |
-| :------------ | :------------ |
-| **Emerald Green**<br><br><img src="docs/imgs/preview-emerald-green.png" width="240" alt="Emerald Green preview"><br><br>`node build-theme example-theme spruceos example-pack --palette emerald-green` | **Ruby Red**<br><br><img src="docs/imgs/preview-ruby-red.png" width="240" alt="Ruby Red preview"><br><br>`node build-theme example-theme spruceos example-pack --palette ruby-red` |
-| **Pink Pearl**<br><br><img src="docs/imgs/preview-pink-pearl.png" width="240" alt="Pink Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette pink-pearl` | **Blue Pearl**<br><br><img src="docs/imgs/preview-blue-pearl.png" width="240" alt="Blue Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette blue-pearl` |
+| **Snowy Peak**<br><br><img src="docs/imgs/preview-snowy-peak.png" width="240" alt="Snowy Peak preview"><br><br>`node build-theme example-theme spruceos example-pack --palette snowy-peak`             | **Autumn Nights**<br><br><img src="docs/imgs/preview-autumn-night.png" width="240" alt="Autumn Nights preview"><br><br>`node build-theme example-theme spruceos example-pack --palette autumn-nights` |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Emerald Green**<br><br><img src="docs/imgs/preview-emerald-green.png" width="240" alt="Emerald Green preview"><br><br>`node build-theme example-theme spruceos example-pack --palette emerald-green` | **Ruby Red**<br><br><img src="docs/imgs/preview-ruby-red.png" width="240" alt="Ruby Red preview"><br><br>`node build-theme example-theme spruceos example-pack --palette ruby-red`                    |
+| **Pink Pearl**<br><br><img src="docs/imgs/preview-pink-pearl.png" width="240" alt="Pink Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette pink-pearl`             | **Blue Pearl**<br><br><img src="docs/imgs/preview-blue-pearl.png" width="240" alt="Blue Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette blue-pearl`            |
 
 # How to install
 
@@ -30,6 +21,17 @@ npm install
 ```
 
 # How to use
+
+## Recommended method
+
+The tool includes a small interactive assistant. Copy this command and follow
+the instructions:
+
+```bash
+node build-theme
+```
+
+## Manual method
 
 ```bash
 node build-theme <theme-name> <frontend-name> <icon-pack-name>
