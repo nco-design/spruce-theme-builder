@@ -1,4 +1,5 @@
 const { buildTheme } = require("./src/mains.js");
+const { promptForBuildOptions } = require("./src/interactive-builder.js");
 
 function parseOptions(args) {
   const options = { include720p: false, paletteName: undefined };
@@ -30,6 +31,11 @@ function parseOptions(args) {
 }
 
 async function main() {
+  if (process.argv.length === 2) {
+    await buildTheme(await promptForBuildOptions());
+    return;
+  }
+
   const options = parseOptions(process.argv.slice(5));
 
   await buildTheme({

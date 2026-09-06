@@ -1,3 +1,12 @@
+# Recommended method
+
+The tool includes a small interactive assistant. Copy this command and follow
+the instructions:
+
+```bash
+node build-theme
+```
+
 # Project description
 
 This project is a theme builder for SpruceOS. It can support multiple frontends and could be modified to work with OnionOS.
