@@ -59,7 +59,7 @@
         {
             "icon-name": "app_loading_bg",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/main-background.svg",
+            "source": "/projects/backgrounds/background-flat.svg",
             "width": 640,
             "height": 480,
             "format": "png",
@@ -222,7 +222,7 @@
             "target-path": "/skin",
             "source": "/projects/buttons/list-selected.svg",
             "width": 640,
-            "height": 88,
+            "height": 92,
             "format": "png",
             "type":"button"
         },
@@ -1377,7 +1377,7 @@
         {
         "icon-name": "loading-bg",
         "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/main-background.svg",
+        "source": "/projects/backgrounds/background-flat.svg",
         "width": 508,
         "height": 68,
         "format": "png"
@@ -1439,7 +1439,7 @@
         {
         "icon-name": "menu-sub-bg",
         "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/main-background.svg",
+        "source": "/projects/backgrounds/background-flat.svg",
         "width": 320,
         "height": 300,
         "format": "png"
@@ -1447,7 +1447,7 @@
         {
         "icon-name": "menu-sub-title-bg",
         "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/main-background.svg",
+        "source": "/projects/backgrounds/background-flat.svg",
         "width": 320,
         "height": 36,
         "format": "png"

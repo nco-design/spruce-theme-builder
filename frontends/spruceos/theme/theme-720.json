@@ -211,7 +211,7 @@
             "target-path": "/skin_1280x720",
             "source": "/projects/buttons/list-selected.svg",
             "width": 1280,
-            "height": 132,
+            "height": 138,
             "format": "png",
             "type":"button"
         },
