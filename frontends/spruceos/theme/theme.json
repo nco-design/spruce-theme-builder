@@ -62,7 +62,8 @@
             "source": "/projects/backgrounds/main-background.svg",
             "width": 640,
             "height": 480,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "background-small",
@@ -79,7 +80,8 @@
             "source": "/projects/backgrounds/main-background.svg",
             "width": 640,
             "height": 480,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "background",
@@ -87,7 +89,8 @@
             "source": "/projects/backgrounds/main-background.svg",
             "width": 640,
             "height": 480,
-            "format": "png"
+            "format": "png",
+            "type": "background"
         },
         {
             "icon-name": "barbg",
