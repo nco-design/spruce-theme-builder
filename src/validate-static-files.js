@@ -29,16 +29,16 @@ function collectFontReferences(value, references = new Set()) {
   return references;
 }
 
-function validateStaticFiles({ outputDir, staticFiles }) {
+function validateStaticFiles({ outputDir, systemFonts = [] }) {
   const configPath = resolveWithin(outputDir, "config.json");
   const config = readJson(configPath);
-  const systemFonts = new Set(staticFiles["system-fonts"] || []);
+  const systemFontNames = new Set(systemFonts);
   const fontReferences = collectFontReferences(config);
   let validatedFonts = 0;
   let validatedSounds = 0;
 
   for (const font of fontReferences) {
-    if (systemFonts.has(font)) {
+    if (systemFontNames.has(font)) {
       continue;
     }
 
@@ -49,14 +49,10 @@ function validateStaticFiles({ outputDir, staticFiles }) {
     validatedFonts++;
   }
 
-  for (const relativePath of staticFiles.required.filter(
-    (filePath) => filePath.startsWith("sound/")
-  )) {
-    const soundPath = resolveWithin(outputDir, relativePath);
-    if (!isFile(soundPath)) {
-      throw new Error(`Required audio file not found: ${relativePath}`);
-    }
-    validatedSounds++;
+  const soundDir = resolveWithin(outputDir, "sound");
+  if (fs.existsSync(soundDir) && fs.statSync(soundDir).isDirectory()) {
+    validatedSounds = fs.readdirSync(soundDir, { withFileTypes: true })
+      .filter((entry) => entry.isFile()).length;
   }
 
   return { validatedFonts, validatedSounds };

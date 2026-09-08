@@ -2,51 +2,78 @@ const fs = require("fs");
 const path = require("path");
 const { resolveWithin } = require("./paths.js");
 
-function isFile(filePath) {
-  return fs.existsSync(filePath) && fs.statSync(filePath).isFile();
+function existsAs(filePath, type) {
+  return fs.existsSync(filePath) && fs.statSync(filePath)[type]();
 }
 
-function copyFile({ outputDir, relativePath, sourceDir }) {
-  const sourceFile = resolveWithin(sourceDir, relativePath);
-  const outputFile = resolveWithin(outputDir, relativePath);
+function resolveItemPath(baseDir, item) {
+  return resolveWithin(baseDir, item.name);
+}
 
+function resolveTargetPath(outputDir, item) {
+  const targetDir = item.target.replace(/^\/+/, "");
+  return resolveWithin(outputDir, targetDir, item.name);
+}
+
+function copyFile(sourceFile, outputFile) {
   fs.mkdirSync(path.dirname(outputFile), { recursive: true });
   fs.copyFileSync(sourceFile, outputFile);
-
-  return relativePath;
 }
 
-function copyRequiredFile({ assetsDir, outputDir, placeholderDir, relativePath }) {
-  const projectFile = resolveWithin(assetsDir, relativePath);
+function copyFolder(sourceDir, outputDir) {
+  fs.mkdirSync(path.dirname(outputDir), { recursive: true });
+  fs.cpSync(sourceDir, outputDir, { force: true, recursive: true });
+}
 
-  if (isFile(projectFile)) {
-    return {
-      fallback: false,
-      relativePath: copyFile({
-      outputDir,
-      relativePath,
-      sourceDir: assetsDir
-      })
-    };
+function getItemSources({ assetsDir, item, placeholderDir }) {
+  const projectPath = resolveItemPath(assetsDir, item);
+  const placeholderPath = resolveItemPath(placeholderDir, item);
+  const expectedType = item.type === "folder" ? "isDirectory" : "isFile";
+
+  return {
+    placeholderPath,
+    projectPath,
+    hasPlaceholder: existsAs(placeholderPath, expectedType),
+    hasProject: existsAs(projectPath, expectedType)
+  };
+}
+
+function areStaticItemsAvailable({ assetsDir, items, placeholderDir }) {
+  return items.every((item) => {
+    const sources = getItemSources({ assetsDir, item, placeholderDir });
+    return sources.hasPlaceholder || sources.hasProject;
+  });
+}
+
+function copyStaticItems({ assetsDir, items, outputDir, placeholderDir }) {
+  const copiedItems = [];
+  const fallbackItems = [];
+  const configFiles = [];
+
+  for (const item of items) {
+    const sources = getItemSources({ assetsDir, item, placeholderDir });
+    const outputPath = resolveTargetPath(outputDir, item);
+    const outputRelativePath = path.relative(outputDir, outputPath);
+
+    if (!sources.hasPlaceholder && !sources.hasProject) {
+      throw new Error(`Static item not found in theme or placeholders: ${item.name}`);
+    }
+
+    if (item.type === "folder") {
+      if (sources.hasPlaceholder) copyFolder(sources.placeholderPath, outputPath);
+      if (sources.hasProject) copyFolder(sources.projectPath, outputPath);
+      if (!sources.hasProject) fallbackItems.push(outputRelativePath);
+    } else {
+      const sourcePath = sources.hasProject ? sources.projectPath : sources.placeholderPath;
+      copyFile(sourcePath, outputPath);
+      if (!sources.hasProject) fallbackItems.push(outputRelativePath);
+    }
+
+    copiedItems.push(outputRelativePath);
+    if (item.type === "config-file") configFiles.push(outputRelativePath);
   }
 
-  const placeholderFile = resolveWithin(placeholderDir, relativePath);
-
-  if (isFile(placeholderFile)) {
-    return {
-      fallback: true,
-      relativePath: copyFile({
-      outputDir,
-      relativePath,
-      sourceDir: placeholderDir
-      })
-    };
-  }
-
-  throw new Error(
-    `Required static file not found in the theme or placeholders: ` +
-    relativePath
-  );
+  return { configFiles, copiedItems, fallbackItems };
 }
 
 function findFontFiles(assetsDir) {
@@ -58,80 +85,34 @@ function findFontFiles(assetsDir) {
 
       if (entry.isDirectory()) {
         scanDirectory(entryPath);
-        continue;
-      }
-
-      if (entry.isFile() && /\.(ttf|otf)$/i.test(entry.name)) {
+      } else if (entry.isFile() && /\.(ttf|otf)$/i.test(entry.name)) {
         fontFiles.push(path.relative(assetsDir, entryPath));
       }
     }
   }
 
   scanDirectory(assetsDir);
-
   return fontFiles.sort();
 }
 
-function copyThemeStaticFiles({ assetsDir, outputDir, placeholderDir, staticFiles }) {
-  const copiedFiles = [];
-  const fallbackFiles = [];
+function copyProjectFonts({ assetsDir, copiedItems, outputDir }) {
+  const copiedFonts = [];
 
-  for (const relativePath of staticFiles.required) {
-    const copyResult = copyRequiredFile({
-      assetsDir,
-      outputDir,
-      placeholderDir,
-      relativePath
-    });
-    copiedFiles.push(copyResult.relativePath);
-    if (copyResult.fallback) {
-      fallbackFiles.push(copyResult.relativePath);
-    }
-  }
-
-  for (const relativePath of staticFiles.optional) {
-    const projectFile = resolveWithin(assetsDir, relativePath);
-
-    if (!isFile(projectFile)) {
-      continue;
-    }
-
-    copiedFiles.push(copyFile({
-      outputDir,
-      relativePath,
-      sourceDir: assetsDir
-    }));
-  }
-
-  const projectFonts = findFontFiles(assetsDir);
-  const fontSourceDir = projectFonts.length > 0 ? assetsDir : placeholderDir;
-  const fontFiles = projectFonts.length > 0
-    ? projectFonts
-    : findFontFiles(placeholderDir);
-
-  if (fontFiles.length === 0) {
-    throw new Error(
-      "No .ttf or .otf font found in the theme or placeholders"
+  for (const relativePath of findFontFiles(assetsDir)) {
+    if (copiedItems.includes(relativePath)) continue;
+    copyFile(
+      resolveWithin(assetsDir, relativePath),
+      resolveWithin(outputDir, relativePath)
     );
+    copiedFonts.push(relativePath);
   }
 
-  for (const relativePath of fontFiles) {
-    if (copiedFiles.includes(relativePath)) {
-      continue;
-    }
-
-    copiedFiles.push(copyFile({
-      outputDir,
-      relativePath,
-      sourceDir: fontSourceDir
-    }));
-
-    if (fontSourceDir === placeholderDir) {
-      fallbackFiles.push(relativePath);
-    }
-  }
-
-  return { copiedFiles, fallbackFiles };
+  return copiedFonts;
 }
 
-module.exports = { copyThemeStaticFiles, findFontFiles };
+module.exports = {
+  areStaticItemsAvailable,
+  copyProjectFonts,
+  copyStaticItems,
+  findFontFiles
+};

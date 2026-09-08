@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { areStaticItemsAvailable } = require("./copy-static-files.js");
 const readJson = require("./read-json.js");
 const { validateAssetOpacity } = require("./opacity.js");
 const { ROOT_DIR, requireDirectory, resolveWithin } = require("./paths.js");
@@ -36,41 +37,24 @@ function readFrontendConfigFile(configPath) {
   return config;
 }
 
-function readFrontendConfigs(frontendName, projectType, includeOptional = false) {
+function readFrontendConfigs(frontendName, projectType, configNames) {
   const frontendsRoot = path.join(ROOT_DIR, "frontends");
   const frontendDir = resolveWithin(frontendsRoot, frontendName, projectType);
-  const mainConfigName = `${projectType}.json`;
-  const optionalConfigPattern = new RegExp(`^${projectType}-.+\\.json$`, "i");
 
   requireDirectory(
     frontendDir,
     `Frontend configuration not found: ${frontendDir}`
   );
 
-  const configFiles = fs
-    .readdirSync(frontendDir, { withFileTypes: true })
-    .filter(
-      (entry) =>
-        entry.isFile() &&
-        (entry.name === mainConfigName ||
-          (includeOptional && optionalConfigPattern.test(entry.name)))
-    )
-    .map((entry) => entry.name)
-    .sort((left, right) => {
-      if (left === mainConfigName) return -1;
-      if (right === mainConfigName) return 1;
-      return left.localeCompare(right);
-    });
-
-  if (!configFiles.includes(mainConfigName)) {
-    throw new Error(
-      `Required frontend configuration is missing: ${path.join(frontendDir, mainConfigName)}`
-    );
+  if (!Array.isArray(configNames) || configNames.length === 0) {
+    throw new Error(`No ${projectType} configuration files were declared for ${frontendName}`);
   }
+
+  const configFiles = [...new Set(configNames)];
 
   return configFiles.map((fileName) => ({
     fileName,
-    config: readFrontendConfigFile(path.join(frontendDir, fileName))
+    config: readFrontendConfigFile(resolveWithin(frontendDir, fileName))
   }));
 }
 
@@ -120,28 +104,6 @@ function readPalettes(palettesDir, themeFolder, paletteName) {
   return [selectedPalette];
 }
 
-function readStaticFilesConfig(frontendName) {
-  const configPath = resolveWithin(
-    path.join(ROOT_DIR, "frontends"),
-    frontendName,
-    "theme",
-    "static-files.json"
-  );
-  const config = readJson(configPath);
-
-  if (
-    !Array.isArray(config.required) ||
-    !Array.isArray(config.optional) ||
-    (config["system-fonts"] && !Array.isArray(config["system-fonts"]))
-  ) {
-    throw new Error(
-      `Invalid static files configuration: ${configPath}`
-    );
-  }
-
-  return config;
-}
-
 function readFrontendSettings(frontendName) {
   const configPath = resolveWithin(
     path.join(ROOT_DIR, "frontends"),
@@ -149,26 +111,76 @@ function readFrontendSettings(frontendName) {
     "frontend.json"
   );
   const config = readJson(configPath);
-  const resolutionConfig = config["resolution-config"];
+  const options = config.options;
 
-  if (!resolutionConfig || typeof resolutionConfig.enabled !== "boolean") {
-    throw new Error(
-      `Missing or invalid "resolution-config.enabled" switch: ${configPath}`
-    );
+  function validateConfigName(value, property, label, required = false) {
+    if (value === undefined && !required) return;
+    if (typeof value !== "string" || !value) {
+      throw new Error(`Invalid "${property}" for ${label}: ${configPath}`);
+    }
   }
 
-  if (resolutionConfig.enabled) {
-    const requiredStrings = ["source-file", "manual-file", "output-file"];
-    const invalidString = requiredStrings.some(
-      (key) => typeof resolutionConfig[key] !== "string" || !resolutionConfig[key]
-    );
+  function validateStaticItems(items, label) {
+    if (!Array.isArray(items)) {
+      throw new Error(`Invalid "static-files" list for ${label}: ${configPath}`);
+    }
+
+    for (const item of items) {
+      if (!item || typeof item !== "object" || Array.isArray(item)) {
+        throw new Error(`Invalid static item for ${label}: ${configPath}`);
+      }
+      if (!["folder", "static-file", "config-file"].includes(item.type)) {
+        throw new Error(`Invalid static item type for ${label}: ${configPath}`);
+      }
+      if (typeof item.name !== "string" || !item.name || typeof item.target !== "string") {
+        throw new Error(`Invalid static item path for ${label}: ${configPath}`);
+      }
+    }
+  }
+
+  validateConfigName(config["theme-config"], "theme-config", "frontend", true);
+  validateConfigName(config["icon-pack-config"], "icon-pack-config", "frontend", true);
+  validateStaticItems(config["static-files"], "frontend");
+  if (
+    config["system-fonts"] !== undefined &&
+    (!Array.isArray(config["system-fonts"]) ||
+      config["system-fonts"].some((font) => typeof font !== "string" || !font))
+  ) {
+    throw new Error(`Invalid "system-fonts" list: ${configPath}`);
+  }
+
+  if (!options || typeof options !== "object" || Array.isArray(options)) {
+    throw new Error(`Missing or invalid "options" table: ${configPath}`);
+  }
+
+  for (const [optionName, option] of Object.entries(options)) {
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(optionName) || optionName === "palette") {
+      throw new Error(`Invalid frontend option name "${optionName}": ${configPath}`);
+    }
+
+    if (!option || typeof option !== "object" || Array.isArray(option)) {
+      throw new Error(`Invalid frontend option "${optionName}": ${configPath}`);
+    }
+
+    validateConfigName(option["theme-config"], "theme-config", `frontend option "${optionName}"`);
+    validateConfigName(option["icon-pack-config"], "icon-pack-config", `frontend option "${optionName}"`);
+    validateStaticItems(option["static-files"] ?? [], `frontend option "${optionName}"`);
+    const declaredFileCount =
+      Number(option["theme-config"] !== undefined) +
+      Number(option["icon-pack-config"] !== undefined) +
+      (option["static-files"] ?? []).length;
+
+    if (declaredFileCount === 0) {
+      throw new Error(
+        `Frontend option "${optionName}" does not declare any files: ${configPath}`
+      );
+    }
 
     if (
-      invalidString ||
-      typeof resolutionConfig.scale !== "number" ||
-      resolutionConfig.scale <= 0
+      option.label !== undefined &&
+      (typeof option.label !== "string" || !option.label.trim())
     ) {
-      throw new Error(`Invalid resolution configuration: ${configPath}`);
+      throw new Error(`Invalid label for frontend option "${optionName}": ${configPath}`);
     }
   }
 
@@ -178,8 +190,8 @@ function readFrontendSettings(frontendName) {
 function loadBuildContext({
   themeFolder,
   frontendName,
+  frontendOptions = [],
   iconPackFolder,
-  include720p = false,
   paletteName
 }) {
   if (!themeFolder || !frontendName || !iconPackFolder) {
@@ -219,6 +231,35 @@ function loadBuildContext({
   const iconPackSourcePalette = readJson(
     path.join(iconPackDir, "source-palette.json")
   );
+  const frontendSettings = readFrontendSettings(frontendName);
+  const selectedFrontendOptions = frontendOptions.map((optionName) => {
+    const option = frontendSettings.options[optionName];
+    if (!option) {
+      const availableOptions = Object.keys(frontendSettings.options)
+        .map((name) => `--${name}`)
+        .join(", ");
+      throw new Error(
+        `Frontend option "--${optionName}" is not available for "${frontendName}". ` +
+        `Available options: ${availableOptions || "none"}`
+      );
+    }
+    return { name: optionName, ...option };
+  });
+  const staticItems = [
+    ...frontendSettings["static-files"],
+    ...selectedFrontendOptions.flatMap((option) => option["static-files"] ?? [])
+  ];
+
+  if (!areStaticItemsAvailable({
+    assetsDir: themeAssetsDir,
+    items: staticItems,
+    placeholderDir
+  })) {
+    throw new Error(
+      `Selected frontend option is not available for theme "${themeFolder}": ` +
+      "a required static item is missing"
+    );
+  }
 
   if (!themeConfig["theme-name"]) {
     throw new Error('Missing field "theme-name" in the theme config.json');
@@ -242,22 +283,41 @@ function loadBuildContext({
 
   return {
     frontendName,
-    frontendSettings: readFrontendSettings(frontendName),
+    frontendOptions: selectedFrontendOptions,
     iconPackAssetsDir,
     iconPackConfig,
     iconPackFolder,
-    iconPackFrontends: readFrontendConfigs(frontendName, "icon-pack", include720p),
+    iconPackFrontends: readFrontendConfigs(
+      frontendName,
+      "icon-pack",
+      [
+        frontendSettings["icon-pack-config"],
+        ...selectedFrontendOptions.flatMap((option) => option["icon-pack-config"] ?? [])
+      ]
+    ),
     iconPackSourcePalette,
-    include720p,
     palettes: readPalettes(palettesDir, themeFolder, paletteName),
     placeholderDir,
-    staticFiles: readStaticFilesConfig(frontendName),
+    staticItems,
+    systemFonts: frontendSettings["system-fonts"] ?? [],
     themeAssetsDir,
     themeConfig,
     themeFolder,
-    themeFrontends: readFrontendConfigs(frontendName, "theme", include720p),
+    themeFrontends: readFrontendConfigs(
+      frontendName,
+      "theme",
+      [
+        frontendSettings["theme-config"],
+        ...selectedFrontendOptions.flatMap((option) => option["theme-config"] ?? [])
+      ]
+    ),
     themeSourcePalette
   };
 }
 
-module.exports = { loadBuildContext, readFrontendConfigs, validateAssetTypes };
+module.exports = {
+  loadBuildContext,
+  readFrontendConfigs,
+  readFrontendSettings,
+  validateAssetTypes
+};

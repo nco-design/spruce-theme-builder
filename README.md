@@ -63,7 +63,10 @@ Example:
 node build-theme example-theme spruceos example-pack
 ```
 
-With optional 720p assets:
+Front-end-specific options are declared in `frontends/<frontend>/frontend.json`.
+For example, SpruceOS declares `--720p`. This option adds the front-end's
+720p profiles and configuration template; a theme may override that template
+with a file of the same name in its `assets/` directory:
 
 ```bash
 node build-theme example-theme spruceos example-pack --720p
@@ -75,7 +78,7 @@ Build a single palette:
 node build-theme example-theme spruceos example-pack --palette snowy-peak
 ```
 
-Options can be combined:
+Front-end options can be combined with `--palette`:
 
 ```bash
 node build-theme example-theme spruceos example-pack --palette snowy-peak --720p

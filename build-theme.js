@@ -1,16 +1,13 @@
 const { buildTheme } = require("./src/mains.js");
 const { promptForBuildOptions } = require("./src/interactive-builder.js");
+const { readFrontendSettings } = require("./src/load-configs.js");
 
-function parseOptions(args) {
-  const options = { include720p: false, paletteName: undefined };
+function parseOptions(args, availableFrontendOptions = []) {
+  const options = { frontendOptions: [], paletteName: undefined };
+  const frontendOptionNames = new Set(availableFrontendOptions);
 
   for (let index = 0; index < args.length; index += 1) {
     const argument = args[index];
-
-    if (argument === "--720p") {
-      options.include720p = true;
-      continue;
-    }
 
     if (argument === "--palette") {
       const paletteName = args[index + 1];
@@ -21,6 +18,16 @@ function parseOptions(args) {
 
       options.paletteName = paletteName;
       index += 1;
+      continue;
+    }
+
+    const frontendOptionName = argument.startsWith("--")
+      ? argument.slice(2)
+      : "";
+    if (frontendOptionNames.has(frontendOptionName)) {
+      if (!options.frontendOptions.includes(frontendOptionName)) {
+        options.frontendOptions.push(frontendOptionName);
+      }
       continue;
     }
 
@@ -36,11 +43,22 @@ async function main() {
     return;
   }
 
-  const options = parseOptions(process.argv.slice(5));
+  const frontendName = process.argv[3];
+  if (!process.argv[2] || !frontendName || !process.argv[4]) {
+    throw new Error(
+      "Usage: node build-theme <theme-name> <frontend> <icon-pack-name> [options]"
+    );
+  }
+
+  const frontendSettings = readFrontendSettings(frontendName);
+  const options = parseOptions(
+    process.argv.slice(5),
+    Object.keys(frontendSettings.options)
+  );
 
   await buildTheme({
     themeFolder: process.argv[2],
-    frontendName: process.argv[3],
+    frontendName,
     iconPackFolder: process.argv[4],
     ...options
   });

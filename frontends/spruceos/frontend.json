@@ -1,9 +1,36 @@
 {
-  "resolution-config": {
-    "enabled": true,
-    "source-file": "config.json",
-    "manual-file": "config_1280x720.json",
-    "output-file": "config_1280x720.json",
-    "scale": 1.5
+  "theme-config": "theme.json",
+  "icon-pack-config": "icon-pack.json",
+  "system-fonts": ["AdobeBlank.ttc"],
+  "static-files": [
+    {
+      "type": "folder",
+      "name": "sound",
+      "target": "/"
+    },
+    {
+      "type": "config-file",
+      "name": "config.json",
+      "target": "/"
+    },
+    {
+      "type": "static-file",
+      "name": "nunwen.ttf",
+      "target": "/"
+    }
+  ],
+  "options": {
+    "720p": {
+      "label": "Include optional 720p assets",
+      "theme-config": "theme-720.json",
+      "icon-pack-config": "icon-pack-720.json",
+      "static-files": [
+        {
+          "type": "config-file",
+          "name": "config_1280x720.json",
+          "target": "/"
+        }
+      ]
+    }
   }
 }

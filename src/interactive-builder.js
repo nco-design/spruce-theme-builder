@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline/promises");
 const { stdin, stdout } = require("process");
+const { areStaticItemsAvailable } = require("./copy-static-files.js");
+const { readFrontendSettings } = require("./load-configs.js");
 const { ROOT_DIR } = require("./paths.js");
 
 function listDirectories(directoryPath) {
@@ -24,6 +26,33 @@ function listPaletteNames(themeFolder) {
     .filter((entry) => entry.isFile() && path.extname(entry.name) === ".json")
     .map((entry) => path.basename(entry.name, ".json"))
     .sort((left, right) => left.localeCompare(right, "en", { sensitivity: "base" }));
+}
+
+function listAvailableFrontendOptions(frontendName, themeFolder) {
+  const settings = readFrontendSettings(frontendName);
+  const themeAssetsDir = path.join(ROOT_DIR, "projects", "themes", themeFolder, "assets");
+  const frontendDir = path.join(ROOT_DIR, "frontends", frontendName);
+
+  return Object.entries(settings.options)
+    .filter(([, option]) => {
+      const requiredFiles = [
+        ...(option["theme-config"] ? [path.join(frontendDir, "theme", option["theme-config"])] : []),
+        ...(option["icon-pack-config"] ? [path.join(frontendDir, "icon-pack", option["icon-pack-config"])] : [])
+      ];
+      return requiredFiles.every((file) => fs.existsSync(file) && fs.statSync(file).isFile()) &&
+        areStaticItemsAvailable({
+          assetsDir: themeAssetsDir,
+          items: [
+            ...settings["static-files"],
+            ...(option["static-files"] ?? [])
+          ],
+          placeholderDir: path.join(frontendDir, "placeholder-static-files")
+        });
+    })
+    .map(([name, option]) => ({
+      label: option.label || `Include --${name}`,
+      name
+    }));
 }
 
 async function chooseFromMenu(prompt, choices, interface_) {
@@ -105,12 +134,17 @@ async function promptForBuildOptions({ input = stdin, output = stdout } = {}) {
       interface_
     );
 
-    const include720p = await confirm("Include optional 720p assets?", interface_);
+    const frontendOptions = [];
+    for (const option of listAvailableFrontendOptions(frontendName, themeFolder)) {
+      if (await confirm(`${option.label}?`, interface_)) {
+        frontendOptions.push(option.name);
+      }
+    }
 
     return {
       frontendName,
+      frontendOptions,
       iconPackFolder,
-      include720p,
       paletteName,
       themeFolder
     };
@@ -123,6 +157,7 @@ module.exports = {
   chooseFromMenu,
   confirm,
   listDirectories,
+  listAvailableFrontendOptions,
   listPaletteNames,
   promptForBuildOptions
 };

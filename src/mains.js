@@ -1,8 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const { createColorMap } = require("./colors.js");
-const { copyThemeStaticFiles } = require("./copy-static-files.js");
-const { prepareResolutionConfig } = require("./generate-resolution-config.js");
+const {
+  copyProjectFonts,
+  copyStaticItems
+} = require("./copy-static-files.js");
 const { injectPaletteIntoConfig } = require("./inject-config.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
@@ -40,6 +42,9 @@ async function buildTheme(options) {
   console.log(`Frontend    : ${context.frontendName}`);
   console.log(`Icon pack   : ${context.iconPackFolder}`);
   console.log(
+    `Options      : ${context.frontendOptions.map((option) => `--${option.name}`).join(", ") || "none"}`
+  );
+  console.log(
     `Theme profiles    : ${context.themeFrontends.map((item) => item.fileName).join(", ")}`
   );
   console.log(
@@ -73,57 +78,40 @@ async function buildTheme(options) {
     console.log(`\nPalette: ${palette["palette-name"]}`);
     console.log(`Output : ${outputDir}`);
 
-    const staticCopyResult = copyThemeStaticFiles({
+    const staticCopyResult = copyStaticItems({
       assetsDir: context.themeAssetsDir,
+      items: context.staticItems,
       outputDir,
-      placeholderDir: context.placeholderDir,
-      staticFiles: context.staticFiles
+      placeholderDir: context.placeholderDir
     });
-    console.log(`Static files: ${staticCopyResult.copiedFiles.join(", ")}`);
-    for (const fallbackFile of staticCopyResult.fallbackFiles) {
+    const copiedFonts = copyProjectFonts({
+      assetsDir: context.themeAssetsDir,
+      copiedItems: staticCopyResult.copiedItems,
+      outputDir
+    });
+    console.log(
+      `Static files: ${[...staticCopyResult.copiedItems, ...copiedFonts].join(", ")}`
+    );
+    for (const fallbackFile of staticCopyResult.fallbackItems) {
       console.log(`Fallback used: ${fallbackFile}`);
     }
 
-    const injectedConfigValues = injectPaletteIntoConfig({
-      frontendName: context.frontendName,
-      iconPackConfig: context.iconPackConfig,
-      outputDir,
-      palette,
-      themeConfig: context.themeConfig
-    });
-    console.log(`Colors injected: ${injectedConfigValues}`);
-
-    const resolutionConfig = context.include720p
-      ? prepareResolutionConfig({
-          assetsDir: context.themeAssetsDir,
-          outputDir,
-          settings: context.frontendSettings["resolution-config"]
-        })
-      : { enabled: false };
-
-    if (resolutionConfig.enabled) {
-      injectPaletteIntoConfig({
-        configFileName: resolutionConfig.fileName,
+    let injectedConfigValues = 0;
+    for (const configFileName of staticCopyResult.configFiles) {
+      injectedConfigValues += injectPaletteIntoConfig({
+        configFileName,
         frontendName: context.frontendName,
         iconPackConfig: context.iconPackConfig,
         outputDir,
         palette,
         themeConfig: context.themeConfig
       });
-      console.log(
-        `HD configuration: ${resolutionConfig.fileName} (${resolutionConfig.mode})`
-      );
-    } else {
-      console.log(
-        context.include720p
-          ? "HD configuration: disabled for this frontend"
-          : "HD configuration: not requested"
-      );
     }
+    console.log(`Colors injected: ${injectedConfigValues}`);
 
     const staticValidation = validateStaticFiles({
       outputDir,
-      staticFiles: context.staticFiles
+      systemFonts: context.systemFonts
     });
     console.log(
       `Validated files: ${staticValidation.validatedFonts} font(s), ` +

@@ -69,8 +69,10 @@ A theme build requires three arguments:
 node build-theme <theme-name> <frontend-name> <icon-pack-name>
 ```
 
-The default build only includes the main resolution. Add `--720p` to include
-the optional 720p theme assets, icon-pack assets and resolution config:
+The default build includes only the main profiles. Additional build options are
+declared by each front-end in `frontend.json`. For example, the SpruceOS
+front-end declares `--720p`, which adds its 720p theme profile, icon-pack profile
+and configuration template:
 
 ```bash
 node build-theme <theme-name> <frontend-name> <icon-pack-name> --720p
@@ -83,7 +85,10 @@ palette matching its `palette-name`:
 node build-theme <theme-name> <frontend-name> <icon-pack-name> --palette <palette-name>
 ```
 
-`--palette` and `--720p` can be combined.
+Front-end options and `--palette` can be combined. The builder never generates
+or scales configuration values automatically; it copies the configuration
+template declared by the front-end, with an optional same-name override from the
+theme assets.
 
 Example:
 
