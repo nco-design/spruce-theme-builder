@@ -1,7 +1,6 @@
 {
   "theme-config": "theme.json",
   "icon-pack-config": "icon-pack.json",
-  "system-fonts": ["AdobeBlank.ttc"],
   "static-files": [
     {
       "type": "folder",
@@ -14,7 +13,7 @@
       "target": "/"
     },
     {
-      "type": "static-file",
+      "type": "font",
       "name": "nunwen.ttf",
       "target": "/"
     }

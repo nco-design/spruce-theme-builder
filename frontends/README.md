@@ -86,15 +86,13 @@ For example, SpruceOS declares its default build and its `--720p` option like th
 | `icon-pack-config` | One asset map loaded from the front-end's `icon-pack/` directory. |
 | `static-files` | Files and folders copied into the build. Option entries are added to the default entries. |
 
-`static-files` entries use `folder`, `static-file` or `config-file`. A `folder` is copied recursively; a `static-file` is copied unchanged; and a `config-file` also receives palette injection. For every item, a same-name path in the theme's `assets/` directory overrides the front-end placeholder. Folders merge recursively, with the theme files taking priority.
+`static-files` entries use `folder`, `static-file`, `font` or `config-file`. A `folder` is copied recursively; `static-file` and `font` are copied unchanged; and a `config-file` also receives palette injection. For every item, a same-name path in the theme's `assets/` directory overrides the front-end placeholder. Folders merge recursively, with the theme files taking priority.
 
 The builder does not infer filenames from an option name and does not generate missing files. For `--720p`, `theme-720.json`, `icon-pack-720.json` and the `config_1280x720.json` placeholder must exist. A contributor can add `--960p` or `--other-setting` by adding another entry and its files, without modifying JavaScript.
 
 ## Static files and placeholders
 
 Every `static-files` item is sourced from `placeholder-static-files/` by default. A matching item in the theme's `assets/` folder takes precedence. Project `.ttf` and `.otf` files are also copied automatically so a theme can add a custom font.
-
-`system-fonts` is an optional root property in `frontend.json`. It lists font names referenced by a configuration that are supplied by the target firmware and therefore must not be present in the build.
 
 The output configuration and every referenced non-system font are validated before asset rendering begins.
 

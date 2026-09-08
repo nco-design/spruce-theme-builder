@@ -129,7 +129,7 @@ function readFrontendSettings(frontendName) {
       if (!item || typeof item !== "object" || Array.isArray(item)) {
         throw new Error(`Invalid static item for ${label}: ${configPath}`);
       }
-      if (!["folder", "static-file", "config-file"].includes(item.type)) {
+      if (!["folder", "static-file", "config-file", "font"].includes(item.type)) {
         throw new Error(`Invalid static item type for ${label}: ${configPath}`);
       }
       if (typeof item.name !== "string" || !item.name || typeof item.target !== "string") {
@@ -141,14 +141,6 @@ function readFrontendSettings(frontendName) {
   validateConfigName(config["theme-config"], "theme-config", "frontend", true);
   validateConfigName(config["icon-pack-config"], "icon-pack-config", "frontend", true);
   validateStaticItems(config["static-files"], "frontend");
-  if (
-    config["system-fonts"] !== undefined &&
-    (!Array.isArray(config["system-fonts"]) ||
-      config["system-fonts"].some((font) => typeof font !== "string" || !font))
-  ) {
-    throw new Error(`Invalid "system-fonts" list: ${configPath}`);
-  }
-
   if (!options || typeof options !== "object" || Array.isArray(options)) {
     throw new Error(`Missing or invalid "options" table: ${configPath}`);
   }
@@ -299,7 +291,6 @@ function loadBuildContext({
     palettes: readPalettes(palettesDir, themeFolder, paletteName),
     placeholderDir,
     staticItems,
-    systemFonts: frontendSettings["system-fonts"] ?? [],
     themeAssetsDir,
     themeConfig,
     themeFolder,

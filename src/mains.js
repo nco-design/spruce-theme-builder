@@ -9,7 +9,6 @@ const { injectPaletteIntoConfig } = require("./inject-config.js");
 const { loadBuildContext } = require("./load-configs.js");
 const { ROOT_DIR, resolveWithin } = require("./paths.js");
 const { renderAssets } = require("./render-assets.js");
-const { validateStaticFiles } = require("./validate-static-files.js");
 
 async function renderProfiles({
   assetsDir,
@@ -108,15 +107,6 @@ async function buildTheme(options) {
       });
     }
     console.log(`Colors injected: ${injectedConfigValues}`);
-
-    const staticValidation = validateStaticFiles({
-      outputDir,
-      systemFonts: context.systemFonts
-    });
-    console.log(
-      `Validated files: ${staticValidation.validatedFonts} font(s), ` +
-      `${staticValidation.validatedSounds} sound file(s)`
-    );
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,
