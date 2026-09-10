@@ -1,51 +1,68 @@
 {
-    "name": "Spruce",
-    "author": "tenlevels",
-    "description": "spruce theme for a30",
+    "name": "PS-modern-deep-blue",
+    "description": "Modern theme. Deep blue palette ; reminiscent of \"Playstation\" blue. Square and monochrome boxes are used for emulator selection.",
+    "author": "Nicolas C",
+    "generatedNotice": "Generated with spruce-theme-builder. Learn more at https://github.com/nco-design/",
     "batteryPercentage": {
-        "color": "#EBDBB2",
-        "font": "nunwen.ttf",
-        "size": 27
+        "font": "Roboto-Regular-patched.ttf",
+        "size": 27,
+        "color": "#ffffff"
     },
     "title": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "size": 37,
-        "color": "#EBDBB2"
+        "color": "#ffffff"
     },
     "hint": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "size": 37,
-        "color": "#EBDBB2"
+        "color": "#ffffff"
     },
     "currentpage": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "size": 33,
-        "color": "#EBDBB2"
+        "color": "#000064"
     },
     "total": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "size": 33,
-        "color": "#D65D0E"
+        "color": "#000064"
     },
     "grid": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "grid1x4": 37,
         "grid3x4": 27,
-        "color": "#7C6F64",
-        "selectedcolor": "#FBF1C7"
+        "color": "#40408b",
+        "selectedcolor": "#ffffff"
     },
     "list": {
-        "font": "nunwen.ttf",
+        "font": "Roboto-Regular-patched.ttf",
         "size": 36,
-        "color": "#FBF1C7",
-        "selectedcolor": "#FBF1C7"
+        "color": "#40408b",
+        "selectedcolor": "#ffffff"
     },
-    "bindOverMiyooTheme": true,
     "recentsEnabled": true,
-    "topBarInitialXOffset": 90,
-    "setTopBarTextToGameSelection": true,
+    "topBarInitialXOffset": 30,
+    "setTopBarTextToGameSelection": false,
     "fullScreenGridGameMenuResizeType": "FIT",
     "mainMenuTitle": "",
-    "mainMenuColCount": 5,
-    "displayVolumeNumbers": true
+    "skipMainMenu": false,
+    "mergeMainMenuAndGameMenu": false,
+    "showExtrasInSystemSelectMenu": false,
+    "gameSystemSelectColCount": 4,
+    "gameSystemSelectRowCount": 1,
+    "systemSelectGridResizeType": "FIT",
+    "gridSystemSelectImgWidth": 240,
+    "gridSystemSelectImgHeight": 240,
+    "systemSelectGridWrapAroundSingleRow": false,
+    "gridBgOffsetToImageOffset": true,
+    "gameSelectionViewType": "TEXT_AND_IMAGE",
+    "systemSelectShowTextGridMode": false,
+    "mainMenuShowTextGridMode": false,
+    "systemSelectViewType": "CAROUSEL",
+    "gameSystemSelectCarouselColCount": 4,
+    "carouselSystemSelectPrimaryImgWidth": 30,
+    "carouselSystemXPad": 24,
+    "systemSelectionSetBottomBarText": true,
+    "systemSelectionSetTopBarText": false
 }
