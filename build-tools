@@ -1,0 +1,55 @@
+const readline = require("readline/promises");
+const { stdin: input, stdout: output } = require("process");
+const { runGeneratePreview } = require("./tools/generate-preview");
+
+const TOOLS = [
+  {
+    command: "generate-preview",
+    description: "Generate assets/preview.svg for a theme project.",
+    run: runGeneratePreview
+  }
+];
+
+async function chooseTool() {
+  const terminal = readline.createInterface({ input, output });
+
+  console.log("Available tools:\n");
+  TOOLS.forEach((tool, index) => {
+    console.log(`${index + 1}. ${tool.command} — ${tool.description}`);
+  });
+  console.log("\n0. Exit");
+
+  try {
+    const answer = (await terminal.question("\nChoose a tool: ")).trim();
+    const selectedIndex = Number(answer) - 1;
+
+    if (answer === "0" || answer.toLowerCase() === "q") return null;
+    if (!Number.isInteger(selectedIndex) || !TOOLS[selectedIndex]) {
+      throw new Error("Choose a tool from the list.");
+    }
+
+    return TOOLS[selectedIndex];
+  } finally {
+    terminal.close();
+  }
+}
+
+async function main() {
+  const command = process.argv[2];
+  const tool = command
+    ? TOOLS.find((candidate) => candidate.command === command)
+    : await chooseTool();
+
+  if (command && !tool) {
+    throw new Error(`Unknown tool "${command}". Run "node build-tools" to see the available tools.`);
+  }
+
+  if (!tool) return;
+
+  await tool.run();
+}
+
+main().catch((error) => {
+  console.error(`\nError: ${error.message}`);
+  process.exitCode = 1;
+});
