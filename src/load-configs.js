@@ -217,7 +217,7 @@ function loadBuildContext({
     `Placeholder directory for frontend "${frontendName}" does not exist`
   );
 
-  const themeConfig = readJson(path.join(themeDir, "config.json"));
+  const themeConfig = readJson(path.join(themeDir, "project-config.json"));
   const iconPackConfig = readJson(path.join(iconPackDir, "config.json"));
   const themeSourcePalette = readJson(path.join(themeDir, "source-palette.json"));
   const iconPackSourcePalette = readJson(
@@ -254,12 +254,12 @@ function loadBuildContext({
   }
 
   if (!themeConfig["theme-name"]) {
-    throw new Error('Missing field "theme-name" in the theme config.json');
+    throw new Error('Missing field "theme-name" in project-config.json');
   }
 
   if (!themeConfig.description || !themeConfig.Author) {
     throw new Error(
-      'Missing "description" or "Author" field in the theme config.json'
+      'Missing "description" or "Author" field in project-config.json'
     );
   }
 

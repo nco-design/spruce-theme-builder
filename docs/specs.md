@@ -29,7 +29,7 @@ spruce-theme-builder/
 |-- projects/                      Source projects
 |   |-- themes/                    Master projects and color palettes
 |   |   `-- example-theme/
-|   |       |-- config.json        Theme information
+|   |       |-- project-config.json Theme information
 |   |       |-- source-palette.json
 |   |       |                       Source colors used by the theme SVG files
 |   |       |-- assets/            Shared SVG source files
@@ -96,7 +96,7 @@ Example:
 node build-theme PS-modern spruceos ic-squares-monochrome
 ```
 
-## Theme config.json
+## Theme project-config.json
 
 ```json
 {
