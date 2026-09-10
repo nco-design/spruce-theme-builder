@@ -135,6 +135,10 @@ function readFrontendSettings(frontendName) {
       if (typeof item.name !== "string" || !item.name || typeof item.target !== "string") {
         throw new Error(`Invalid static item path for ${label}: ${configPath}`);
       }
+      if (item.type === "config-file" &&
+        (typeof item.id !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(item.id))) {
+        throw new Error(`Invalid config-file id for ${label}: ${configPath}`);
+      }
     }
   }
 
@@ -241,6 +245,16 @@ function loadBuildContext({
     ...frontendSettings["static-files"],
     ...selectedFrontendOptions.flatMap((option) => option["static-files"] ?? [])
   ];
+
+  const configItemIds = new Set();
+  for (const item of staticItems.filter(({ type }) => type === "config-file")) {
+    if (configItemIds.has(item.id)) {
+      throw new Error(
+        `Duplicate config-file id "${item.id}" for frontend "${frontendName}"`
+      );
+    }
+    configItemIds.add(item.id);
+  }
 
   if (!areStaticItemsAvailable({
     assetsDir: themeAssetsDir,

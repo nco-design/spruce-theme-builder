@@ -16,7 +16,8 @@ theme-name/
 
 - `assets/` contains the SVGs, backgrounds, fonts and other source files ;
 - `palettes/` contains one JSON file per color palette ;
-- `project-config.json` contains the theme metadata and front-end bindings;
+- `project-config.json` contains the theme metadata, palette bindings and
+  optional front-end config overrides;
 - `source-palette.json` defines the source colors used by the SVG assets.
 
 ## Icon packs

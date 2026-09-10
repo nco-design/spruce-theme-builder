@@ -8,6 +8,7 @@
       "target": "/"
     },
     {
+      "id": "base",
       "type": "config-file",
       "name": "config.json",
       "target": "/"
@@ -25,6 +26,7 @@
       "icon-pack-config": "icon-pack-720.json",
       "static-files": [
         {
+          "id": "720p",
           "type": "config-file",
           "name": "config_1280x720.json",
           "target": "/"

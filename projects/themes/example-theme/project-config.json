@@ -15,6 +15,14 @@
         "grid.selectedcolor": "primary-color",
         "list.color": "secondary-color",
         "list.selectedcolor": "primary-color"
+      },
+      "config-overrides": {
+        "base": {
+          "systemSelectViewType": "GRID"
+        },
+        "720p": {
+          "systemSelectViewType": "GRID"
+        }
       }
     }
   }

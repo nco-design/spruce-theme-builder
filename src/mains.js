@@ -95,9 +95,11 @@ async function buildTheme(options) {
       console.log(`Fallback used: ${fallbackFile}`);
     }
 
-    let injectedConfigValues = 0;
-    for (const configFileName of staticCopyResult.configFiles) {
-      injectedConfigValues += injectPaletteIntoConfig({
+    let injectedPaletteValues = 0;
+    let injectedOverrideValues = 0;
+    for (const { id: configFileId, fileName: configFileName } of staticCopyResult.configFiles) {
+      const injectionResult = injectPaletteIntoConfig({
+        configFileId,
         configFileName,
         frontendName: context.frontendName,
         iconPackConfig: context.iconPackConfig,
@@ -105,8 +107,13 @@ async function buildTheme(options) {
         palette,
         themeConfig: context.themeConfig
       });
+      injectedPaletteValues += injectionResult.paletteCount;
+      injectedOverrideValues += injectionResult.overrideCount;
     }
-    console.log(`Colors injected: ${injectedConfigValues}`);
+    console.log(`Colors injected: ${injectedPaletteValues}`);
+    if (injectedOverrideValues > 0) {
+      console.log(`Config overrides injected: ${injectedOverrideValues}`);
+    }
 
     const themeResult = await renderProfiles({
       assetsDir: context.themeAssetsDir,

@@ -19,6 +19,28 @@ function getPaletteBindings(themeConfig, frontendName) {
   return bindings;
 }
 
+function getConfigOverrides(themeConfig, frontendName, configFileId) {
+  const frontendConfig = themeConfig["frontend-configs"]?.[frontendName];
+  const configOverrides = frontendConfig?.["config-overrides"];
+
+  if (configOverrides === undefined) return {};
+  if (!configOverrides || typeof configOverrides !== "object" || Array.isArray(configOverrides)) {
+    throw new Error(
+      `Invalid "frontend-configs.${frontendName}.config-overrides" table`
+    );
+  }
+
+  const overrides = configOverrides[configFileId];
+  if (overrides === undefined) return {};
+  if (!overrides || typeof overrides !== "object" || Array.isArray(overrides)) {
+    throw new Error(
+      `Invalid config overrides for "${frontendName}" config-file "${configFileId}"`
+    );
+  }
+
+  return overrides;
+}
+
 function setConfigPath(config, configPath, value) {
   const parts = configPath.split(".");
 
@@ -68,6 +90,7 @@ function createMetadata({ iconPackConfig, palette, themeConfig }) {
 }
 
 function injectPaletteIntoConfig({
+  configFileId,
   configFileName = "config.json",
   frontendName,
   iconPackConfig,
@@ -78,6 +101,7 @@ function injectPaletteIntoConfig({
   const outputConfigPath = resolveWithin(outputDir, configFileName);
   const outputConfig = readJson(outputConfigPath);
   const bindings = getPaletteBindings(themeConfig, frontendName);
+  const overrides = getConfigOverrides(themeConfig, frontendName, configFileId);
 
   for (const [configPath, paletteProperty] of Object.entries(bindings)) {
     const value = palette.properties?.[paletteProperty];
@@ -91,16 +115,24 @@ function injectPaletteIntoConfig({
     setConfigPath(outputConfig, configPath, value);
   }
 
+  for (const [configPath, value] of Object.entries(overrides)) {
+    setConfigPath(outputConfig, configPath, value);
+  }
+
   const metadata = createMetadata({ iconPackConfig, palette, themeConfig });
   const finalConfig = Object.assign({}, metadata, outputConfig, metadata);
 
   fs.writeFileSync(outputConfigPath, `${JSON.stringify(finalConfig, null, 4)}\n`);
 
-  return Object.keys(bindings).length;
+  return {
+    overrideCount: Object.keys(overrides).length,
+    paletteCount: Object.keys(bindings).length
+  };
 }
 
 module.exports = {
   createMetadata,
+  getConfigOverrides,
   injectPaletteIntoConfig,
   joinAuthors,
   joinDescriptions

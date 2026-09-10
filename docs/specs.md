@@ -102,9 +102,28 @@ node build-theme PS-modern spruceos ic-squares-monochrome
 {
   "theme-name": "example-theme",
   "description": "Simple theme designed as an example, with a clear UI",
-  "Author": "Nicolas C"
+  "Author": "Nicolas C",
+  "frontend-configs": {
+    "spruceos": {
+      "palette-bindings": {
+        "title.color": "primary-color"
+      },
+      "config-overrides": {
+        "base": {
+          "systemSelectViewType": "GRID"
+        },
+        "720p": {
+          "systemSelectViewType": "GRID"
+        }
+      }
+    }
+  }
 }
 ```
+
+`config-overrides` uses the `id` declared by each front-end `config-file`.
+Each key is a JSON path and is added or updated only in that configuration
+file. Values are explicit: the builder never scales values between profiles.
 
 ## Palette config.json
 

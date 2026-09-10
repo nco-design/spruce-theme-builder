@@ -70,7 +70,9 @@ function copyStaticItems({ assetsDir, items, outputDir, placeholderDir }) {
     }
 
     copiedItems.push(outputRelativePath);
-    if (item.type === "config-file") configFiles.push(outputRelativePath);
+    if (item.type === "config-file") {
+      configFiles.push({ id: item.id, fileName: outputRelativePath });
+    }
   }
 
   return { configFiles, copiedItems, fallbackItems };

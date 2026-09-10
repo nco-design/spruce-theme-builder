@@ -67,6 +67,7 @@ All SVG assets are recolored from the relevant project's `source-palette.json` b
       "target": "/"
     },
     {
+      "id": "base",
       "type": "config-file",
       "name": "config.json",
       "target": "/"
@@ -98,7 +99,7 @@ For example, SpruceOS declares its default build and its `--720p` option like th
   "icon-pack-config": "icon-pack.json",
   "static-files": [
     { "type": "folder", "name": "sound", "target": "/" },
-    { "type": "config-file", "name": "config.json", "target": "/" }
+    { "id": "base", "type": "config-file", "name": "config.json", "target": "/" }
   ],
   "options": {
     "720p": {
@@ -106,7 +107,7 @@ For example, SpruceOS declares its default build and its `--720p` option like th
       "theme-config": "theme-720.json",
       "icon-pack-config": "icon-pack-720.json",
       "static-files": [
-        { "type": "config-file", "name": "config_1280x720.json", "target": "/" }
+        { "id": "720p", "type": "config-file", "name": "config_1280x720.json", "target": "/" }
       ]
     }
   }
@@ -120,7 +121,7 @@ For example, SpruceOS declares its default build and its `--720p` option like th
 | `icon-pack-config` | Asset-map loaded from the `icon-pack/` directory.                          | Yes        |
 | `static-files`     | Files and folders copied into the build. See [Static files](#static-files) | Yes        |
 
-`static-files` entries use `folder`, `static-file`, `font` or `config-file`. A `folder` is copied recursively; `static-file` and `font` are copied unchanged; and a `config-file` also receives palette injection. For every item, a same-name path in the theme's `assets/` directory overrides the front-end placeholder. Folders merge recursively, with the theme files taking priority.
+`static-files` entries use `folder`, `static-file`, `font` or `config-file`. A `folder` is copied recursively; `static-file` and `font` are copied unchanged; and a `config-file` also receives palette injection and matching project overrides. Every `config-file` needs a unique `id`, used by `project-config.json`. For every item, a same-name path in the theme's `assets/` directory overrides the front-end placeholder. Folders merge recursively, with the theme files taking priority.
 
 The builder does not infer filenames from an option name and does not generate missing files. For `--720p`, `theme-720.json`, `icon-pack-720.json` and the `config_1280x720.json` placeholder must exist. A contributor can add `--960p` or `--other-setting` by adding another entry and its files, without modifying JavaScript.
 
@@ -131,7 +132,7 @@ Statics files are necessary for the build, but are not icons or images. They can
 ```json
 "static-files": [
     { "type": "folder", "name": "sound", "target": "/" },
-    { "type": "config-file", "name": "config.json", "target": "/" },
+    { "id": "base", "type": "config-file", "name": "config.json", "target": "/" },
     { "type": "font", "name": "font.ttf", "target": "/" },
     { "type": "static-file", "name": "license", "target": "/" }
   ]
@@ -139,6 +140,7 @@ Statics files are necessary for the build, but are not icons or images. They can
 
 | Property | Description                                                | Required ? |
 | -------- | ---------------------------------------------------------- | ---------- |
+| `id`     | Stable identifier for a `config-file`; unused for other types. | For `config-file` |
 | `type`   | Item type ; `static-file`, `font`, `folder`, `config-file` | Yes        |
 | `name`   | Name of the item                                           | Yes        |
 | `target` | Output path. `/` is the root folder of the built theme     | Yes        |
