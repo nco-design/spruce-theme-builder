@@ -8,12 +8,12 @@ A front-end describes the target firmware UI that receives a generated theme. It
 
 Each front-end lives in `frontends/<frontend-name>/`
 
-| Path                        | Purpose                                                          |
-| --------------------------- | ---------------------------------------------------------------- |
-| `frontend.json`             | Default profiles, static items and optional build modes. |
-| `theme/`                    | Asset maps for files from `projects/themes/<theme>/assets/`.     |
-| `icon-pack/`                | Asset maps for files from `projects/icon-packs/<pack>/assets/`.  |
-| `placeholder-static-files/` | Safe defaults for static files a project may omit.               |
+| Path                        | Purpose                                                         |
+| --------------------------- | --------------------------------------------------------------- |
+| `frontend.json`             | Default profiles, static items and optional build modes.        |
+| `theme/`                    | Asset maps for files from `projects/themes/<theme>/assets/`.    |
+| `icon-pack/`                | Asset maps for files from `projects/icon-packs/<pack>/assets/`. |
+| `placeholder-static-files/` | Safe defaults for static files a project may omit.              |
 
 The directory name is the value passed as `<frontend-name>` to `build-theme`. For example, `frontends/spruceos/` is selected with `spruceos`.
 
@@ -40,21 +40,55 @@ The directory name is the value passed as `<frontend-name>` to `build-theme`. Fo
 
 ### Properties
 
-| Property | Description | Required? |
-| --- | --- | --- |
-| `icon-name` | Output filename, without the extension. | Yes |
-| `target-path` | Destination directory inside the generated theme. Leading and trailing `/` are optional. | Yes |
-| `source` | Source SVG path. | Yes |
-| `width`, `height` | Output dimensions in pixels. | Yes |
-| `format` | `png` or `svg`. | Yes |
-| `type` | Optional rendering behaviour. See [source image types](../docs/source-image-types.md). | No |
-| `opacity` | Optional percentage from `0` to `100`; defaults to `100`. | No |
+| Property          | Description                                                                              | Required? |
+| ----------------- | ---------------------------------------------------------------------------------------- | --------- |
+| `icon-name`       | Output filename, without the extension.                                                  | Yes       |
+| `target-path`     | Destination directory inside the generated theme. Leading and trailing `/` are optional. | Yes       |
+| `source`          | Source SVG path.                                                                         | Yes       |
+| `width`, `height` | Output dimensions in pixels.                                                             | Yes       |
+| `format`          | `png` or `svg`.                                                                          | Yes       |
+| `type`            | Optional rendering behaviour. See [source image types](../docs/source-image-types.md).   | No        |
+| `opacity`         | Optional percentage from `0` to `100`; defaults to `100`.                                | No        |
 
 All SVG assets are recolored from the relevant project's `source-palette.json` before being exported. Use source palette colors in SVG files whenever the asset should follow a palette.
 
-## Front-end options
+## Front-end configuration
 
-The default `theme-config` and `icon-pack-config` profiles are always used. Every additional option is declared in `frontend.json`; option names have no hard-coded meaning in the builder.
+`fronteds/fronted-name/frontend.json` contains all the required information to build a project for a specific front-end.
+
+```json
+{
+  "theme-config": "theme.json",
+  "icon-pack-config": "icon-pack.json",
+  "static-files": [
+    {
+      "type": "folder",
+      "name": "sound",
+      "target": "/"
+    },
+    {
+      "type": "config-file",
+      "name": "config.json",
+      "target": "/"
+    },
+    {
+      "type": "font",
+      "name": "font.ttf",
+      "target": "/"
+    }
+  ]
+}
+```
+
+| Property           | Description                                                                | Required ? |
+| ------------------ | -------------------------------------------------------------------------- | ---------- |
+| `theme-config`     | Asset-map loaded from the `theme/` directory.                              | Yes        |
+| `icon-pack-config` | Asset-map loaded from the `icon-pack/` directory.                          | Yes        |
+| `static-files`     | Files and folders copied into the build. See [Static files](#static-files) | Yes        |
+
+### Front-end options
+
+The default `theme-config` and `icon-pack-config` profiles are always used. Every additional option is declared in `frontend.json`.
 
 For example, SpruceOS declares its default build and its `--720p` option like this:
 
@@ -79,22 +113,46 @@ For example, SpruceOS declares its default build and its `--720p` option like th
 }
 ```
 
-| Property | Description |
-| --- | --- |
-| `label` | Optional text displayed by the interactive assistant. |
-| `theme-config` | One asset map loaded from the front-end's `theme/` directory. |
-| `icon-pack-config` | One asset map loaded from the front-end's `icon-pack/` directory. |
-| `static-files` | Files and folders copied into the build. Option entries are added to the default entries. |
+| Property           | Description                                                                | Required ? |
+| ------------------ | -------------------------------------------------------------------------- | ---------- |
+| `label`            | Optional text displayed by the interactive assistant.                      | Yes        |
+| `theme-config`     | Asset-map loaded from the `theme/` directory.                              | Yes        |
+| `icon-pack-config` | Asset-map loaded from the `icon-pack/` directory.                          | Yes        |
+| `static-files`     | Files and folders copied into the build. See [Static files](#static-files) | Yes        |
 
 `static-files` entries use `folder`, `static-file`, `font` or `config-file`. A `folder` is copied recursively; `static-file` and `font` are copied unchanged; and a `config-file` also receives palette injection. For every item, a same-name path in the theme's `assets/` directory overrides the front-end placeholder. Folders merge recursively, with the theme files taking priority.
 
 The builder does not infer filenames from an option name and does not generate missing files. For `--720p`, `theme-720.json`, `icon-pack-720.json` and the `config_1280x720.json` placeholder must exist. A contributor can add `--960p` or `--other-setting` by adding another entry and its files, without modifying JavaScript.
 
-## Static files and placeholders
+### Static files
 
-Every `static-files` item is sourced from `placeholder-static-files/` by default. A matching item in the theme's `assets/` folder takes precedence. Project `.ttf` and `.otf` files are also copied automatically so a theme can add a custom font.
+Statics files are necessary for the build, but are not icons or images. They can be declared like this :
 
-The output configuration and every referenced non-system font are validated before asset rendering begins.
+```json
+"static-files": [
+    { "type": "folder", "name": "sound", "target": "/" },
+    { "type": "config-file", "name": "config.json", "target": "/" },
+    { "type": "font", "name": "font.ttf", "target": "/" },
+    { "type": "static-file", "name": "license", "target": "/" }
+  ]
+```
+
+| Property | Description                                                | Required ? |
+| -------- | ---------------------------------------------------------- | ---------- |
+| `type`   | Item type ; `static-file`, `font`, `folder`, `config-file` | Yes        |
+| `name`   | Name of the item                                           | Yes        |
+| `target` | Output path. `/` is the root folder of the built theme     | Yes        |
+
+**Item `type` :**
+
+- `static-file` and `font` are simply copied ;
+- `folder` is copied, with its files and sub-folders ;
+- `config-file` is copied, its JSON params can be modified by the code.
+
+### Placeholder files
+
+Files place in the `placeholder-static-files` will be included in the build.
+If a file or folder bearing the same name is found in the `projects/themes/theme-name/` folder, it will replace the placeholder file.
 
 ## Adding a new front-end
 
