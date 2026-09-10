@@ -29,7 +29,7 @@ Copyright © 2026 nco-design. This project is licensed under the
 
 ## 1. Download the project
 
-**[Download the latest release](https://github.com/nco-design/spruce-theme-builder/releases/download/v1.0.0/spruce-theme-builder-v1.0.0.zip)** or clone this repository.
+**[Download the latest release](https://github.com/nco-design/spruce-theme-builder/releases/download/v2.0.0/spruce-theme-builder-v2.0.zip)** or clone this repository.
 
 ## 2. Install project dependencies
 
