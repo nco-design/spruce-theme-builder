@@ -1,7 +1,6 @@
-[![Download v1.0.0](https://img.shields.io/badge/download-v1.0.0-2ea44f?logo=github)](https://github.com/nco-design/spruce-theme-builder/releases/download/v1.0.0/spruce-theme-builder-v1.0.0.zip)
-[![License: GPL v3 or later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 [![GitHub profile](https://img.shields.io/badge/GitHub-nco--design-181717?logo=github)](https://github.com/nco-design)
-[![PS Modern theme](https://img.shields.io/badge/theme-PS%20Modern-6f42c1?logo=github)](https://github.com/nco-design/PS-modern-theme)
+[![License: GPL v3 or later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-Wiki-2ea44f?logo=github)](https://github.com/nco-design/spruce-theme-builder/wiki)
 
 # Project description
 
@@ -11,6 +10,8 @@ For each theme, you can add as many color variants as you want in `theme-name/pa
 
 Once you have a theme, an icon pack for your emulators and app and a few palettes, you can build any combination you want with the builder.
 So, you can work on a dark theme, add a brighter version, a colorful version or any other variant very easily.
+
+For installation and theme-creation guides, see the [documentation wiki](https://github.com/nco-design/spruce-theme-builder/wiki).
 
 Copyright © 2026 nco-design. This project is licensed under the
 [GNU General Public License v3.0 or later](LICENSE).
