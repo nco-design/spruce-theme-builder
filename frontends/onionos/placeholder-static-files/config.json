@@ -1,70 +1,40 @@
 {
     "name": "",
+    "author": "",
     "description": "",
-    "author": "Nicolas C",
-    "generatedNotice": "Generated with spruce-theme-builder. Learn more at https://github.com/nco-design/",
-    "showBottomBar": true,
     "batteryPercentage": {
-        "font": "nunwen.ttf",
+        "visible": true,
+        "color": "#FFFFFF",
         "size": 18,
-        "color": "#FFFFFF"
+        "offsetX": 26,
+        "fixed": true
     },
     "title": {
-        "font": "nunwen.ttf",
+        "font": "/mnt/SDCARD/miyoo/app/Exo-2-Bold-Italic_Universal.ttf",
         "size": 25,
         "color": "#FFFFFF"
     },
     "hint": {
-        "font": "nunwen.ttf",
+        "font": "/mnt/SDCARD/miyoo/app/Exo-2-Bold-Italic_Universal.ttf",
         "size": 25,
         "color": "#FFFFFF"
     },
     "currentpage": {
-        "font": "nunwen.ttf",
-        "size": 22,
         "color": "#FFFFFF"
     },
     "total": {
-        "font": "nunwen.ttf",
-        "size": 22,
-        "color": "#F6CF32"
+        "color": "#FFFFFF"
     },
     "grid": {
-        "font": "nunwen.ttf",
+        "font": "/mnt/SDCARD/miyoo/app/Exo-2-Bold-Italic_Universal.ttf",
         "grid1x4": 25,
         "grid3x4": 18,
-        "color": "#007FAA",
-        "selectedcolor": "#F6CF32"
-    },
-    "list": {
-        "font": "nunwen.ttf",
-        "size": 24,
-        "color": "#007FAA",
+        "color": "#888888",
         "selectedcolor": "#FFFFFF"
     },
-    "recentsEnabled": true,
-    "topBarInitialXOffset": 27,
-    "setTopBarTextToGameSelection": true,
-    "fullScreenGridGameMenuResizeType": "FIT",
-    "mainMenuTitle": "",
-    "skipMainMenu": false,
-    "mergeMainMenuAndGameMenu": false,
-    "showExtrasInSystemSelectMenu": false,
-    "systemSelectShowTextGridMode": false,
-    "systemSelectGridResizeType": "FIT",
-    "gridBgOffsetToImageOffset": true,
-    "gameSystemSelectColCount": 3,
-    "gameSystemSelectRowCount": 1,
-    "systemSelectGridWrapAroundSingleRow": false,
-    "systemSelectViewType": "CAROUSEL",
-    "carouselSystemUsePercentageMode": true,
-    "carouselSystemSelectShrinkFurtherAway": false,
-    "carouselSystemSelectPrimaryImgWidth": 20,
-    "carouselSystemXPad": 13,
-    "singleRowGridTextYOffset": 13,
-    "displayBatteryIcon": true,
-    "displayBatteryPercent": true,
-    "mainMenuShowTextGridMode": false,
-    "systemSelectionSetTopBarText": false,
-    "systemSelectionSetBottomBarText": false
+    "list": {
+        "font": "/mnt/SDCARD/miyoo/app/wqy-microhei.ttc",
+        "size": 25,
+        "color": "#FFFFFF"
+    }
 }
