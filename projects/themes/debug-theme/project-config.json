@@ -1,6 +1,6 @@
 {
   "theme-name": "debug-theme",
-  "description": "Simple theme with text description of each easset to better understand how the build process works",
+  "description": "Debug theme",
   "Author": "Nicolas C",
 
   "frontend-configs": {
@@ -8,13 +8,33 @@
       "palette-bindings": {
         "batteryPercentage.color": "primary-color",
         "title.color": "primary-color",
-        "hint.color": "secondary-color",
-        "currentpage.color": "secondary-color",
-        "total.color": "secondary-color",
+        "hint.color": "primary-color",
+        "currentpage.color": "bg-color",
+        "total.color": "bg-color",
         "grid.color": "secondary-color",
         "grid.selectedcolor": "primary-color",
         "list.color": "secondary-color",
-        "list.selectedcolor": "bg-color"
+        "list.selectedcolor": "primary-color"
+      },
+      "config-overrides": {
+        "base": {
+          "systemSelectViewType": "GRID"
+        },
+        "720p": {
+          "systemSelectViewType": "GRID"
+        }
+      }
+    },
+    "onionos": {
+      "palette-bindings": {
+        "batteryPercentage.color": "primary-color",
+        "title.color": "primary-color",
+        "hint.color": "primary-color",
+        "currentpage.color": "bg-color",
+        "total.color": "bg-color",
+        "grid.color": "secondary-color",
+        "grid.selectedcolor": "primary-color",
+        "list.color": "secondary-color"
       }
     }
   }
