@@ -1,0 +1,22 @@
+{
+  "theme-config": "theme.json",
+  "icon-pack-config": "icon-pack.json",
+  "static-files": [
+    {
+      "type": "folder",
+      "name": "sound",
+      "target": "/"
+    },
+    {
+      "id": "base",
+      "type": "config-file",
+      "name": "config.json",
+      "target": "/"
+    },
+    {
+      "type": "font",
+      "name": "nunwen.ttf",
+      "target": "/"
+    }
+  ]
+}
