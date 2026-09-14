@@ -22,6 +22,14 @@ Copyright © 2026 nco-design. This project is licensed under the
 | **Emerald Green**<br><br><img src="docs/imgs/preview-emerald-green.png" width="240" alt="Emerald Green preview"><br><br>`node build-theme example-theme spruceos example-pack --palette emerald-green` | **Ruby Red**<br><br><img src="docs/imgs/preview-ruby-red.png" width="240" alt="Ruby Red preview"><br><br>`node build-theme example-theme spruceos example-pack --palette ruby-red`                    |
 | **Pink Pearl**<br><br><img src="docs/imgs/preview-pink-pearl.png" width="240" alt="Pink Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette pink-pearl`             | **Blue Pearl**<br><br><img src="docs/imgs/preview-blue-pearl.png" width="240" alt="Blue Pearl preview"><br><br>`node build-theme example-theme spruceos example-pack --palette blue-pearl`            |
 
+# Compatibility
+
+| Front-end | Resolution  | Status                    |
+| --------- | ----------- | ------------------------- |
+| SpruceOS  | 4:3 ; 480p  | Compatible                |
+| SpruceOS  | 16:9 : 720p | Tested                    |
+| OnionOS   | 4:3 ; 480p  | Compatible (need testers) |
+
 # How to install
 
 > [!NOTE]
