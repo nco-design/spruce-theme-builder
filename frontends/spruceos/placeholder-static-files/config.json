@@ -1,43 +1,70 @@
 {
-    "name": "Placeholder",
+    "name": "",
+    "description": "",
     "author": "Nicolas C",
-    "description": "Placeholder description",
+    "generatedNotice": "Generated with spruce-theme-builder. Learn more at https://github.com/nco-design/",
+    "showBottomBar": true,
     "batteryPercentage": {
         "font": "nunwen.ttf",
-        "size": 18
+        "size": 18,
+        "color": "#FFFFFF"
     },
     "title": {
         "font": "nunwen.ttf",
-        "size": 25
+        "size": 25,
+        "color": "#FFFFFF"
     },
     "hint": {
         "font": "nunwen.ttf",
-        "size": 25
+        "size": 25,
+        "color": "#FFFFFF"
     },
     "currentpage": {
         "font": "nunwen.ttf",
-        "size": 22
+        "size": 22,
+        "color": "#FFFFFF"
     },
     "total": {
         "font": "nunwen.ttf",
-        "size": 22
+        "size": 22,
+        "color": "#F6CF32"
     },
     "grid": {
-        "font": "AdobeBlank.ttc",
+        "font": "nunwen.ttf",
         "grid1x4": 25,
-        "grid3x4": 18
+        "grid3x4": 18,
+        "color": "#007FAA",
+        "selectedcolor": "#F6CF32"
     },
     "list": {
         "font": "nunwen.ttf",
-        "size": 24
-
+        "size": 24,
+        "color": "#007FAA",
+        "selectedcolor": "#FFFFFF"
     },
-    "recentsEnabled": false,
-    "topBarInitialXOffset": 60,
+    "recentsEnabled": true,
+    "topBarInitialXOffset": 27,
     "setTopBarTextToGameSelection": true,
     "fullScreenGridGameMenuResizeType": "FIT",
     "mainMenuTitle": "",
     "skipMainMenu": false,
     "mergeMainMenuAndGameMenu": false,
-    "showExtrasInSystemSelectMenu": false
+    "showExtrasInSystemSelectMenu": false,
+    "systemSelectShowTextGridMode": false,
+    "systemSelectGridResizeType": "FIT",
+    "gridBgOffsetToImageOffset": true,
+    "gameSystemSelectColCount": 3,
+    "gameSystemSelectRowCount": 1,
+    "systemSelectGridWrapAroundSingleRow": false,
+    "systemSelectViewType": "CAROUSEL",
+    "carouselSystemUsePercentageMode": true,
+    "carouselSystemSelectShrinkFurtherAway": false,
+    "carouselSystemSelectPrimaryImgWidth": 20,
+    "carouselSystemXPad": 13,
+    "singleRowGridTextYOffset": 13,
+    "displayBatteryIcon": true,
+    "displayBatteryPercent": true,
+    "mainMenuShowTextGridMode": false,
+    "systemSelectionSetTopBarText": false,
+    "systemSelectionSetBottomBarText": false
 }
