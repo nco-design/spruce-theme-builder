@@ -41,7 +41,7 @@ async function main() {
     : await chooseTool();
 
   if (command && !tool) {
-    throw new Error(`Unknown tool "${command}". Run "node build-tools" to see the available tools.`);
+    throw new Error(`Unknown tool "${command}". Run "node build-tools.js" to see the available tools.`);
   }
 
   if (!tool) return;
