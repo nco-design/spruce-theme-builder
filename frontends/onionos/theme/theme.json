@@ -1,11 +1,11 @@
 {
-    "icons":[
+    "icons": [
         {
             "icon-name": "preview",
             "target-path": "/",
             "source": "/projects/preview.svg",
-            "width": 640,
-            "height": 480,
+            "width": 480,
+            "height": 360,
             "format": "png"
         },
         {
@@ -17,73 +17,6 @@
             "format": "png"
         },
         {
-            "icon-name": "app_loading_01",
-            "target-path": "/skin",
-            "source": "/projects/icons/app_loading_01.svg",
-            "width": 100,
-            "height": 480,
-            "format": "png"
-        },
-        {
-            "icon-name": "app_loading_02",
-            "target-path": "/skin",
-            "source": "/projects/icons/app_loading_02.svg",
-            "width": 100,
-            "height": 480,
-            "format": "png"
-        },
-        {
-            "icon-name": "app_loading_03",
-            "target-path": "/skin",
-            "source": "/projects/icons/app_loading_03.svg",
-            "width": 100,
-            "height": 480,
-            "format": "png"
-        },
-        {
-            "icon-name": "app_loading_04",
-            "target-path": "/skin",
-            "source": "/projects/icons/app_loading_04.svg",
-            "width": 100,
-            "height": 480,
-            "format": "png"
-        },
-        {
-            "icon-name": "app_loading_05",
-            "target-path": "/skin",
-            "source": "/projects/icons/app_loading_05.svg",
-            "width": 100,
-            "height": 480,
-            "format": "png"
-        },
-        {
-            "icon-name": "app_loading_bg",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/background-flat.svg",
-            "width": 640,
-            "height": 480,
-            "format": "png",
-            "type": "background"
-        },
-        {
-            "icon-name": "background-small",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/background-flat.svg",
-            "width": 640,
-            "height": 480,
-            "format": "png",
-            "opacity": 50
-        },
-        {
-            "icon-name": "background.1",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/main-background.svg",
-            "width": 640,
-            "height": 480,
-            "format": "png",
-            "type": "background"
-        },
-        {
             "icon-name": "background",
             "target-path": "/skin",
             "source": "/projects/backgrounds/main-background.svg",
@@ -91,87 +24,6 @@
             "height": 480,
             "format": "png",
             "type": "background"
-        },
-        {
-            "icon-name": "barbg",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 320,
-            "height": 38,
-            "format": "png"
-        },
-        {
-            "icon-name": "bg-btn-01-f",
-            "target-path": "/skin",
-            "source": "/projects/buttons/keyboard-key-selected.svg",
-            "width": 50,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-01-n",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 50,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-02-f",
-            "target-path": "/skin",
-            "source": "/projects/buttons/keyboard-key-selected.svg",
-            "width": 111,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-02-n",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 111,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-nor",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-sel",
-            "target-path": "/skin",
-            "source": "/projects/buttons/keyboard-key-selected.svg",
-            "width": 50,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-btn-shift-active",
-            "target-path": "/skin",
-            "source": "/projects/buttons/keyboard-key-selected.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "bg-button-nor",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 234,
-            "height": 68,
-            "format": "png",
-            "_useless":"maybe",
-            "type": "button"
         },
         {
             "icon-name": "bg-game-item-f",
@@ -189,34 +41,6 @@
             "height": 154,
             "format": "png"
         },
-        { 
-            "icon-name": "bg-gamelist",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/background-flat.svg",
-            "width": 640,
-            "height": 360,
-            "format": "png",
-            "opacity": 50,
-            "_useless":"maybe"
-        }, 
-        {
-            "icon-name": "bg-grid-s",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 156,
-            "height": 176,
-            "format": "png",
-            "_useless":"maybe"
-        },
-        {
-            "icon-name": "bg-input",
-            "target-path": "/skin",
-            "source": "/projects/buttons/text-input.svg",
-            "width": 512,
-            "height": 52,
-            "format": "png",
-            "type":"button"
-        },
         {
             "icon-name": "bg-list-l",
             "target-path": "/skin",
@@ -224,7 +48,7 @@
             "width": 640,
             "height": 92,
             "format": "png",
-            "type":"button"
+            "type": "button"
         },
         {
             "icon-name": "bg-list-s",
@@ -233,7 +57,7 @@
             "width": 640,
             "height": 60,
             "format": "png",
-            "type":"button"
+            "type": "button"
         },
         {
             "icon-name": "bg-pop-menu-1",
@@ -285,57 +109,6 @@
             "source": "/projects/backgrounds/bg-header.svg",
             "width": 640,
             "height": 60,
-            "format": "png"
-        },
-        {
-            "icon-name": "btn-OK-f",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-selected.svg",
-            "width": 172,
-            "height": 52,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "btn-OK",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 172,
-            "height": 52,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "btn-delete",
-            "target-path": "/skin",
-            "source": "/projects/icons/delete.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png",
-            "_useless":"maybe"
-        },
-        {
-            "icon-name": "btn-empty",
-            "target-path": "/skin",
-            "source": "/projects/icons/delete.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "btn-shift",
-            "target-path": "/skin",
-            "source": "/projects/icons/shift.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "btn-space",
-            "target-path": "/skin",
-            "source": "/projects/icons/space.svg",
-            "width": 30,
-            "height": 30,
             "format": "png"
         },
         {
@@ -400,14 +173,6 @@
             "source": "/projects/backgrounds/bg-empty.svg",
             "width": 1,
             "height": 1,
-            "format": "png"
-        },
-        {
-            "icon-name": "div-line-v-02",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 4,
-            "height": 420,
             "format": "png"
         },
         {
@@ -477,24 +242,6 @@
             "type": "button"
         },
         {
-            "icon-name": "ic-collection-f",
-            "target-path": "/skin",
-            "source": "/projects/icons/collection-selected.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png",
-            "type": "button"
-        },
-        {
-            "icon-name": "ic-collection-n",
-            "target-path": "/skin",
-            "source": "/projects/icons/collection-unselected.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png",
-            "type": "button"
-        },
-        {
             "icon-name": "ic-favorite-f",
             "target-path": "/skin",
             "source": "/projects/main-nav-icons/fav-selected.svg",
@@ -539,41 +286,9 @@
             "type": "button"
         },
         {
-            "icon-name": "ic-power-charge-0%",
-            "target-path": "/skin",
-            "source": "/projects/icons/charge-0.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
             "icon-name": "ic-power-charge-100%",
             "target-path": "/skin",
             "source": "/projects/icons/charge-100.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "ic-power-charge-25%",
-            "target-path": "/skin",
-            "source": "/projects/icons/charge-25.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "ic-power-charge-50%",
-            "target-path": "/skin",
-            "source": "/projects/icons/charge-50.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "ic-power-charge-75%",
-            "target-path": "/skin",
-            "source": "/projects/icons/charge-75.svg",
             "width": 40,
             "height": 40,
             "format": "png"
@@ -615,15 +330,6 @@
             "type": "button"
         },
         {
-            "icon-name": "ic-retroarch",
-            "target-path": "/skin",
-            "source": "/projects/icons/retroarch-selected.svg",
-            "width": 81,
-            "height": 81,
-            "format": "png",
-            "type": "button"
-        },
-        {
             "icon-name": "ic-setting-f",
             "target-path": "/skin",
             "source": "/projects/main-nav-icons/settings-selected.svg",
@@ -642,23 +348,7 @@
             "type": "button"
         },
         {
-            "icon-name": "icon-A-27",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 640,
-            "height": 54,
-            "format": "png"
-        },
-        {
             "icon-name": "icon-A-54",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 640,
-            "height": 54,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-B-27",
             "target-path": "/skin",
             "source": "/projects/backgrounds/bg-empty.svg",
             "width": 640,
@@ -671,38 +361,6 @@
             "source": "/projects/backgrounds/bg-empty.svg",
             "width": 640,
             "height": 54,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-L2",
-            "target-path": "/skin",
-            "source": "/projects/icons/L2.svg",
-            "width": 28,
-            "height": 26,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-OK",
-            "target-path": "/skin",
-            "source": "/projects/icons/OK.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-R2",
-            "target-path": "/skin",
-            "source": "/projects/icons/R2.svg",
-            "width": 28,
-            "height": 26,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-START",
-            "target-path": "/skin",
-            "source": "/projects/icons/start.svg",
-            "width": 48,
-            "height": 26,
             "format": "png"
         },
         {
@@ -722,43 +380,11 @@
             "format": "png"
         },
         {
-            "icon-name": "icon-abc",
-            "target-path": "/skin",
-            "source": "/projects/icons/ABC.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
             "icon-name": "icon-brightness-48",
             "target-path": "/skin",
             "source": "/projects/icons/brightness.svg",
             "width": 40,
             "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-character",
-            "target-path": "/skin",
-            "source": "/projects/icons/character.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-core",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 1,
-            "height": 1,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-delete",
-            "target-path": "/skin",
-            "source": "/projects/icons/delete.svg",
-            "width": 30,
-            "height": 30,
             "format": "png"
         },
         {
@@ -778,35 +404,11 @@
             "format": "png"
         },
         {
-            "icon-name": "icon-folder-40",
-            "target-path": "/skin",
-            "source": "/projects/icons/folder.svg",
-            "width": 50,
-            "height": 40,
-            "format": "png"
-        },
-        {
             "icon-name": "icon-folder",
             "target-path": "/skin",
             "source": "/projects/icons/folder.svg",
             "width": 50,
             "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-font-size",
-            "target-path": "/skin",
-            "source": "/projects/icons/fonts.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-game-40",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 1,
-            "height": 1,
             "format": "png"
         },
         {
@@ -821,14 +423,6 @@
             "icon-name": "icon-hotspot-wifi",
             "target-path": "/skin",
             "source": "/projects/icons/hotspot.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-joystick-calibrate",
-            "target-path": "/skin",
-            "source": "/projects/icons/joystick-calibrate.svg",
             "width": 40,
             "height": 40,
             "format": "png"
@@ -858,22 +452,6 @@
             "format": "png"
         },
         {
-            "icon-name": "icon-menu-left-arrow-24",
-            "target-path": "/skin",
-            "source": "/projects/icons/left-arrow.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-menu-right-arrow-24",
-            "target-path": "/skin",
-            "source": "/projects/icons/right-arrow.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
             "icon-name": "icon-right-arrow-24",
             "target-path": "/skin",
             "source": "/projects/icons/right-arrow.svg",
@@ -890,49 +468,9 @@
             "format": "png"
         },
         {
-            "icon-name": "icon-shift-active",
-            "target-path": "/skin",
-            "source": "/projects/icons/shift-active.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-shift",
-            "target-path": "/skin",
-            "source": "/projects/icons/shift.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-space",
-            "target-path": "/skin",
-            "source": "/projects/icons/space.svg",
-            "width": 30,
-            "height": 30,
-            "format": "png"
-        },
-        {
             "icon-name": "icon-theme",
             "target-path": "/skin",
             "source": "/projects/icons/themes.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-usb-storage",
-            "target-path": "/skin",
-            "source": "/projects/icons/usb.svg",
-            "width": 40,
-            "height": 40,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-vibrate-48",
-            "target-path": "/skin",
-            "source": "/projects/icons/vibrate.svg",
             "width": 40,
             "height": 40,
             "format": "png"
@@ -986,39 +524,6 @@
             "format": "png"
         },
         {
-            "icon-name": "icon-x",
-            "target-path": "/skin",
-            "source": "/projects/icons/X.svg",
-            "width": 26,
-            "height": 26,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-y",
-            "target-path": "/skin",
-            "source": "/projects/icons/Y.svg",
-            "width": 26,
-            "height": 26,
-            "format": "png"
-        },
-        {
-            "icon-name": "input",
-            "target-path": "/skin",
-            "source": "/projects/buttons/text-input.svg",
-            "width": 592,
-            "height": 52,
-            "format": "png"
-        },
-        {
-            "icon-name": "list-item-select-bg-short",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-unselected.svg",
-            "width": 320,
-            "height": 60,
-            "format": "png",
-            "type":"button"
-        },
-        {
             "icon-name": "list-num",
             "target-path": "/skin",
             "source": "/projects/icons/numbers.svg",
@@ -1027,627 +532,106 @@
             "format": "png"
         },
         {
-            "icon-name": "loading-bg",
+            "icon-name": "miyoo-topbar",
             "target-path": "/skin",
             "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 508,
-            "height": 68,
+            "width": 148,
+            "height": 42,
             "format": "png"
         },
         {
-            "icon-name": "loading-progress-left",
-            "target-path": "/skin",
-            "source": "/projects/buttons/btn-selected.svg",
-            "width": 4,
-            "height": 50,
-            "format": "png",
-            "type": "button"
-        },
-        {
-        "icon-name": "loading-progress-mid",
-        "target-path": "/skin",
-        "source": "/projects/buttons/btn-selected.svg",
-        "width": 4,
-        "height": 50,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "loading-progress-right",
-        "target-path": "/skin",
-        "source": "/projects/buttons/btn-selected.svg",
-        "width": 4,
-        "height": 50,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "menu-5line-bg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-bg-6",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-bg-7",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-sub-bg",
-        "target-path": "/skin",
-        "source": "/projects/buttons/btn-unselected.svg",
-        "width": 320,
-        "height": 300,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "menu-sub-title-bg",
-        "target-path": "/skin",
-        "source": "/projects/buttons/btn-unselected.svg",
-        "width": 320,
-        "height": 36,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "missing_image",
-        "target-path": "/skin",
-        "source": "/projects/icons/is_empty.svg",
-        "width": 250,
-        "height": 250,
-        "format": "png"
-        },
-        {
-        "icon-name": "miyoo-topbar",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 148,
-        "height": 42,
-        "format": "png"
-        },
-        {
-        "icon-name": "nav-favorite-f",
-        "target-path": "/skin",
-        "source": "/projects/main-nav-icons/fav-selected.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "nav-favorite-n",
-        "target-path": "/skin",
-        "source": "/projects/main-nav-icons/fav-unselected.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "nav-file-f",
-        "target-path": "/skin",
-        "source": "/projects/icons/folder.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "nav-file-n",
-        "target-path": "/skin",
-        "source": "/projects/icons/folder-n.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "navbg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 60,
-        "format": "png"
-        },
-        {
-        "icon-name": "num-bg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 44,
-        "height": 24,
-        "format": "png"
-        },
-        {
-        "icon-name": "pop-bg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-pop.svg",
-        "width": 271,
-        "height": 180,
-        "format": "png"
-        },
-        {
-        "icon-name": "power-0%-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/power-0.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "power-20%-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/power-25.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "power-50%-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/power-50.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "power-80%-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/power-75.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "power-full-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/power-100.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "preview-bg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 254,
-        "height": 360,
-        "format": "png"
-        },
-        {
-        "icon-name": "preview-nameFrame",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 114,
-        "height": 70,
-        "format": "png"
-        },
-        {
-        "icon-name": "preview",
-        "target-path": "/skin",
-        "source": "/projects/preview.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png"
-        },
-        {
-        "icon-name": "progress-dot",
-        "target-path": "/skin",
-        "source": "/projects/icons/progress-dot.svg",
-        "width": 16,
-        "height": 16,
-        "format": "png"
-        },
-        {
-        "icon-name": "save-default",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 330,
-        "height": 248,
-        "format": "png"
-        },
-        {
-        "icon-name": "sound-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/sound.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "sound-mute-icon",
-        "target-path": "/skin",
-        "source": "/projects/icons/sound-mute.svg",
-        "width": 40,
-        "height": 40,
-        "format": "png"
-        },
-        {
-        "icon-name": "statbg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 62,
-        "format": "png"
-        },
-        {
-        "icon-name": "thumb-default",
-        "target-path": "/skin",
-        "source": "/projects/icons/game-jacket.svg",
-        "width": 250,
-        "height": 360,
-        "format": "png"
-        },
-        {
-        "icon-name": "tips-bar-bg",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-footer.svg",
-        "width": 640,
-        "height": 60,
-        "format": "png"
-        },
-        {
-        "icon-name": "Empty",
-        "target-path": "/skin_640_480",
-        "source": "/projects/icons/is_empty.svg",
-        "width": 96,
-        "height": 96,
-        "format": "png"
-        },
-        {
-        "icon-name": "background-small",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "icon-A-27",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 54,
-        "format": "png"
-        },
-        {
-        "icon-name": "icon-B-27",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 54,
-        "format": "png"
-        },
-        {
-        "icon-name": "icon-left-arrow-24",
-        "target-path": "/skin_640_480",
-        "source": "/projects/icons/left-arrow.svg",
-        "width": 30,
-        "height": 30,
-        "format": "png"
-        },
-        {
-        "icon-name": "icon-menu-left-arrow-24",
-        "target-path": "/skin_640_480",
-        "source": "/projects/icons/left-arrow.svg",
-        "width": 30,
-        "height": 30,
-        "format": "png"
-        },
-        {
-        "icon-name": "icon-menu-right-arrow-24",
-        "target-path": "/skin_640_480",
-        "source": "/projects/icons/right-arrow.svg",
-        "width": 30,
-        "height": 30,
-        "format": "png"
-        },
-        {
-        "icon-name": "icon-right-arrow-24",
-        "target-path": "/skin_640_480",
-        "source": "/projects/icons/right-arrow.svg",
-        "width": 30,
-        "height": 30,
-        "format": "png"
-        },
-        {
-        "icon-name": "list-item-select-bg-short",
-        "target-path": "/skin_640_480",
-        "source": "/projects/buttons/btn-unselected.svg",
-        "width": 320,
-        "height": 60,
-        "format": "png",
-        "type":"button"
-        },
-        {
-        "icon-name": "loading-bg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 508,
-        "height": 68,
-        "format": "png"
-        },
-        {
-        "icon-name": "loading-progress-left",
-        "target-path": "/skin_640_480",
-        "source": "/projects/buttons/btn-selected.svg",
-        "width": 4,
-        "height": 50,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "loading-progress-mid",
-        "target-path": "/skin_640_480",
-        "source": "/projects/buttons/btn-selected.svg",
-        "width": 4,
-        "height": 50,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "loading-progress-right",
-        "target-path": "/skin_640_480",
-        "source": "/projects/buttons/btn-selected.svg",
-        "width": 4,
-        "height": 50,
-        "format": "png",
-        "type": "button"
-        },
-        {
-        "icon-name": "menu-5line-bg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-bg-6",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-bg-7",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 640,
-        "height": 480,
-        "format": "png",
-        "opacity": 50
-        },
-        {
-        "icon-name": "menu-sub-bg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 320,
-        "height": 300,
-        "format": "png"
-        },
-        {
-        "icon-name": "menu-sub-title-bg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/background-flat.svg",
-        "width": 320,
-        "height": 36,
-        "format": "png"
-        },
-        {
-        "icon-name": "navbg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 60,
-        "format": "png"
-        },
-        {
-        "icon-name": "save-default",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 330,
-        "height": 248,
-        "format": "png"
-        },
-        {
-        "icon-name": "statbg",
-        "target-path": "/skin_640_480",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 640,
-        "height": 62,
-        "format": "png"
-        },
-        {"icon-name": "icon-volume-00",
-        "target-path": "/skin",
-        "source": "/projects/backgrounds/bg-empty.svg",
-        "width": 48,
-        "height": 48,
-        "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-01",
+            "icon-name": "num-bg",
             "target-path": "/skin",
             "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "width": 44,
+            "height": 24,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-02",
+            "icon-name": "pop-bg",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/backgrounds/bg-pop.svg",
+            "width": 271,
+            "height": 180,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-03",
+            "icon-name": "power-0%-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/power-0.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-04",
+            "icon-name": "power-20%-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/power-25.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-05",
+            "icon-name": "power-50%-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/power-50.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-06",
+            "icon-name": "power-80%-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/power-75.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-07",
+            "icon-name": "power-full-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/power-100.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-08",
+            "icon-name": "preview-bg",
             "target-path": "/skin",
             "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "width": 254,
+            "height": 360,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-09",
+            "icon-name": "progress-dot",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/progress-dot.svg",
+            "width": 16,
+            "height": 16,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-10",
+            "icon-name": "sound-icon",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/sound.svg",
+            "width": 40,
+            "height": 40,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-11",
+            "icon-name": "thumb-default",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
+            "source": "/projects/icons/game-jacket.svg",
+            "width": 250,
+            "height": 360,
             "format": "png"
         },
         {
-            "icon-name": "icon-volume-12",
+            "icon-name": "tips-bar-bg",
             "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-13",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-14",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-15",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-16",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-17",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-18",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-19",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "icon-volume-20",
-            "target-path": "/skin",
-            "source": "/projects/backgrounds/bg-empty.svg",
-            "width": 48,
-            "height": 48,
-            "format": "png"
-        },
-        {
-            "icon-name": "bg-list-s2",
-            "target-path": "/skin",
-            "source": "/projects/buttons/list-selected.svg",
-            "width": 320,
+            "source": "/projects/backgrounds/bg-footer.svg",
+            "width": 640,
             "height": 60,
             "format": "png"
         }
