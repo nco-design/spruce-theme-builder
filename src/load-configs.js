@@ -6,10 +6,24 @@ const { validateAssetOpacity } = require("./opacity.js");
 const { ROOT_DIR, requireDirectory, resolveWithin } = require("./paths.js");
 
 const SUPPORTED_ASSET_TYPES = new Set(["background", "button"]);
+const SUPPORTED_FLIP_ANGLES = new Set([0, 90, 180, 270]);
+
+function validateAssetFlip(asset, configPath) {
+  if (asset.flip === undefined) return;
+
+  if (!SUPPORTED_FLIP_ANGLES.has(asset.flip)) {
+    const assetName = asset["icon-name"] || asset.source || "unnamed asset";
+    throw new Error(
+      `Invalid flip in ${configPath} for "${assetName}": ` +
+      `${asset.flip}. Accepted values: 0, 90, 180, 270`
+    );
+  }
+}
 
 function validateAssetTypes(config, configPath) {
   for (const asset of config.icons) {
     validateAssetOpacity(asset, configPath);
+    validateAssetFlip(asset, configPath);
 
     if (asset.type === undefined) {
       continue;

@@ -25,6 +25,37 @@ function getResizeOptions(asset) {
   return { fit: "fill" };
 }
 
+function getFlipAngle(asset) {
+  return asset.flip ?? 0;
+}
+
+async function writeRotatedPng({ asset, outputFile, pipeline }) {
+  const flipAngle = getFlipAngle(asset);
+
+  if (flipAngle === 0) {
+    await applyOpacityToSharp(pipeline, asset)
+      .png()
+      .toFile(outputFile);
+    return;
+  }
+
+  // Render at the dimensions declared in the asset map first, then rotate the
+  // resulting bitmap. Sharp otherwise rotates before resizing, which would
+  // preserve the declared dimensions for 90° and 270° rotations.
+  const rendered = await pipeline.png().toBuffer();
+  await applyOpacityToSharp(sharp(rendered).rotate(flipAngle), asset)
+    .png()
+    .toFile(outputFile);
+}
+
+async function rotateExistingPng({ asset, outputFile }) {
+  const flipAngle = getFlipAngle(asset);
+  if (flipAngle === 0) return;
+
+  const rotated = await sharp(outputFile).rotate(flipAngle).png().toBuffer();
+  fs.writeFileSync(outputFile, rotated);
+}
+
 async function renderAssets({
   assetsDir,
   colorMap,
@@ -72,15 +103,14 @@ async function renderAssets({
           targetWidth: icon.width,
           opacity: icon.opacity
         });
+        await rotateExistingPng({ asset: icon, outputFile });
       } else {
         const pipeline = sharp(Buffer.from(svgContent)).resize(
           icon.width,
           icon.height,
           getResizeOptions(icon)
         );
-        await applyOpacityToSharp(pipeline, icon)
-          .png()
-          .toFile(outputFile);
+        await writeRotatedPng({ asset: icon, outputFile, pipeline });
       }
     } else {
       process.emitWarning(
@@ -96,4 +126,4 @@ async function renderAssets({
   return { generatedCount, skippedCount };
 }
 
-module.exports = { getResizeOptions, renderAssets };
+module.exports = { getFlipAngle, getResizeOptions, renderAssets };
