@@ -23,7 +23,8 @@
             "width": 640,
             "height": 480,
             "format": "png",
-            "type": "background"
+            "type": "background",
+            "flip": 180
         },
         {
             "icon-name": "bg-game-item-f",
