@@ -1471,6 +1471,38 @@
             "width": 50,
             "height": 50,
             "format": "png"
+        },
+        {
+            "icon-name": "dsi",
+            "target-path": "/icons",
+            "source": "/projects/icon-packs/dsi.svg",
+            "width": 240,
+            "height": 240,
+            "format": "png"
+        },
+        {
+            "icon-name": "dsi",
+            "target-path": "/icons/sel",
+            "source": "/projects/icon-packs/sel/dsi.svg",
+            "width": 240,
+            "height": 240,
+            "format": "png"
+        },
+        {
+            "icon-name": "j2me",
+            "target-path": "/icons",
+            "source": "/projects/icon-packs/j2me.svg",
+            "width": 240,
+            "height": 240,
+            "format": "png"
+        },
+        {
+            "icon-name": "j2me",
+            "target-path": "/icons/sel",
+            "source": "/projects/icon-packs/sel/j2me.svg",
+            "width": 240,
+            "height": 240,
+            "format": "png"
         }
     ]
 }
